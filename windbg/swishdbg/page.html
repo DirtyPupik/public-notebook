@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SwishDbg </title>
+</head><body><div style="text-align: left"><span style="font-family: Open Sans"><span style="font-size: 16pt">path: C:\Users\dp\Source\Repos\swishdbgext\x64\Debug\SwishDbgExt.dll<br/>
+<br/>
+</span></span><br/>
+!load <span style="font-family: Open Sans"><span style="font-size: 16pt">C:\Users\dp\Source\Repos\swishdbgext\x64\Debug\SwishDbgExt.dll</span></span><br/>
+</div><br/>
+!SwishDbgExt.help<br/>
+<ul><li>!ms_callbacks - Which shows the Microsoft supported callback functions which 3rd party software can use to find out about events on the system such as process creation, registry edits, etc. (These are things which rootkits can either alter or create their own to find out about behavior they want to monitor or hide.)</li>
+<li>!ms_ssdt - This is the System Service Descriptor Table, which is the list of <i>system calls</i> supported by the OS.</li>
+<li>!ms_hivelist - For listing registry hive information.</li>
+<li>!ms_gdt - Examine the Global Descriptor Table</li>
+</ul>
+&nbsp;</body></html>

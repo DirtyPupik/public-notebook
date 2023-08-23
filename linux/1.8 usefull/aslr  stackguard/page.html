@@ -1,0 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ASLR &amp; StackGuard</title>
+</head><body>Disable ASLR:<br/>
+<b>sudo bash -c 'echo 0 &gt; /proc/sys/kernel/randomize_va_space'<br/>
+<br/>
+</b>Disable canaries: (recomplie with no stack protector, default compile is 64bits unless stated -m32)<b><br/>
+</b><b>gcc &lt;filename.c&gt; -o &lt;filename&gt; -fno-stack-protector<br/>
+</b></body></html>

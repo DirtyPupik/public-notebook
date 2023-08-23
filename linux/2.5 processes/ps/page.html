@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ps</title>
+</head><body><b>ps -eLf<br/>
+</b>will show:<ul><li>PID: Unique process identifier</li>
+<li>LWP (Light-Weight Process): Unique thread identifier inside a process</li>
+<li>NLWP(Number of Light-Weight Processes): Number of threads for a given process</li>
+</ul>
+<br/>
+NLWP is an indication to weather the process is single or multi threaded<br/>
+Single-threaded processes have the same PID and LWP values as if they are the same thing. However, in a multi-threaded process, only one LWP matches its PID.<br/>
+</body></html>

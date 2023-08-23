@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>print</title>
+</head><body><b>Print</b>&nbsp;- can print a single value/register (may be used as "p"):<ul><li>Size letters are meaningless in "print" command.</li>
+<li>Size is addressed by the register, via intel syntax:</li>
+<li style="list-style-type: none"><ul><b><li style="list-style-type: none">(gdb) p/x $r14</li>
+<li style="list-style-type: none">$1 = 0xdeadbabe</li>
+<li style="list-style-type: none">(gdb) p/x $r14w</li>
+</b><li style="list-style-type: none"><b>$2 = 0xbabe</b></li>
+</ul>
+</li>
+<li>Item count other than 1 (number) is meaningless in "print" command. </li>
+<b><li>p/x $ah</li>
+</b></ul>
+</body></html>

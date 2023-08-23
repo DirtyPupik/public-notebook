@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LDR STR</title>
+</head><body><b>Remember the three offset modes in LDR/STR:<br/>
+</b>offset mode uses an immediate as offset<b></b><ul><b><li>ldr &nbsp; r3, [r1, #4]</li>
+</b></ul>
+offset mode uses a register as offset<b></b><ul><b><li>ldr &nbsp; r3, [r1, r2]</li>
+</b></ul>
+offset mode uses a scaled register as offset<b></b><b><ul><li>ldr &nbsp; r3, [r1, r2, LSL#2]</li>
+</ul>
+<br/>
+How to remember the different address modes in LDR/STR:<br/>
+</b>If there is a !, it’s prefix address mode<b></b><ul><b><li>ldr &nbsp; r3, [r1, #4]!</li>
+<li>ldr &nbsp; r3, [r1, r2]!</li>
+<li>ldr &nbsp; r3, [r1, r2, LSL#2]!</li>
+</b></ul>
+If the base register is in brackets by itself, it’s postfix address mode<b></b><ul><b><li>ldr &nbsp; r3, [r1], #4</li>
+<li>ldr &nbsp; r3, [r1], r2</li>
+<li>ldr &nbsp; r3, [r1], r2, LSL#2</li>
+</b></ul>
+Anything else is offset address mode.<b></b><b><ul><li>ldr &nbsp; r3, [r1, #4]</li>
+<li>ldr &nbsp; r3, [r1, r2]</li>
+<li>ldr &nbsp; r3, [r1, r2, LSL#2]</li>
+</ul>
+<br/>
+<br/>
+</b><b>ldr r0, adr_var1 </b>@ load the memory address of var1 via label adr_var1 into R0<br/>
+<br/>
+<b>ldr r1, adr_var2</b>&nbsp;@ load the memory address of var2 via label adr_var2 into R1<br/>
+<br/>
+<b>ldr r2, [r0] </b>@ load the value (0x03) at memory address found in R0 to register R2 <br/>
+<br/>
+<b>str r2, [r1, #2]</b>&nbsp;@ address mode: offset. Store the value found in R2 (0x03) to the memory address found in R1 plus 2. Base register (R1) unmodified. &nbsp;<br/>
+<br/>
+<b>str r2, [r1, #4]! </b>@ address mode: pre-indexed. Store the value found in R2 (0x03) to the memory address found in R1 plus 4. Base register (R1) modified: R1 = R1+4 &nbsp;<br/>
+<br/>
+<b>ldr r3, [r1], #4</b>&nbsp;@ address mode: post-indexed. Load the value at memory address found in R1 to register R3. Base register (R1) modified after load: R1 = R1+4<br/>
+<br/>
+<br/>
+Scaled register as the offset:<br/>
+<b>&nbsp;ldr r3, [r1], r2, LSL#2 </b>&nbsp;@ address mode: post-indexed. Load value at memory address found in R1 to the register R3. Then modifiy base register: R1 = R1 + R2&lt;&lt;2 <br/>
+&nbsp;</body></html>

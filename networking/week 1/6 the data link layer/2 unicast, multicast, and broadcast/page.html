@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unicast, Multicast, and Broadcast</title>
+</head><body><span style="font-size: 12pt">On the network 192.168.0.0/24 the usual gateway is 192.168.0.1 and the network broadcast address is 192.168.0.255.<br/>
+<br/>
+/24 is the boradcast range (24 first bits eg 255.255.255.0)<br/>
+<br/>
+<b>The unicast</b>&nbsp;address will have the value of the MAC address of the destination device.<br/>
+<br/>
+<b>Multicast</b>&nbsp;frames have a value of 1 in the least-significant bit of the first octet of the destination address.<br/>
+This helps a network switch to distinguish between unicast and multicast addresses.<br/>
+examples of an Ethernet multicast address<br/>
+01:00:0C:CC:CC:CC (0000000<b>1</b>&nbsp;: 00000000 : 00001100 : 11001100 : 11001100 : 11001100)<br/>
+0100.CCCC.DDDD (0:1 = 0000:0001)<br/>
+0900.AAAA.BBBB (0:9 = 0000:1001)<br/>
+<br/>
+broadcast is 255.255.255.255 (all one's in binary)<br/>
+<br/>
+further read<br/>
+http://www.steves-internet-guide.com/subnetting-subnet-masks-explained/</span></body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>display</title>
+</head><body><b>Display</b>&nbsp;- can be used to create a continuously-updating disassembly display. somewhat similar to linux "tail".<br/>
+The following will create an updating stack on each step, showing also rip:<br/>
+<b>display/10i $rip<br/>
+display/10x $rsp<br/>
+</b><b>display/12wx $rbp-0x30</b><br/>
+<br/>
+The display will have a number (13 in this example):<br/>
+<img src="image.png" /><br/>
+<br/>
+To remove:<br/>
+<b>undisplay &lt;number&gt;<br/>
+<br/>
+</b><br/>
+<br/>
+<br/>
+</body></html>

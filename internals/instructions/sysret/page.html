@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SYSRET</title>
+</head><body>Privileged instruction<br/>
+<ul><li>Restore RIP from RCX.</li>
+<li>Restore RFLAGS from R11.</li>
+<li>Load CS with value stored in IA32_STAR MSR bits [63:48] and adds 16.</li>
+<li>Load SS with value stored in IA32_STAR MSR bits [63:48] and adds 8.</li>
+<li>Whichever side of kernel/user that saved RSP is responsible for restoring it.</li>
+</ul>
+<br/>
+<br/>
+<img src="image.png" width="600" height="438" /><br/>
+<br/>
+<br/>
+When returning, CS might not have RPL=3, and as it must have RPL=3 in userspace to avoid kernel privileges in userspace.<br/>
+<img src="image 2.png" width="600" height="352" /><br/>
+<br/>
+The problem is solved in the microcode behind SYSRET instruction, which forces the RPL to 3 when returning:<br/>
+in the pseudocode<br/>
+<img src="image 3.png" width="500" height="105" /><br/>
+Bitwise OR is preformed against CS, to ensure the last 2 bits are 0y11 (3).<br/>
+<br/>
+<img src="image 4.png" width="500" height="264" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

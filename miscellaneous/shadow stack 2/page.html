@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shadow Stack</title>
+</head><body><ul><li>a separate stack that shadows the real stack by holding a copy of the return addresses</li>
+<li>it is a measure of security against buffer overflows</li>
+<li>the return addresses of the stack and the shadow stack are compared.</li>
+<li>shadow stack stores only the return addresses and nothing more</li>
+<li>shadow stack and cannaries are two different things. cannaries do not store a return address.</li>
+</ul>
+<br/>
+<br/>
+<a href="https://windows-internals.com/cet-on-windows/">https://windows-internals.com/cet-on-windows/</a></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Void pointer &amp; type cast</title>
+</head><body>A void pointer is a pointer that has no associated data type with it. A void pointer can hold address of any type and can be typcasted to any type.<br/>
+<br/>
+Void pointers cannot be dereferenced (UB).<br/>
+They can be type casted and than dereferenced.<br/>
+<br/>
+<b>int a = 10;<br/>
+</b><b>void *p = &amp;a;</b>&nbsp;&#09;&#09; // void pointer holds address of int 'a'<br/>
+<br/>
+<b>char b = 'x';<br/>
+</b><b>p = &amp;b;&#09;&#09;&#09;&#09;</b>&nbsp;// void pointer holds address of char 'b'<br/>
+<br/>
+<a href="https://www.hackerearth.com/practice/notes/void-pointer-in-c/">further read</a></body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>6 Interior Gateway Protocols</title>
+</head><body>routing tables are updated about the quickest paths via routing protocols<br/>
+routing protocols allow to share info between routers<br/>
+routing protocols devide into 2 main categories - interior and exterior<br/>
+interior are further split into 2 categories:<br/>
+<b>link state routing protocols </b>and <b>distance-vector protocols<br/>
+</b><b><br/>
+</b>Interior gateway protocols are used by routers to share information within a single autonomous system - &nbsp;a collection of networks that all fall under the control of a single network operator. (a large corp sending data between different offices)<br/>
+<br/>
+<b>distance-vector protocols</b>&nbsp;- its technically an algorithem which dynamic routing protocols such as EIGRP and RIP use.<br/>
+each router broadcast on a regular basis its whole routing table, the neighboring router <b>ignores </b>of a destination route if its less efficient (if its <b>metric</b>&nbsp;is higher<br/>
+&nbsp;- metric is the number of hops). in this manner, routers know only the path with the lowest number of hops and not the whole network map.<br/>
+but short distance doent necessary means its a short delivery<br/>
+*** the router doesnt knows the whole path, only the next hop<br/>
+<br/>
+<b>link state - </b>also an algorithm used by different protocols as OSPF- each router knows the whole net map<br/>
+these are complicated algoritms and use alot of memory - not a problem in new age is it?<br/>
+<br/>
+<img src="image.png" width="600" height="226" /><br/>
+<br/>
+</body></html>

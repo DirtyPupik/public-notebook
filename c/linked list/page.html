@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Linked list</title>
+</head><body><b>Why use Linked List?</b><ul><li>Regular arrays are fixed size, once declared, size cannot be changed during execution.</li>
+<li>Dynamic memory allocation solved this problem with <b>realloc()</b>. yet as the array must stay continuous, when reallocating big chunks of memory, the whole array might need to be moved to another location, moving might slow things down.</li>
+<li>also, adding an element in the middle of an array will cause all elements above to be shifted - lots of copying and things will also slow down alot</li>
+<li>deleting an element from a middle will also cause a shift (copy).</li>
+</ul>
+<br/>
+<br/>
+In a linked list, each element stand's alone as a node. in a memory point of view, each element gets a memory allocation and a pointer that points to the next element on the list. nodes can be anywhere in memory.<br/>
+Thus it is clear how easy can deletion and insertion of the middle may be done, it is only required to change 2 pointers.<br/>
+Node's in C are mostly structs.<br/>
+<br/>
+linked list termination:<ul><li>node is a list item, it has a pointer and an element</li>
+<li>edge pointers / edges - they connect the nodes</li>
+<li>head - the first node in the list, used for keeping track.</li>
+<li>tail - sometimes also used.</li>
+</ul>
+&nbsp;<br/>
+</body></html>

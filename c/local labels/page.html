@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>labels &amp; goto</title>
+</head><body>GCC allows you to declare local labels in any nested block scope. A local label is just like an ordinary label, but you can only reference it (with a goto statement, or by taking its address) within the block in which it is declared.<br/>
+<br/>
+A local label declaration looks like this:<br/>
+<br/>
+<b>__label__ label;</b><br/>
+<br/>
+or<br/>
+<br/>
+<b>__label__ label1, label2, /* … */;<br/>
+</b><br/>
+Local label declarations must come at the beginning of the block, before any ordinary declarations or statements.<br/>
+<br/>
+The label declaration defines the label name, but does not define the label itself. You must do this in the usual way, with label:, within the statements of the statement expression.<br/>
+<br/>
+</body></html>

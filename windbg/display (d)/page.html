@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Display (d)</title>
+</head><body><div style="text-align: left"><span style="font-family: Open Sans"><span style="font-size: 16pt"><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></span></div><div style="text-align: left"><span style="font-family: Open Sans"><span style="font-size: 16pt">"</span></span></div><b>D</b><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">isplay Local </div></span></span><b>V</b><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">ariables" (</div></span></span><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/dv--display-local-variables-">dv</a><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">)</div></span></span>&nbsp; <br/>
+if you have not yet stepped through the function prolog, and into the function body, the debugger will display incorrect values for variables.<br/>
+<br/>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor"><br/>
+</a><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/d--da--db--dc--dd--dd--df--dp--dq--du--dw--dw--dyb--dyd--display-memor">Display memory</a><br/>
+<br/>
+<br/>
+Display Expression (<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/dx--display-visualizer-variables-">dx</a>)<br/>
+displays a C++ expression using the NatVis extension model.<br/>
+Can be used to display as bits<ul><li style="list-style-type: none">0: kd&gt; dx 0x123,b</li>
+<li style="list-style-type: none">0x123,b &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: 0y100100011</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<b><span style="font-size: 17pt">Displaying Structures: </span></b>&nbsp;<br/>
+<span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">"</div></span></span><b>D</b><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">isplay </div></span></span><b>T</b><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">ype" (</div></span></span><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/dt--display-type-">dt</a><span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">)</div></span></span>&nbsp;<br/>
+The (dt) command can both display the fields of a structure, and interpret the memory at a given address according to a given structure type - <b>casting</b>&nbsp;to a system structure or build one.<br/>
+<br/>
+To only display the top level fields of a structure of a given type:<br/>
+dt {structure type}<br/>
+<br/>
+To recursively display the fields of a structure (and sub-structures):<br/>
+dt -r{depth} {structure type}<br/>
+<br/>
+To interpret the memory at a given address according to a structure definition:<br/>
+dt {structure type} {address}<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

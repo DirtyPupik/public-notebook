@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Breakpoints</title>
+</head><body><b><span style="font-size: 16pt">Breakpoints</span></b><span style="font-size: 16pt">&nbsp;<b>(software):</b></span><ul><span style="font-size: 16pt"><li>Implemented as "interrupt 3" (0xCC) that the debugger is inserting into the code</li>
+<li>Allows break over instruction execution only.</li>
+<li>Can be done multiple number of times (unlimited number of bp). </li>
+</span></ul>
+<b><br/>
+</b>Setting:<ul><li><b>(b / break) main / *address / *main + 8</b></li>
+</ul>
+Listing:<ul><li><b>info breakpoints&#09;&#09;/&#09;info break&#09;/&#09;info b</b></li>
+</ul>
+Clear (by address or function name):<ul><li><b>clear *0xADDRESS &#09;/&#09;function_name</b></li>
+</ul>
+Delete (by breakpoint number):<ul><li><b>d&#09;/&#09;delete&#09;b_number</b></li>
+</ul>
+Disabling (by breakpoint number):<ul><li><b>disable b_number</b></li>
+</ul>
+Enabling &nbsp;(by breakpoint number):<ul><li><b>enable b_number</b></li>
+</ul>
+<b><br/>
+<br/>
+</b><b><a href="http://www.nynaeve.net/?p=80"><span style="font-size: 16pt">Hardware Break On Execute - implemented by the MMU</span></a></b><ul><li>Limited to 4 Debug Registers (DR) on x86.</li>
+<li>Allows breaking on read or read/write and execute (due to the limited number, its more common to use software break on execute).</li>
+<li>Can be used to halt on non-execution accesses to memory locations.</li>
+<li><b>hbreak / hb&#09;*adress / function_name</b></li>
+</ul>
+</body></html>

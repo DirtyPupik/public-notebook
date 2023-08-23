@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>argc argv</title>
+</head><body><span style="font-size: 14pt"><br/>
+<div style="text-align: left"><span style="font-family: -apple-system">argv and argc are how command line arguments are passed to main() in C and C++.<br/>
+</span></div><br/>
+<div style="text-align: left"><span style="font-family: -apple-system">argc will be the number of strings pointed to by argv. This will (in practice) be 1 plus the number of arguments, as virtually all implementations will prepend the name of the program to the array.<br/>
+</span></div><br/>
+<div style="text-align: left"><span style="font-family: -apple-system">The variables are named argc (<i>argument count</i>) and argv (<i>argument vector</i>) by convention, but they can be given any valid identifier: int main(int num_args, char** arg_strings) is equally valid.<br/>
+</span></div><br/>
+<div style="text-align: left"><span style="font-family: -apple-system">They can also be omitted entirely, yielding int main(), if you do not intend to process command line arguments.<br/>
+</span></div><br/>
+<div style="text-align: left"><span style="font-family: -apple-system">Try the following program:<br/>
+<br/>
+<br/>
+<br/>
+</span></div>&nbsp; <br/>
+<img src="image.png" width="650" height="400" /><br/>
+<br/>
+<br/>
+</span><span style="font-size: 15pt">*argv[] and **argv are exactly equivalent, so you can write int main(int argc, char *argv[]) as int main(int argc, char **argv).</span><br/>
+&nbsp;<span style="font-size: 14pt"><br/>
+</span><span style="font-size: 14pt"><br/>
+input hex into argv[1]:<br/>
+<b>./myProgram $(python -c <span style="font-family: inherit">"print '\x48\x65\x6c\x6c\x6f'"</span>) &nbsp;</b><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

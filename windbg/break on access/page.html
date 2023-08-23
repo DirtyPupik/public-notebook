@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Break on access</title>
+</head><body><b><span style="font-size: 13pt"><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/ba--break-on-access-">ba - break on access (processor / hardware breakpoints)</a><br/>
+</span></b><span style="font-size: 13pt"><br/>
+ba use's hardware breakpoints (4 debug registers).<br/>
+<br/>
+The types of ba are:<br/>
+w&#09;write<br/>
+r&#09;read+write<br/>
+e&#09;execute&#09;&#09;&#09;&#09;size must be 1 if the type is "e"<br/>
+i&#09;i/o access<br/>
+<br/>
+***Hardware breakpoints must be set after execution have started, because hardware debug registers are saved and restored as part of thread state, when starting execution, breakpoint set before are cleared momentarly.<br/>
+<br/>
+<div style="text-align: left"><span style="font-family: Open Sans">A simplified form of the <b>b</b>reak on <b>a</b>ccess command is:<br/>
+</span></div><br/>
+<span style="font-family: Open Sans"><div style="text-align: left"><b>ba &lt;access type&gt; &lt;data size&gt; &lt;address&gt;</b><br/>
+</div></span><br/>
+<span style="font-family: Open Sans"><div style="text-align: left">Where:<br/>
+</div></span><ul><span style="font-family: Open Sans"><div style="text-align: left"><li style="list-style-type: none">&lt;access type&gt; == w (for write-access)</li>
+</div></span></ul>
+<ul><span style="font-family: Open Sans"><div style="text-align: left"><li style="list-style-type: none">&lt;data size&gt; == 1, 2, 4, or 8 (bytes)</li>
+</div></span></ul>
+<ul><span style="font-family: Open Sans"><div style="text-align: left"><li style="list-style-type: none">&lt;address&gt; == an absolute address, symbol name, or calculation of an address like "rsp+0x24"</li>
+</div></span></ul>
+<br/>
+<span style="font-family: Open Sans"><div style="text-align: left">So for instance to break when <b>4 bytes</b>&nbsp;are <b>written</b>&nbsp;to address 00000000`0014fdf4, you would enter:</div></span><br/>
+<ul><span style="font-family: Open Sans"><div style="text-align: left"><li style="list-style-type: none"><b>ba w 4 00000000`0014fdf4</b></li>
+</div></span></ul>
+<br/>
+There is no break on read-only. there is however break on <b>read and write<br/>
+</b>where <b>w </b>changes to <b>r</b>:<br/>
+<ul><b><li style="list-style-type: none">ba r 4 00000000`0014fdf4</li>
+</b></ul>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

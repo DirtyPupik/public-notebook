@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>pool</string>
+  <key>nodeid</key><string>21bdaba3-aae0-4645-8b59-8c5b289624db</string>
+  <key>modified_time</key><integer>1688028007</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1688027903</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>16</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

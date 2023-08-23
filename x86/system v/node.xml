@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>title</key><string>System V</string>
+  <key>nodeid</key><string>6f4d52d0-4b14-4be9-acbb-3a83548bd2d3</string>
+  <key>modified_time</key><integer>1677150795</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1677150795</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>27</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

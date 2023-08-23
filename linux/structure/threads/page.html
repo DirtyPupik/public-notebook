@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Threads</title>
+</head><body>A thread comprises of:<ul><li>Thread ID</li>
+<li>Program counter</li>
+<li>Register set</li>
+<li>Stack</li>
+</ul>
+<br/>
+Threads belonging to the same process share:<ul><li>Code section</li>
+<li>Data section</li>
+<li>Open files</li>
+<li>Other OS resources </li>
+</ul>
+<br/>
+Benefits of mulithreading:<ul><li><b>Responsiveness</b>&nbsp;- allow program to continue running even of part of it is blocked or delayed.</li>
+<li><b>Resource Sharing </b>- the sharing allows an application to have different threads of activity within the same address space</li>
+<li><b>Memory cost</b>&nbsp;- when resources are shared, memory is also shared and there's no need to reallocate memory to each thread being created. </li>
+<li><b>Utilization of multiprocessor architectures</b>&nbsp;- threads may run in parallel on different processors. a single-threaded process can run only on one CPU.</li>
+</ul>
+<br/>
+The major downside is that since the threads share the same memory, they can become slow if the process does many concurrent tasks.<br/>
+<br/>
+Main two types of threads:<ul><li><b>User thread </b>- supported above the kernel and managed without kernel support.</li>
+<li><b>Kernel thread</b>&nbsp;- supported and managed directly by the OS.</li>
+</ul>
+There must exist a relationship between the user and the kernel threads.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sal / sar</title>
+</head><body>Shifts are generally prefered over mul/div when the operand is a power of 2.<b><br/>
+</b><b><br/>
+</b><b>shr&#09;-&#09;Shift Arithmetic Right </b>(works the same as left).<ul><li>Can be used with C's &gt;&gt; (when operands are <b>signed</b>).</li>
+<li>First operand (source and destination) is r/mX.</li>
+<li>Second operand is either <b>cl</b>&nbsp;(lowest byte of rcx) or 1 byte <b>immidiate.</b></li>
+<li>Devides by 2.</li>
+<li>Bits fallen of the right go into &nbsp;the carry flag (CF, &nbsp;CY in MSVS), if it is either 0 or 1.</li>
+<li>The new bits that are added in arithmitic shift are either one's or zero's, depending on the sign bit.</li>
+<li>1111`0000 (-16) &gt;&gt; <b>1</b>111`1000 (-8)</li>
+</ul>
+<br/>
+<b><br/>
+</b><b>shl&#09;-&#09;Shift Arithmetic Left (same as logical left).</b><ul><li>Can be used with C's &lt;&lt; (when operands are <b>signed</b>).</li>
+<li>First operand (source and destination) is r/mX.</li>
+<li>Second operand is either <b>cl</b>&nbsp;(lowest byte of rcx) or 1 byte <b>immidiate.</b></li>
+<li>Multiplies by 2.</li>
+<li>Bits fallen of the right go into the carry flag (CF, &nbsp;CY in MSVS), if it is either 0 or 1.</li>
+<li>The new bits that are added in left arithmethic shift are zero's.</li>
+</ul>
+<br/>
+</body></html>

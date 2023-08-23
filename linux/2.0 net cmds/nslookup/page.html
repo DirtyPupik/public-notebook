@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>nslookup</title>
+</head><body>nslookup - <b>name server lookup - </b>returns a DNS record details<br/>
+<br/>
+example:&#09;<br/>
+<b>nslookup google.com</b><br/>
+* no https://<br/>
+* will return "A" record by default<br/>
+<br/>
+nslookup can be used as interactive mode by typing "nslookup" without a host name<br/>
+in interactive mode, multiple commands can be used one after another<br/>
+<br/>
+<b>server</b>&nbsp;&#09;&#09;&#09;&#09;<br/>
+will give the default server to use<br/>
+<br/>
+<b>server &lt;ip&gt;&#09;</b>&#09;&#09;<br/>
+will change the default DNS server of use (8.8.8.8 is for google)<br/>
+<img src="image.png" /><br/>
+<br/>
+<br/>
+<br/>
+<b>set type=&lt;record type&gt;</b>&#09;&#09;&#09;&#09;<br/>
+this will set the requested record type, A is default, with this command u can ask for AAAA or MX and etc<br/>
+<br/>
+<img src="image 2.png" width="600" height="193" /><br/>
+<br/>
+<br/>
+<b>set debug </b><br/>
+will allow the tool to display the full response packets, including any intermediary requests and all of their contents.<br/>
+this is a lot of data and can contain details like the TTL left, if it's a cached response, all the way to the serial number of the zone file the request was made against. </body></html>

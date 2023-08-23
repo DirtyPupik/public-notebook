@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>miscellaneous</title>
+</head><body><b>.formats cr3<br/>
+</b>display different formats.<b><br/>
+</b><b><br/>
+<br/>
+</b><b>GDT</b><br/>
+Examine the Global Descriptor Table (GDT)<br/>
+!ms_gdt<br/>
+<br/>
+<br/>
+<br/>
+<b>IDT</b><br/>
+Examine the Interrupt Descriptor Table (IDT) &nbsp;<br/>
+!idt<br/>
+!ms_idt<br/>
+<br/>
+<br/>
+<br/>
+A specific interrupt number can be printed with<ul><li style="list-style-type: none">!idt [interrupt #]</li>
+<b><li style="list-style-type: none">0: kd&gt; !idt 0n14</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</b></ul>
+<b>PTE page table entries<br/>
+</b>!pte &lt;address&gt;<ul><li style="list-style-type: none">0: kd&gt; !pte fffff804`2ba1e000</li>
+<li style="list-style-type: none">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VA fffff8042ba1e000</li>
+<li style="list-style-type: none">PXE at FFFFFCFE7F3F9F80 &nbsp; &nbsp;PPE at FFFFFCFE7F3F0080 &nbsp; &nbsp;PDE at FFFFFCFE7E010AE8 &nbsp; &nbsp;PTE at FFFFFCFC0215D0F0</li>
+<li style="list-style-type: none">contains 0000000001009063 &nbsp;contains 000000000100A063 &nbsp;contains 0000000001016063 &nbsp;contains 8900000002C00863</li>
+<li style="list-style-type: none">pfn 1009 &nbsp; &nbsp; &nbsp;---DA--KWEV &nbsp;pfn 100a &nbsp; &nbsp; &nbsp;---DA--KWEV &nbsp;pfn 1016 &nbsp; &nbsp; &nbsp;---DA--KWEV &nbsp;pfn 2c00 &nbsp; &nbsp; &nbsp;---DA--KW-V</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<b>POOL</b><br/>
+Using <a href="https://techcommunity.microsoft.com/t5/ask-the-performance-team/an-introduction-to-pool-tags/ba-p/372983">!pool</a>&nbsp;to associate a memory address with a data structure or driver<br/>
+<br/>
+The Windows kernel has multiple "pools", which are really just heaps from which memory can be allocated. Pools can have different "tags", to help developers identify which allocations came from their own code (if they specified a custom tag at allocation time), or when the data is from a pool of all the same type of data structures.<br/>
+<br/>
+!pool &lt;address&gt;<br/>
+<br/>
+<br/>
+<a href="https://github.com/jjzhang166/windbgtool/blob/master/Dependecies/x64/triage/pooltag.txt">list of pool tags</a><br/>
+<br/>
+<br/>
+<br/>
+<b>Windows Interrupt Request Level (IRQL)</b><br/>
+!irql<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>mistake</title>
+</head><body>the mistake happens at the begining:<br/>
+<br/>
+<b>int fd;<br/>
+if (fd=open("/home/mistake/password",O_RDONLY,0400) &lt; 0) { <br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("can't open password %d\n", fd); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>
+</b><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0;</b><ul><li style="list-style-type: none"><b>}</b></li>
+<li style="list-style-type: none"></li>
+</ul>
+since "&lt;" has higher priority than "=", the right part is evaluated first<br/>
+the right part of the expression -&#09;<b>open("/home/mistake/password",O_RDONLY,0400) &lt; 0</b>&#09;- will be equal to 0,<br/>
+since open(2) returns an FD (usally something like 63), and (63&lt;0)=false=0 .<br/>
+so it comes to be: &nbsp; <b>if (fd = 0) {exit}; else {proceed}<br/>
+</b>this statement evaluates to false, so the program will proceed and the file descriptor fd will be assigned with the value of zero (fd=0 (stdin))<br/>
+<br/>
+later on at the code, the password is read from the (<b>wrong</b>) file descriptor - stdin<br/>
+so the user is the one who's declaring the password<br/>
+<br/>
+all what left to do is give a 10 char password such as CCCCCCCCCC<br/>
+and another one such as BBBBBBBBBB (see the mistake.c file on the linux machine and vscode for full description)</body></html>

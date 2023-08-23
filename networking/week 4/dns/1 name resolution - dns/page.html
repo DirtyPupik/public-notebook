@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1 Name Resolution - DNS</title>
+</head><body>Domain name system<br/>
+domain name's can be resolved by DNS<br/>
+the IP of a domain can change<br/>
+DNS server listens on port 53<br/>
+<br/>
+There are five primary types of DNS servers: <br/>
+Root name servers<br/>
+TLD name servers (top level domain)<br/>
+Authoritative name servers. <br/>
+caching name servers - generally provided by the ISP<br/>
+recursive name servers - generally provided by the ISP<br/>
+<br/>
+alot of times the catching will also be recursive<br/>
+recursive is a type that preforms full DNS resolution request<br/>
+if the server is also a catching, it could store the domain's ip for future request (with an expiry of course - TTL in seconds)<br/>
+TTL's vary from minutes to hours<br/>
+<br/>
+<b>Full Recursive Resolution process:</b><br/>
+first - reacing a root server - there are 13 total authorities for the root servers but there are more than 13 physical root servers<br/>
+reaching it via catching/recursive server (c/rS)<br/>
+the root respond to the c/rS with the TLD that should be queried<br/>
+<img src="image.png" width="250" height="61" /><br/>
+For each TLD in existence, there is a TLD name server, but just like with root servers, this doesn't mean there's only physically one server in question, it's most likely a global distribution of any cast accessible servers responsible for each TLD. <br/>
+the TLD will respond with a redirect to an authoretive name server (ANS)<br/>
+the ANS will provide the actual IP of the requested domain<br/>
+<br/>
+this controled hirarchy of trusted entities is a mean to prevent redirecting to melacious content<br/>
+the process is long and takes alot of trafic - reason for catching<br/>
+<br/>
+DNS is an application layer service that uses UDP<br/>
+a single DNS request and its response can fit in a single UDP datagram<br/>
+<br/>
+if a full resolution request was done by TCP it would take 44 packets to be send in order to fufill one request!!!<br/>
+<img src="image 2.png" width="250" height="156" />&nbsp;&#09;11 packet for each - syn, syn/ack, ack, request, request ACK, response, response ACK , 4 way handshakre to end<br/>
+<br/>
+with UDP it would take 8 total packets: (the DNS answer is not on the scheme)<br/>
+<img src="image 3.png" width="550" height="344" /><br/>
+<br/>
+in conclusion, for simple request answer between 2 nodes, UDP would take 2 packets, while TCP would take 11<br/>
+<br/>
+DNS over TCP exists and is in use - since not all DNS requests can fit in a single UDP datagram - for those who cant fit, a TCP connection will be established<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

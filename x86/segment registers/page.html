@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Segment registers</title>
+</head><body>Segment registers (see <a href="https://en.wikipedia.org/wiki/X86_memory_segmentation">x86 memory segmentation</a>):<br/>
+<ul><li><b>CS </b>- Code Segment </li>
+<li><b>DS</b>&nbsp;- Data Segment</li>
+<li><b>SS </b>- Stack Segment</li>
+<li><b>ES </b>- Extra Segment</li>
+<li><b>FS</b>&nbsp;- Frame Segment</li>
+<li><b>GS </b>- General &nbsp;Segment</li>
+</ul>
+<br/>
+<img src="image 2.png" width="300" height="62" /><ul><li>Each segment register is 16 bit long Segment Selector with a visible part and another hidden part.</li>
+<li>SR's are primarly used for 32-bit mode, in which only 4GB of memory can be addressed (32bits-&gt;4gb).</li>
+<li>The x86-64 architecture have largely dropped support for segmentation in 64-bit mode.</li>
+<li>When accessing memory in 32 bit, segment selector (eg register) comes first, than an offset. </li>
+<li>DS segment is the default segment when storing data in memory or loading data from memory. &nbsp;</li>
+<li>Segment override is generally handled with a colon “:” operator, to overwrite the default DS. (MOV ES:[EBX], EAX).</li>
+<li>SR's can be modifiyed with mov, push and pop instructions (kernel mode only)</li>
+</ul>
+<br/>
+<img src="image.png" width="450" height="201" /><br/>
+Every segment register has a “visible” part and a “<b>hidden</b>” part. (The hidden part is sometimes referred to as a “descriptor cache” or a “shadow register.”) When a segment selector is loaded into the visible part of a segment register, the processor also loads the hidden part of the segment register with the base address, segment limit, and access control information from the segment descriptor pointed to by the segment selector. The information cached in the segment register (visible and hidden) allows the processor to translate addresses without taking extra bus cycles to read the base address and limit from the segment descriptor. Vol 3.4.3<br/>
+&nbsp; <br/>
+<b>*** remark about ES FS and GS names***</b><br/>
+The names "ES" (Extra Segment), "FS" (Frame Segment), and "GS" (General Segment) are commonly used to refer to the segment registers in the x86 architecture. These names are widely recognized and have been used in various programming references, books, and online resources. They are not specific abbreviations defined by an official x86 architecture specification.<br/>
+<br/>
+<br/>
+<br/>
+A bit more about segment registers:<ul><li><b>rep movsb %ds:(%rsi),%es:(%rdi)</b></li>
+</ul>
+"The segment registers are now used as selectors out of the Global Descriptor (or possibly local descriptor) table, which is used to define memory regions and their read/write permissions."<br/>
+"EDI will use the ES selector. and ESI will use the DS selector."<br/>
+</body></html>

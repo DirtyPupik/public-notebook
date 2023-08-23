@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registers</title>
+</head><body>x86-64 has 16 general purpose registers, 64 bits wide<br/>
+x86-32 has 8 gps and 32 bit wide<br/>
+out of these registers, one is for IP, one for flag and the rest are "segment"<br/>
+<br/>
+there are 2 naming conventions for the registers, one by intel and one by amd<br/>
+intel marks alphabetical names with meaning<br/>
+<img src="image.png" width="550" height="311" /><br/>
+<br/>
+<br/>
+The 8 GPRs are as follows by intel's naming convention:<br/>
+(note. this convention is optional, gpr's can be used differently)<br/>
+<ul><li>Accumulator register (<b>AX</b>). Used in arithmetic operations</li>
+<li>Counter register (<b>CX</b>). Used in shift/rotate instructions and loops and strings.</li>
+<li>Data register (<b>DX</b>). Used in arithmetic operations and I/O operations.</li>
+<li>Base register (<b>BX</b>). Used as a pointer to data (located in segment register DS, when in segmented mode).</li>
+<li>Stack Pointer register (<b>SP</b>). Pointer to the top of the stack.</li>
+<li>Stack Base Pointer register (<b>BP</b>). Used to point to the base of the stack.</li>
+<li>Source Index register (<b>SI)</b>. Used as a pointer to a source in stream operations.</li>
+<li>Destination Index register (<b>DI</b>). Used as a pointer to a destination in stream operations.</li>
+<li>Instruction pointer (<b>IP</b>). pointer to next instruction to execute</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

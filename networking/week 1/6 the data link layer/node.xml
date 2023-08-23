@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>nodeid</key><string>a5ede76a-9684-4476-b7d1-b5866d912b53</string>
+  <key>modified_time</key><integer>1668524610</integer>
+  <key>expanded2</key><false/>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1668524610</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>title</key><string>6 The Data Link Layer</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>6</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

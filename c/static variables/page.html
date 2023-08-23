@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Static variables</title>
+</head><body><b>static variables<br/>
+</b><ul><li>they preserve their previous value in their previous scope and are not initialized again in the new scope.</li>
+<li>they <b>remain in memory</b>&nbsp;while the program is running.</li>
+<li>Static variables are allocated memory in <b>initialized data segment</b>, not stack segment.</li>
+<li>static variables are initialized <b>exactly once </b>at program start (before main()), before your function is ever called. The fact that it's a local variable doesn't affect this rule.</li>
+<li>static storage class variables are<b>&nbsp;automatically initialized to zero</b>&nbsp;if not explicitly initialized.</li>
+<li style="list-style-type: none">hence, the <b>count = 0</b>&nbsp;in the program below is superfluous.</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><img src="image.png" width="265" height="238" /></li>
+<li style="list-style-type: none">this program returns: <b>1 2</b></li>
+<b><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</b></ul>
+</li>
+<li>Static variables should not be declared inside structure. The reason is C compiler requires the entire structure elements to be placed together (i.e.) memory allocation for structure members should be contiguous.</li>
+</ul>
+<br/>
+see also:<br/>
+https://www.geeksforgeeks.org/static-variables-in-c/<br/>
+<a href="https://www.geeksforgeeks.org/g-fact-80/">Initialization of static variables in C</a></body></html>

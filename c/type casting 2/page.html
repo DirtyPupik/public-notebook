@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Type Casting 2</title>
+</head><body>Advanced casting example:<br/>
+<br/>
+In the code below:<br/>
+<br/>
+unsigned char shellcode[] = "\x31\xc9\x6a";<br/>
+main()<br/>
+{<br/>
+&nbsp; &nbsp; int (*ret)() = (int(*)())shellcode; <br/>
+&nbsp; &nbsp; ret();<br/>
+}<br/>
+<br/>
+****************<br/>
+<br/>
+The expression (int (*) ())shellcode is a C cast-expression.<br/>
+<br/>
+This expression converts the shellcode variable, which is of type unsigned char[] (array of unsigned character) to the type int (*) () (pointer to function returning int taking no arguments).<br/>
+<br/>
+This means the compiler will take the address of the shellcode variable, and will assume that the code of a function returning int and taking no arguments is at this address.<br/>
+<br/>
+running ret() will now call this function, by saving the return address on the stack and jumping to this address.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

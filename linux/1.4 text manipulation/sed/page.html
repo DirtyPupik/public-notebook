@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sed</title>
+</head><body>find a specific line by line number:<br/>
+<b>cat &lt;file&gt; | sed 'NUMq;d'</b>&#09;&#09;&#09;&#09;eg for line 112: <b>cat &lt;file&gt; | sed '112q;d'</b><br/>
+<br/>
+delete empty lines (only lines without spaces):<br/>
+<b>sed '/^$/d' file.txt &nbsp;</b><br/>
+d is the sed command to delete a line. ^$ is a regular expression matching only a blank line, a line start followed by a line end.<br/>
+<br/>
+delete empty lines including lines with spaces<br/>
+<b>sed '/^ *$/d' file.txt <br/>
+<br/>
+</b><b>-i </b>&nbsp;flag make changes to the file<br/>
+<br/>
+<img src="image.png" width="950" height="489" /></body></html>

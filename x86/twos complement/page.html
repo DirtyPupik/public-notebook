@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Two's complement</title>
+</head><body>Negative values are represented as the "two's complement" of their positive value. Two's complement is computed by flipping all the bits, and adding 1.<br/>
+<br/>
+So for instance, I said that 0xFF is -1. This can be confirmed by flipping all the bits (11111111b -&gt; 00000000b), and then adding 1 (00000001) to yield a positive 1. Or for instance -128 is 10000000 -&gt; 01111111 + 1 = 10000000 = 128.<br/>
+<br/>
+The same rules for ranges which applied to one byte values can extend to 2, 4, 8, etc byte values.<br/>
+<br/>
+2 byte positive range = 0x0001 to 0x7FFF (32767), negative range = 0x8000 (-32768) to 0xFFFF (-1)<br/>
+<br/>
+4 byte positive range = [0x00000001, 0x7FFFFFFF], negative range = [0x80000000, 0xFFFFFFFF]</body></html>

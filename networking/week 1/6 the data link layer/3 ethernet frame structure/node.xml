@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>3 Ethernet frame structure</string>
+  <key>nodeid</key><string>b5c63351-2c03-4f03-a917-ec233272ff3a</string>
+  <key>modified_time</key><integer>1668529255</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1668528706</integer>
+  <key>order</key><integer>2</integer>
+</dict>
+</node>

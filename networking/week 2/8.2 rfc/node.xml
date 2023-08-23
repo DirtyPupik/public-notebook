@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>8.2 RFC</string>
+  <key>nodeid</key><string>0aea9e55-6b79-4367-888c-e567a72a4e14</string>
+  <key>modified_time</key><integer>1668608296</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1668608252</integer>
+  <key>order</key><integer>8</integer>
+</dict>
+</node>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1</title>
+</head><body>many programs and protocols have <b>error detection</b>&nbsp;and <b>error recovery</b><br/>
+<br/>
+CRC - cyclic redundancy check - should match the data payload<br/>
+<br/>
+ICMP - internet control messege protocol - used to communicate issues, routers or remote hosts will use it with the origin address to send error msg<br/>
+structure is simple, has header with few fields and data section to figure out what transmition generated the error<br/>
+<img src="image.png" width="450" height="266" /><br/>
+<b>type - </b>what type of msg is delivered, eg - destination unreachable or time exceeded<br/>
+<b>code</b>&nbsp;- more specific reason for the msg of the type - eg for destination unreachable - can be network unreachable or port unreachable<br/>
+<b>rest of header - </b>optionaly used to send more data<br/>
+<b>data section - </b>&nbsp;the payload - telling the origin which transsmition caused the error<br/>
+<br/>
+ICMP wasnt developed to humans to interact with<br/>
+but there is a tool and 2 msg types importent:<br/>
+<b>ping - </b>special type of ICMP msg called <b>echo request</b>, if destination is avialable it will send back <b>echo reply</b></body></html>

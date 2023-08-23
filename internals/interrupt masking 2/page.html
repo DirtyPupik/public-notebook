@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interrupt Masking</title>
+</head><body><ul><li>Interrupt masking refers to a technique used to control the handling of interrupts.</li>
+<li>It involves temporarily disabling certain interrupts to prevent them from interrupting the normal flow of the program execution.</li>
+<li>This is typically done by manipulating the interrupt enable/disable flag or the interrupt mask register in the processor or interrupt controller.</li>
+</ul>
+<br/>
+IF flag (Interrupt Enable Flag) is affected differently by going though interrupt or trap gate.<br/>
+<br/>
+<b>Interrupt Gate</b><br/>
+When an interrupt occurs the processor automatically <b>disables the IF flag (IF = 0)</b>.<br/>
+Meaning that interrupts are temporarily masked and cannot interrupt the execution of the interrupt service routine (ISR).<br/>
+<br/>
+<b>Trap Gate</b><br/>
+When an interrupt occurs the IF flag remains <b>unaffected</b>.<br/>
+This behavior allows nested interrupts to occur.<br/>
+<ul><li>IF flag may be controled with SLI and STI instructions.</li>
+</ul>
+<br/>
+<b>EXCEPTIONS</b><br/>
+The IF does not mask the explicit invocation of an interrupt with the <b>INT N / INT1 / INT3 / INT0 / UD2 </b>instructions.<br/>
+The IF does not mask a <b>Non Maskable interrupt - (IDT[2]).</b><br/>
+<br/>
+When the INT3 instruction is encountered (int3 goes through interrupt gate)<ul><li>The processor saves the current execution context.</li>
+<li>The processor then loads the CS and RIP from the interrupt gate descriptor specified in the IDT.</li>
+<li>The processor starts executing the interrupt service routine (ISR) at the address specified in the interrupt gate descriptor.</li>
+<li>Since the IF flag was cleared, no further interrupts can occur during the execution of the ISR.</li>
+<li>Once the ISR completes, it executes an IRET.</li>
+<li>The IRET instruction restores the previous flags register, i<b>ncluding the previous state of the IF flag</b>.</li>
+</ul>
+<br/>
+In WinDbg and other debuggers, IF flag might not clear after interrupt gate.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

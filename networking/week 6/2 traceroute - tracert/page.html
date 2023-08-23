@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2 Traceroute / tracert</title>
+</head><body><b>NETWORK LAYER CONNECTIVITY TOOLS</b><br/>
+<br/>
+traceroute is a<b>&nbsp;</b>utility that lets you discover the paths between two nodes, and gives you information about each hop along the way.<br/>
+it works by increasing the TTL field by 1 each time to receieve an ICMP TTL exceeded msg <br/>
+<img src="image.png" width="500" height="231" /><br/>
+in linux - "traceroute"<br/>
+in win - "tracert"<br/>
+<br/>
+"Different versions of traceroute send different packets out.<br/>
+The Linux version sends UDP packets by default;<br/>
+the windows version on your PC sends pings."<br/>
+<br/>
+If you initiative from a Cisco router or unix based system, its implementation uses UDP;<br/>
+<br/>
+The device ends out a sequence of User Datagram Protocol (UDP) datagrams to an invalid port address at the remote host (very high port numbers).<br/>
+<br/>
+If you were to use traceroute equivalent in windows (tracert), it will use ICMP.<br/>
+<br/>
+There are distributions in unix that let you specify if you would like to use ICMP instead of the default UDP.<br/>
+<br/>
+Examples of both:<br/>
+ICMP<br/>
+<img src="image 2.png" width="600" height="233" /><br/>
+<br/>
+<img src="image 3.png" width="800" height="466" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+2 more tools for long running traceroutes- <br/>
+linux - "mtr"<br/>
+windows - "pathping" - will run for 15 sec and display data all at once<br/>
+<br/>
+</body></html>

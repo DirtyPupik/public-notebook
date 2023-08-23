@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Binary Bomb</title>
+</head><body>CMU Binary Bomb<br/>
+<br/>
+solution:<br/>
+**********************************************************<br/>
+I am just a renegade hockey mom.<br/>
+1 2 4 8 16 32<br/>
+0 602<br/>
+3 10<br/>
+5 115<br/>
+5 4 3 1 6 2<br/>
+<br/>
+**********************************************************<br/>
+<br/>
+<b>./bomb a.txt<br/>
+</b><b>gdb -q bomb -x ~/gdbCfg</b><br/>
+<br/>
+gdbCfg:&#09;(it varies)<br/>
+**********************************************************<br/>
+display/10i $rip<br/>
+display/x $rbp<br/>
+display/x $rsp<br/>
+display/x $rax<br/>
+display/x $rbx<br/>
+display/x $rcx<br/>
+display/x $rdx<br/>
+display/x $rdi<br/>
+display/x $rsi<br/>
+display/x $r8<br/>
+display/x $r9<br/>
+display/x $r12<br/>
+display/x $r13<br/>
+display/x $r14<br/>
+display/6wx $rsp<br/>
+display/6gx $rsp+0x20<br/>
+start a.txt<br/>
+**********************************************************</body></html>

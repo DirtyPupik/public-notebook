@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rep stos</title>
+</head><body>Seen in ArrayLocalVariable2.c<br/>
+Occures in a zero initialization of an array.<br/>
+<br/>
+rep stos - <b>Rep</b>eat <b>Sto</b>re <b>S</b>tring<br/>
+Can be seen in ArrayLocalVariable2.c<br/>
+These are actually 2 instructions. stos and a prefix of rep.<br/>
+<br/>
+<b>rep instruction:</b><ul><li>All rep operations use *cx register as a "counter".</li>
+<li>Each time rep executes, *cx is decremented by 1.</li>
+<li>Once *cx == 0, it continues to the next instruction.</li>
+</ul>
+<br/>
+Specifically for <b>rep stos</b>, it will either:<ul><li>Case 1: fill 1 byte at [di] with al (less importent case).</li>
+<li>Case 2: fill 1/2/4/8 bytes at [*di] with al/*ax.</li>
+<li>After each fill, [*di] is incremented by 1/2/4/8, in order to fill the next slot of the array.</li>
+</ul>
+<br/>
+Prerequisites for rep stos:<ul><li>Set *di to start of destination.</li>
+<li>Set *ax/al to the initializing value (value to store).</li>
+<li>Set *cx to the number of repeats.&#09;</li>
+</ul>
+</body></html>

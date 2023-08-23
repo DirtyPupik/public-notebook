@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>named pipe (FIFO)</title>
+</head><body><span style="font-size: 14pt">(from <b>man fif<span style="font-family: -apple-system"><div style="text-align: left">o</div></span></b><span style="font-family: -apple-system"><div style="text-align: left">)<br/>
+</div></span><span style="font-family: -apple-system"><div style="text-align: left"><br/>
+<br/>
+<br/>
+<br/>
+</div></span>A FIFO special file (a <b>named pipe</b>) is similar to a pipe, except that it is accessed as part of the filesystem.<br/>
+It can be opened by multiple processes for reading or writing.<br/>
+When processes are exchanging data via the FIFO, the kernel passes all data internally without writing it to the filesystem. Thus, the FIFO special file has <b>no contents</b>&nbsp;on the filesystem; the filesystem entry merely serves as a reference point so that processes can access the pipe using a name in the filesystem.<br/>
+<br/>
+<div style="text-align: left"><span style="font-family: -apple-system">The kernel maintains exactly one pipe object for each FIFO special file that is opened by at least one process. The FIFO must be opened on both ends (reading and writing) before data can be passed. Normally, opening the FIFO blocks until the other end is opened also.</span></div>&nbsp; <br/>
+<br/>
+So actually a named pipe does nothing until some process reads and writes to it. It does not take any space on the hard disk (except a little bit of meta information), it does not use the CPU.<br/>
+<br/>
+<ul><li>Named pipes are used for two un-related processes to communicate (anonymous pipe allow communication only between related processes).</li>
+<li></li>
+<li><b>Either Read Or Write</b>&nbsp;- a named pipe cannot be opened for both reading and writing. The process opening it must choose one mode, and stick to it until it closes the pipe.</li>
+<li><b>Read/Write Are Blocking</b>&nbsp;- when a process reads from a named pipe that has no data in it, the reading process is blocked. It does <b>not</b>&nbsp;receive an end of file (EOF) value, like when reading from a file. When a process tries to write to a named pipe that has no reader (e.g. the reader process has just closed the named pipe), the writing process gets blocked, until a second process re-opens the named pipe.</li>
+</ul>
+<br/>
+Create a named pipe:<br/>
+<b>mkfifo /tmp/testPipe<br/>
+</b>or<b><br/>
+</b><b>mknod /tmp/testPipe p<br/>
+<br/>
+<br/>
+further read <a href="http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/pipes.html">one</a>&nbsp;two three<br/>
+<br/>
+<br/>
+<br/>
+</b></span></body></html>

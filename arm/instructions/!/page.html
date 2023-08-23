@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>!</title>
+</head><body>! (exclamation mark) means register write-back<b>.</b><br/>
+changes are done to the base register<br/>
+<br/>
+<b>str r2, [r1, #4]! </b>&#09;&#09;- Store the value found in R2 to the memory address found in R1 plus 4.<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">Base register (R1) is modified prior to operation : R1 = R1+4.</li>
+<li style="list-style-type: none">this is called pre-indexed addressing mode.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+note that base register may also be modifed after the opertaion:<br/>
+<b>ldr r3, [r1], #4</b></body></html>

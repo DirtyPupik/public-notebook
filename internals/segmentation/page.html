@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Segmentation</title>
+</head><body><b>Segmentation</b><br/>
+<br/>
+<br/>
+There are few segmentation models, non of them is really in use.<ul><li>Multi-segment model</li>
+<li>Segmented memory model</li>
+<li>Flat memory model</li>
+</ul>
+The model in use in most systems is closly similar to the flat model.<br/>
+<br/>
+<img src="image.png" width="500" height="266" /><br/>
+<br/>
+<br/>
+The pointers include a 16-bit Segment selector, which is stored in a segment register.<br/>
+<br/>
+<b>Pointers in 32-bit</b>:<br/>
+<img src="image 2.png" width="500" height="150" /><br/>
+<br/>
+<b>Pointers in 64bit:</b><br/>
+<img src="image 3.png" width="500" height="153" /><br/>
+<br/>
+<br/>
+<br/>
+In Real-Mode, when PC is started, there is no paging, therefore <b>Linear Address == Physical Address</b><br/>
+<img src="image 6.png" width="600" height="357" /><br/>
+<br/>
+<br/>
+<img src="image 4.png" width="600" height="414" /><br/>
+<br/>
+<img src="image 5.png" width="850" height="98" /><br/>
+<br/>
+The way segment regiseters were used de-facto is<br/>
+<img src="image 7.png" width="650" height="272" /><br/>
+<br/>
+<br/>
+but GS and FS base are stored in MSRs, so its actually<br/>
+<img src="image 8.png" width="600" height="310" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

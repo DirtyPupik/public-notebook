@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Writing assembly</title>
+</head><body>2 ways for writing assembly:<ul><li>Inline Assembly - &nbsp;a way to include assembly inline with C/++ code.</li>
+<li>Standalone Assembly - pure assembly written to a file (not inside the main C/++ file), assembled into an object file and then linked into the final binary with other compuled objects.</li>
+</ul>
+<br/>
+Note that different assemblers use different syntaxs, most common being MASM in MSVS and NASM.<br/>
+Raw bytes can also be written in order to avoid finding the right syntax.<br/>
+<br/>
+<a href="https://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html"><b>Inilne assembly with GCC</b></a><b>&nbsp;- uses GNU Assembler (gas) syntax (== AT&amp;T). in the form of:</b><br/>
+asm("instructions separated by \n");&#09;&#09;&#09;// using __asm__ is also valid function name in case of name conflicts<br/>
+</body></html>

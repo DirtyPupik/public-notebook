@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3 TCP Control Flags and the Three-way Handshake</title>
+</head><body><b>URG</b>&nbsp;- this is short for Urgent. A 'true' value indicates that the segment is considered urgent and that the urgent pointer field has more data about this.<br/>
+this feature of TCP is not common.<br/>
+<br/>
+<b>ACK</b>&nbsp;- short for acknowledge. A 'true' value in this field means that the acknowledgment number field should be examined.<br/>
+<br/>
+<b>PSH</b>&nbsp;- short for Push. This means, that the transmitting device wants the receiving device to push currently- buffered data to the application on the receiving end as soon as possible. &nbsp;In terms of TCP, it's used to send large chunks of data more efficiently. By keeping some amount of data in a buffer, TCP can deliver more meaningful chunks of data to the program waiting for it. But in some cases, you might be sending a very small amount of information, that you need the listening program to respond to immediately. This is what the push flag does.<br/>
+<br/>
+<b>RST</b>&nbsp;- short for Reset. This means, that one of the sides in a TCP connection hasn't been able to properly recover from a series of missing or malformed segments. It's a way of saying "let's start over from scratch".<br/>
+<br/>
+<b>SYN</b>&nbsp;- stands for Synchronize. It's used when first establishing a TCP connection and make sure the receiving end knows to examine the sequence number field.<br/>
+<br/>
+<b>FIN </b>- short for Finish.<br/>
+<br/>
+<b>my ack number is the servers syn number + the TCP segment length</b><br/>
+<br/>
+Each segment sent in either direction should be responded to by TCP segment with the ACK field set. This way, the other side always knows what has been received.<br/>
+<img src="image.png" width="350" height="452" /><br/>
+<br/>
+-------------------------------------------------------------------------------------------------------<br/>
+<br/>
+<img src="image 2.png" width="400" height="175" /></body></html>

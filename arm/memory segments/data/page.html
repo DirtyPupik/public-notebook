@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>.data</title>
+</head><body>the<b>&nbsp;.data</b>&nbsp;section is used to store data - <b>R+W<br/>
+</b>there's also<b>&nbsp;.bss</b>&nbsp;<br/>
+<br/>
+<span style="font-size: 14pt">the<b>&nbsp;.data</b>&nbsp;section usually comes after .global and _start (but not necessarly).<br/>
+<div style="text-align: justify"><br/>
+The<b>&nbsp;.data </b>section is used to declare the memory region, where data elements are stored for the program. This section cannot be expanded after the data elements are declared, and it remains static throughout the program.<br/>
+<br/>
+<span style="font-family: Nunito">The <b>.bss</b>&nbsp;section is also a static memory section that contains buffers for data to be declared later in the program. This buffer memory is zero-filled.</span><br/>
+</div></span><br/>
+inside .data, we put a <b>label </b>which functions as the variable name, a <b>size type of the variable,</b>&nbsp;and the contents<br/>
+example: "list" is the label, ".word" is the size - 32bit signed int<b><br/>
+</b><img src="image.png" width="250" height="161" /><br/>
+<br/>
+ldr loads the address of "list" array starting point</body></html>

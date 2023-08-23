@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>x &amp; Memory</title>
+</head><body><b>"x" (examine memory)</b>, supports the /FMT specifier.<br/>
+<a href="https://visualgdb.com/gdbreference/commands/x"><b>x/50x $sp<br/>
+</b></a><b>x/50s $sp<br/>
+x/1xg $rsp<br/>
+</b><br/>
+<br/>
+Changing memory - can be done useing "<b>set"</b>&nbsp;and a C type size:<br/>
+(gdb) x/1xg $rsp<br/>
+0x7fffffffe038:&#09;0x00007ffff7ded0b3<br/>
+(gdb) set {char}$rsp = 0xFF<br/>
+(gdb) x/1xg $rsp<br/>
+0x7fffffffe038:&#09;0x00007ffff7ded0<b>ff</b><br/>
+(gdb) set {short}$rsp = 0xFF<br/>
+(gdb) x/1xg $rsp<br/>
+0x7fffffffe038:&#09;0x00007ffff7de<b>00ff</b><br/>
+(gdb) set {short}$rsp = 0xFFFF<br/>
+(gdb) x/1xg $rsp<br/>
+0x7fffffffe038:&#09;0x00007ffff7de<b>ffff</b><br/>
+(gdb) set {long long}$rsp = 0x1337bee7<br/>
+(gdb) x/1xg $rsp<br/>
+0x7fffffffe038:&#09;0x<b>000000001337bee7<br/>
+</b></body></html>

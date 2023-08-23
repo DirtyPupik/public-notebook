@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>File Hierarchy Structure</string>
+  <key>nodeid</key><string>07bb2d77-44b8-4c6a-9522-875b4e8d70e1</string>
+  <key>modified_time</key><integer>1675006186</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1674995257</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>5</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

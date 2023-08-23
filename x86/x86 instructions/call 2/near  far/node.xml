@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>near &amp; far</string>
+  <key>nodeid</key><string>ba95de73-d478-43cd-9f05-d3e10dee8649</string>
+  <key>modified_time</key><integer>1679394836</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1679394792</integer>
+  <key>order</key><integer>0</integer>
+</dict>
+</node>

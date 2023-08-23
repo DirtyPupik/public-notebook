@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>syscall</title>
+</head><body>Communication between kernel and user spaces is preformed via a central dispatcher - several options exist.<ul><li>Call gates (not in use since win95)&#09;</li>
+<li>INT (0x2E in win XP-7, 10[1].&#09; 0x80 in linux, BSDs, macOS), up to 0x31 is reserved, beyoned is OS dependent.</li>
+</ul>
+<img src="image.png" width="500" height="242" /><br/>
+<br/>
+But the most used method now is SYSCALL / SYSRET instructions.<br/>
+SYSENTER / SYSEXIT were aim to 32-bit.<br/>
+SYSCALL / SYSRET were aimed at 64-bit, instead of extending the previous ones.<br/>
+<img src="image 2.png" width="500" height="243" /><br/>
+<br/>
+in terms of compatibility:<br/>
+<img src="image 3.png" width="500" height="353" /><br/>
+<br/>
+<img src="image 4.png" width="650" height="221" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<b>syscall excercise</b><br/>
+<ul><li>What is the name of the function where SYSCALL lands you in the kernel?</li>
+</ul>
+0xC0000082 msr is the target ip<br/>
+0: kd&gt; rdmsr 0xC0000082<br/>
+msr[c0000082] = fffff804`2c437180<br/>
+0: kd&gt; ln fffff804`2c437180<br/>
+(fffff804`2c437180) &nbsp; nt!KiSystemCall64Shadow &#09;&#09;&lt;- this is the function name in kernel<br/>
+<ul><li>What is the first assembly instruction?</li>
+</ul>
+looking at the disassembly:<br/>
+&nbsp; &nbsp; nt!KiSystemCall64Shadow:<br/>
+fffff804`2c437180 &#09;&#09;0f01f8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapgs &nbsp;<br/>
+<ul><li>What is the ring 0 CS segment selector?</li>
+</ul>
+Loads CS with value stored in IA32_STAR MSR (0xC0000081) bits [47:32] and set SS = (CS + 8)<br/>
+0: kd&gt; rdmsr 0xC0000081<br/>
+msr[c0000081] = 00230010`00000000<br/>
+0023 is sysret, 0010 is syscall.<br/>
+the segment selector is 0x0010 -&gt; 0000 0000 0001 0000 -&gt; RPL=0, GDT, 0x10 RSH(3) = 0x2 (0y10) record 2.<br/>
+when looking at GDT(2): type 0y11011 code R+E non-conforming, dpl=0, present, long<br/>
+R+E fit CS<br/>
+<ul><li>What is the ring 0 SS segment selector?</li>
+</ul>
+SS=CS+8 = 0x18 RSH(3) = 0x3 (0y11) record 3 in GDT<br/>
+when looking at GDT(3): type 0y10011 data R+W acceessed, dpl=0, present, long, big=1<br/>
+data R+E fits SS<br/>
+<ul><li>What is the ring 3 CS segment selector? from sysret</li>
+</ul>
+Load CS with value stored in IA32_STAR MSR bits [63:48] and adds 16.<br/>
+0: kd&gt; rdmsr 0xC0000081<br/>
+msr[c0000081] = 00230010`00000000<br/>
+CS := 0x23 + 0x10 = 0x33 -&gt; 0y00110011 - RPL=3, GDT, 0x33 RSH(3) = 6 record number<br/>
+looking at GDT - DPL = 0x3, type code R+E non conforiming<br/>
+<ul><li>What is the ring 3 SS segment selector? from sysret</li>
+</ul>
+Load SS with value stored in IA32_STAR MSR bits [63:48] and adds 8.<br/>
+0: kd&gt; rdmsr 0xC0000081<br/>
+msr[c0000081] = 00230010`00000000<br/>
+CS := 0x23 + 0x8 = 0x2B -&gt; 0y00101011 - RPL=3, GDT, 0x2B RSH(3) = 5 record number<br/>
+looking at GDT - DPL = 0x3, type data R+W accessed, BIG (32-bit stack pointer movement), limit 0xfffff, granularity=1<br/>
+<ul><li>Which segments previously seen in the GDT have now been shown to be used here, and which haven't?</li>
+</ul>
+i really dont remember<br/>
+<ul><li>What is MSR 0xC0000083 probably used for based on it's value?</li>
+</ul>
+cheating - #define MSR_CSTAR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#09;0xc0000083 &#09;/* compat mode SYSCALL target */<br/>
+0: kd&gt; rdmsr 0xc0000083 <br/>
+msr[c0000083] = fffff804`2c436e40<br/>
+0: kd&gt; ln fffff804`2c436e40<br/>
+(fffff804`2c436e40) &nbsp;&#09;&#09; nt!KiSystemCall32Shadow&#09;&#09;&lt;- it says syscall 32, compatibility mode<br/>
+<ul><li>What are the specific bits from RFLAGS which are masked out on SYSCALL?</li>
+</ul>
+Mask clear each bit of RFLAGS against IA32_FMASK MSR (0xC0000084)<br/>
+0: kd&gt; rdmsr 0xc0000084 <br/>
+msr[c0000084] = 00000000`00004700 -&gt; 0y0100011100000000, bits 8 trap ,9 interrupt enable ,10 Direction ,14 Nested task are cleared<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

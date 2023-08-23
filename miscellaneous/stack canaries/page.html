@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stack Canaries</title>
+</head><body>https://ctf101.org/binary-exploitation/stack-canaries/<br/>
+https://d3fend.mitre.org/technique/d3f:StackFrameCanaryValidation/<br/>
+<a href="https://www.sans.org/blog/stack-canaries-gingerly-sidestepping-the-cage/">very deep guide</a><br/>
+<ul><li>canaries are initialized with program startup.</li>
+<li>there are different types of canaries, one being random canary.</li>
+<li>a random number is generated from /dev/random and put on the stack after the buffer and before the return. address.</li>
+<li>there is a NULL char 0x00 at the begining of the canary.</li>
+<li>The NULL byte at the beginning of the canary would present a problem for many string operations to print.</li>
+<li>example of a canary value&#09;-&#09;<b>0x08A5F900</b></li>
+<li>Canaries in 64 bit programs follow the same principles, but will use the extra 32 bits for entropy.</li>
+<li>Stack canaries will be checked for their value just before the return to the calling function </li>
+</ul>
+<br/>
+The random XOR canary will be like the random canary, except it will be XOR’ed against a non-static value in the program (usually the Base Pointer EBP). As operating systems nowadays run with Address Space Layout Randomization (ASLR) activated, EBP will not be static across runs of the program. This adds an extra layer of randomization to the cookie, making it hard to predict this value.<br/>
+<br/>
+<b>If the attacker performs a malicious action before the epilogue is called, then this protection will not be effective</b>. This includes altering the logic of the program by altering the values of local variables stored on the function stack, or by causing an exception and exploiting the exception mechanism such as the SEH (Structured Exception Handling) mechanism on Windows.<br/>
+<br/>
+<img src="image.png" width="900" height="348" /></body></html>

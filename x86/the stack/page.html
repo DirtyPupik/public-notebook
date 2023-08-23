@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Stack</title>
+</head><body>typically, the stack grows from high to low address, towards the heap<br/>
+<br/>
+<b>top of the stack</b>&nbsp;- the lowest address which is being used (thats where the RSP register points)<br/>
+while data will exist at addresses beyond the top of the stack, it is considerd undefined<br/>
+<br/>
+what can i find on the stack?<ul><li><b>return addresses - </b>so a called function can return to the function that called it</li>
+<li><b>local variables</b></li>
+<li>sometimes used to pass arguments between functions</li>
+<li>save space for registers between different functions</li>
+<li>save space for registers for same function (when takes too many resources)</li>
+</ul>
+<br/>
+<b>alloca() - </b>dynamically alocated memory on the stack<br/>
+<br/>
+<br/>
+main() is the first called, it calls foo() which calls bar()<br/>
+<img src="image.png" width="650" height="373" /><br/>
+</body></html>

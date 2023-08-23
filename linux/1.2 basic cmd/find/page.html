@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>find</title>
+</head><body><b>find . -name "filename*"</b>&#09;&#09;search in current dir and all subdirs<br/>
+<br/>
+<ul><li><b>/ (slash)</b> — search the whole system.</li>
+<li><b>. (dot)</b> — search from the folder you’re currently working on (current directory).</li>
+<li><b>~ (tilde)</b> — to search from your home folder.</li>
+</ul>
+&nbsp;<br/>
+<br/>
+-iname&#09;&#09;(case) instsensitive<br/>
+<b>find . -iname my-file </b>&nbsp;<br/>
+<br/>
+<br/>
+-not&#09;&#09;&#09;does not contain name<br/>
+<b>find . -not -name my-file </b>&nbsp;<br/>
+<br/>
+<br/>
+search by format&#09;(*)<br/>
+<b>find . -name “*.txt” &nbsp;<br/>
+</b><br/>
+<br/>
+find and delete<br/>
+<b>find . -name my-file -delete &nbsp;</b><br/>
+<br/>
+<br/>
+search by type<ul><li><b>d</b> – directory or folder</li>
+<li><b>f</b> – normal file</li>
+<li><b>l</b> – symbolic link</li>
+<li><b>c</b> – character devices</li>
+<li><b>b</b> – block devices</li>
+</ul>
+example:<br/>
+<b>find / -type f -name my-file &nbsp;<br/>
+<br/>
+<br/>
+</b><a href="https://www.hostinger.com/tutorials/how-to-use-find-and-locate-commands-in-linux/#:~:text=There%20are%20two%20Linux%20commands,only%20on%20your%20Linux%20database.">for more options</a><br/>
+<br/>
+<br/>
+</body></html>

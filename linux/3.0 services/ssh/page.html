@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSH</title>
+</head><body>a <b>secure shell </b>connection<br/>
+<b>sshd</b>&nbsp;- daemon - server part<br/>
+<br/>
+syntex:<br/>
+<b><span style="font-size: 15pt">ssh &#09;&#09;-p2222&#09;&#09;fd@pwnable.kr&#09; </span></b><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">port&#09;&#09; &nbsp; &nbsp; &lt;user&gt; @ &lt;domain&gt;</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><b><u>&nbsp; commands</u></b></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+service ssh start &#09;&#09;&#09;start the ssh service <br/>
+service ssh stop &#09;&#09;&#09;stop the ssh service <br/>
+service ssh status &#09;&#09;&#09;check the status of the ssh service &nbsp;<br/>
+systemctl restart ssh.service&#09;<br/>
+ctrl+d &#09;&#09;log out<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+every time a new ssh connection is made, it may be added to <b>known_hosts </b>file in the <b>root/.ssh</b>&nbsp;dir<br/>
+each server has a uniqe <b>fingerprint </b><a href="https://www.pentestpartners.com/security-blog/how-to-abuse-ssh-keys/">(session faking? hijacking?)</a><br/>
+<br/>
+<br/>
+<b>"config" </b>file can be created in <b>root/.ssh </b>folder, its also where the <b>known_hosts </b>file is, allows to set up entries to frequently used servers<br/>
+<img src="image.png" width="250" height="101" /><br/>
+<br/>
+config file for our server / client info is at - <b>etc/ssh<br/>
+</b><b><br/>
+</b>in order to allow root login, change <b>PermitRootLogin </b>&nbsp;to <b>yes</b>&nbsp;and remove comment:<br/>
+<img src="image 2.png" width="400" height="42" /><br/>
+<br/>
+<br/>
+ssh can be set to use keys, in that case, the key is kept on the machine and no PW authentication is required.<br/>
+if no key is present, PW will be required. a security approach is to disable PW auth and allow only key auth, preventing attacks.<br/>
+<br/>
+in order to create ssh key use binary <b>ssh-keygen, </b>is will generate a key and will ask for path and passphrase, the passphrase is local to the client and is to allow the use of the key.<br/>
+a private and public keys will be generated, the public is verified against the public key.<br/>
+<br/>
+<br/>
+troubleshooting - tracert is usefull, figuring out where the connection failed<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

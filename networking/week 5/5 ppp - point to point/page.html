@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>5 PPP - point to point</title>
+</head><body>its data link layer protocol (such as the ethernet protocol)<br/>
+uses to encapsulate layer 3 &nbsp;protocols for transmision across serial links. <br/>
+an open standard, successor of HDLC<br/>
+<br/>
+it supports alot of stuff:<br/>
+authentication<br/>
+error detection<br/>
+load balancing<br/>
+<br/>
+PPP frame:<br/>
+<img src="image.png" width="500" height="46" /><br/>
+<b>Flag</b>&nbsp;is a single byte and lets the receiver know this is the beginning of the frame. Depending on the encapsulation, there may or may not be a start flag or an end flag.<br/>
+<br/>
+<b>Address</b>&nbsp;is a single byte, and it contains the broadcast address.<br/>
+<br/>
+<b>Control</b>&nbsp;is a single byte required for various purposes but also allows a connectionless data link.<br/>
+<br/>
+<b>Protocol</b>&nbsp;varies from one to three bytes, tells which layer protocol is encapsulated in the Data field<br/>
+<br/>
+<b>Data</b>&nbsp;is where the information you need to transmit is stored and has a limit of 1500 bytes per frame.<br/>
+<br/>
+<b>Frame check sequence (FCS)</b>&nbsp;is 2 or 4 bytes and is used to verify data is intact upon receipt at the endpoint. <br/>
+<br/>
+<br/>
+PPP components:<br/>
+<b><br/>
+</b><b>LCP - link control protocol </b>- establish, configure and maintain a connection (also terminates)<br/>
+the LCP contains alot of features of PPP - authentication, error detection, multilink, loop detection, link termination<br/>
+<br/>
+<b>NCP - network control protocol - </b>determines how layer 3 protocols will be transported<br/>
+NCP is made of many protocols, each layer 3 protocol has its own dedicated NCP for communication<br/>
+for example - IPCP (IP control protocol) is a NCP that is used to negotiate sending IP within PPP frames<br/>
+<br/>
+<b>Point to Point Protocol over Ethernet (PPPoE)</b><br/>
+Point to Point protocol over Ethernet (PPPoE) is a way of encapsulating PPP frames inside an ethernet frame. PPPoE is a solution for tunneling packets over the DSL connection service provider's IP network and from there to the rest of the Internet. Like PPP, PPPoE provides authentication, encryption, and compression, though it primarily uses Password Authentication Protocol (PAP) for authentication.<br/>
+A common use case is PPPoE using DSL services where a PPPoE modem-router connects to the DSL service or when a PPPoE DSL modem is connected to a PPPoE-only router using an Ethernet cable. <br/>
+<br/>
+PPP is strictly point-to-point, so frames can only go to the intended destination. PPPoE requires a new step because ethernet connections are multi-access enabled (every node connects to another). This requires an additional step called the discovery stage. The discovery stage establishes a session ID to identify the hardware address. This stage ensures data gets routed to the correct place.<br/>
+<br/>
+PPPoE is an encapsulation of PPP inside an ethernet frame. PPPoE retains the same architecture, configuration options, and frame data as PPP but with one extra layer of ethernet encapsulation.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registers</title>
+</head><body><a href="https://sourceware.org/gdb/onlinedocs/gdb/Registers.html">Registers</a>&nbsp;- can be accessed as such:<br/>
+<b>$sp</b>&#09;&#09;- stack pointer<br/>
+<b>$pc</b>&#09;&#09;- program counter<br/>
+<b>$fp</b>&#09;&#09;- frame stack pointer<br/>
+<b>$ps</b>&#09;&#09;- processor status<br/>
+<br/>
+<br/>
+Changing Registers:<ul><li><b>set $sp += 4</b></li>
+<li><b>set $r14 = 0xdeadbabe</b></li>
+</ul>
+Example:<b><br/>
+</b><b>(gdb) set $rax = 0xdeadbeeff00dface </b><br/>
+<b>(gdb) p/x $rax </b><br/>
+<b>$15 = 0xdeadbeeff00dface </b><br/>
+<b>(gdb) set $ax = 0xcafef00d &#09;&#09;</b>&#09;&#09;- NOTE: ax is 2 byte, therefore it will take only the first 2 bytes<br/>
+<b>(gdb) p/x $rax </b><br/>
+<b>$16 = 0xdeadbeeff00df00d &nbsp;</b>&#09;&#09;&#09;- "face" changed to "f00d" as we changed only ax.<br/>
+<br/>
+<br/>
+Viewing registers:<br/>
+<b>info r rax rbx rsp&#09;&#09;&#09;-&#09;</b>will give info about the 3 registers.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

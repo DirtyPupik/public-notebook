@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>cat /etc/shadow</title>
+</head><body>opens the shadow file<br/>
+contains the hash's of the passwords of system users<br/>
+<br/>
+SHOULD ONLY BE GAINED ACCESS BY ROOT<br/>
+<br/>
+<img src="image.png" width="1000" height="113" /><br/>
+<br/>
+<b>ID</b>&nbsp;- algorithm used, see <b>man 5 crypt</b>&nbsp;for more info<br/>
+<br/>
+<b>parameters</b>&nbsp;- parameters used with the algoritm - <a href="https://unix.stackexchange.com/questions/690679/what-does-j9t-mean-in-yescrypt-from-etc-shadow">further read<br/>
+</a><a href="https://unix.stackexchange.com/questions/690679/what-does-j9t-mean-in-yescrypt-from-etc-shadow"><br/>
+</a><b>Last password change (lastchanged)</b>&nbsp;- The date of the last<br/>
+password change, expressed as the number of days since Jan 1,<br/>
+1970 (Unix time). The value 0 has a special meaning, which is that<br/>
+the user should change her password the next time she will log in the<br/>
+system. An empty field means that password aging features are<br/>
+disabled.<br/>
+<br/>
+Minimum : The minimum number of days required between<br/>
+password changes i.e. the number of days left before the user is<br/>
+allowed to change her password again. An empty field and value 0<br/>
+mean that there are no minimum password age.<br/>
+<br/>
+<b>Maximum</b>&nbsp;- The maximum number of days the password is valid,<br/>
+after that user is forced to change her password again.<br/>
+<br/>
+<b>Warn</b>&nbsp;- The number of days before password is to expire that user is<br/>
+warned that his/her password must be changed<br/>
+<br/>
+bewtween the empty fields (eg :empty1:empy2:empy3)<br/>
+<br/>
+<b>empty1</b>&nbsp;- Inactivity period - The number of days after password expires that account is<br/>
+disabled.<br/>
+<br/>
+<b>emtpy2</b>&nbsp;- Expiration date - The date of expiration of the account, expressed as the<br/>
+number of days since Jan 1, 1970.<br/>
+<br/>
+<b>empty3</b>&nbsp;- unused</body></html>

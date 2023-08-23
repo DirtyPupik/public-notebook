@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Modules vs Symbols</title>
+</head><body><ul><li>Module:</li>
+<li style="list-style-type: none"><ul><li>In the context of debugging, a module refers to a specific binary file (executable or DLL) that is loaded into the process's memory space.</li>
+<li>Each module typically contains compiled code and data. When an application is executed, the operating system loads various modules into memory to run the program.</li>
+<li>In Windbg, the lm command is used to list the loaded modules, displaying information such as base address, size, and name of each module.</li>
+</ul>
+</li>
+</ul>
+<ul><li>Symbol:</li>
+<li style="list-style-type: none"><ul><li>A symbol is a unique identifier used by a debugger to represent elements in the code, such as functions, variables, and data structures.</li>
+<li>Symbols provide human-readable names to memory addresses, making it easier for developers to interpret and debug code.</li>
+<li>Symbol files (PDBs for Windows binaries) contain the mapping between symbol names and their corresponding memory addresses. These files are generated during the compilation process and are essential for meaningful debugging.</li>
+<li>The ln command in Windbg allows you to find the nearest symbols to a given memory address, providing information about the function name or label associated with that address.</li>
+</ul>
+</li>
+</ul>
+&nbsp;</body></html>

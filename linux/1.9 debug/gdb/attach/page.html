@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>attach</title>
+</head><body><b>Attaching to Running Userspace Processes</b><br/>
+<br/>
+<b>ptrace() permissions</b>&nbsp;- if permissions are blocked, one may:<ul><li>run gdb as root with sudo</li>
+<li>temporarily derestrict ptrace() access:</li>
+<li style="list-style-type: none"><ul><li><b>echo <span style="color: #ff0000">&lt;0/1&gt;</span>&nbsp;| sudo tee /proc/sys/kernel/yama/ptrace_scope&#09;&#09;</b>&#09;- use 0 to derestrict, 1 to restrict.</li>
+</ul>
+</li>
+</ul>
+<br/>
+<b>attach &lt;PID&gt;</b><br/>
+<br/>
+</body></html>

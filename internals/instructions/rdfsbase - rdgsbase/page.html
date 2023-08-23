@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RDFSBASE / RDGSBASE</title>
+</head><body>This is a ring 3 privillege level instruction.<br/>
+<br/>
+The condition for a processor to be able to use these instructions are:<br/>
+<b>if CPUID.07H.0H:EBX.FSGSBASE[bit0] = 1 &amp;&amp; CR4.FSGSBASE = 1</b><br/>
+explaining this:<br/>
+if CPUID with input of 0x7 in eax and 0x0 in ecx sub-leaf retruns -&gt; bit[0] of ebx = 1<br/>
+and CR4 bit[16]<br/>
+<br/>
+<br/>
+cpuid:<br/>
+<img src="image.png" /><br/>
+<br/>
+<br/>
+<br/>
+<img src="image 2.png" /><br/>
+<img src="image 3.png" /></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pool</title>
+</head><body>Using <a href="https://techcommunity.microsoft.com/t5/ask-the-performance-team/an-introduction-to-pool-tags/ba-p/372983">!pool</a>&nbsp;to associate a memory address with a data structure or driver<br/>
+<br/>
+The Windows kernel has multiple "pools", which are really just heaps from which memory can be allocated. Pools can have different "tags", to help developers identify which allocations came from their own code (if they specified a custom tag at allocation time), or when the data is from a pool of all the same type of data structures.<br/>
+<br/>
+!pool &lt;address&gt;<br/>
+<br/>
+<br/>
+<a href="https://github.com/jjzhang166/windbgtool/blob/master/Dependecies/x64/triage/pooltag.txt">list of pool tags</a><br/>
+</body></html>

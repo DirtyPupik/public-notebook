@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>library vs header</title>
+</head><body>Preprocessor directives appear in source code. There are many different directives. One of them is #include, which is used to include a header file. Header files contain a collection of declarations, often for functions and types (and sometimes variables) found in a library. However, a header is not a library.<br/>
+<br/>
+Libraries are collections of object files that have already been compiled. The C standard does not recognize that libraries exist (but it does recognize the preprocessor and defines the required behaviour). Libraries are listed on the linker (compiler) command line, often using the -lname notation to locate a library name, with the -L option used to specify places to search for libraries.<br/>
+<br/>
+Note that the majority of the functions defined in the standard C library are found by the linker without it needing to be told where to look for them. The exception are the maths function which, for historical reasons (primarily related to machines that did not always have floating point arithmetic built-in — sometimes they had FP coprocessors, such as the Intel 80386 + 80387, or sometimes they needed software emulation of the missing hardware). On many systems, you need to specify -lm to link the maths library; on others, you don't (the code is in the main system C library).<br/>
+<br/>
+Generally speaking, headers are not found in the same directories as libraries (it would be a messy, unprofessional project that installed headers into the same directory as its libraries).<br/>
+<br/>
+Especially in C++, there are libraries that do not have pre-compiled object files; the services are defined exclusively through the header. These are much less common in C. It is most sensible to regard the files as headers, not libraries. A header defines a set of services that can be used by the compiler. A library provides the support for such services. (If you think about it, or take a look in your system, you will find that &lt;stdio.h&gt; does not include the source for fprintf() — to take one example of many — but it does declare fprintf() in such a manner that your program can use it and so that the actual function from the standard C library will be used at runtime.)<br/>
+<br/>
+Dynamic linking (the loading of shared objects, aka shared libraries or dynamic link libraries (DLLs)) where the library file(s) are not loaded until runtime, after the program is started up (after main() has been called) are another whole platform-specific bag'o'worms.</body></html>

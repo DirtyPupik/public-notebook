@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>col</title>
+</head><body>{<br/>
+Daddy told me about cool MD5 hash collision today.<br/>
+I wanna do something like that too!<br/>
+<br/>
+ssh col@pwnable.kr -p2222 (pw:guest)<br/>
+}<br/>
+<br/>
+similar to <b>fd</b>, we get to a folder where we can look at the source code of col<br/>
+and execute col as col_pwn<br/>
+<img src="image.png" width="450" height="52" /><br/>
+<br/>
+examining the code and solution:<br/>
+<br/>
+at the main() function, user input is taken through argv[1], which must consist of 20 bytes (20 char's)<br/>
+the <b>if </b>statement checks if the hashcode equals to messege digest of our input, if equals, the flag will be captured.<br/>
+understanding how this digest works consists of understanding of pointers, pointer casting and how pointers are read. <br/>
+<br/>
+<img src="image 2.png" width="1000" height="406" /><br/>
+<img src="image 3.png" width="1000" height="409" /><br/>
+<img src="image 4.png" width="1000" height="431" /><br/>
+&nbsp;</body></html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>major &amp; minor numbers</title>
+</head><body><a href="https://www.oreilly.com/library/view/linux-device-drivers/0596000081/ch03s02.html">deep guide</a><br/>
+devices are located in the <b>/dev</b>&nbsp;folder, when lookin at a device with ls -l, we see "c" char to represent char device<br/>
+as such, there are 2 numbers, the first - major, and the second - minor:<br/>
+<img src="image.png" width="500" height="94" /><br/>
+<ul><li><b>major number</b>&nbsp;- identifies the driver associated with the device.</li>
+<li style="list-style-type: none"><ul><li>The kernel uses the major number at open time to dispatch execution to the appropriate driver.</li>
+</ul>
+</li>
+<li><b>minor number </b>- used only by the driver specified by the major number; </li>
+<li style="list-style-type: none"><ul><li>other parts of the kernel don’t use it. </li>
+<li>It is common for a driver to control several devices.</li>
+<li>the minor number provides a way for the driver to differentiate among them.</li>
+</ul>
+</li>
+</ul>
+<br/>
+</body></html>

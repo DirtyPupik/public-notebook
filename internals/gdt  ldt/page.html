@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GDT &amp; LDT</title>
+</head><body>GDT and LDT are per proccesor.<br/>
+<br/>
+The GDT and LDT are data structures used by the x86 processors to define memory segments, including code segments. These tables contain segment descriptors that specify the properties and attributes of the segments, such as their base address, limit, and access rights.<br/>
+<br/>
+<b>KGDTENRTY62 - Kernel GDT Entry 64<br/>
+</b>A struct used to view GDT records, in WinDbg:<br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Open Sans"><b>dt -r (nt!_KGDTENTRY64)gdtr+(0x8*2)&#09;&#09;</b>2 being the index, can be replaced.</span></span></div>&nbsp;<b>&nbsp;</b><br/>
+<br/>
+<br/>
+<br/>
+<img src="image.png" width="650" height="527" /><br/>
+<br/>
+<b>GDTR - Global Descriptor Table Register</b><br/>
+Points at the location of the table<br/>
+<img src="image 2.png" width="500" height="298" /><br/>
+<br/>
+***In WinDbg, the upper bits are shown in <b>gdtr</b>&nbsp;and the lower bits in <b>gdtl</b><br/>
+<br/>
+<br/>
+<b>LDTR - Local Descriptor Table Register</b><ul><li>Points at the location of the table.</li>
+<li>LDTR acts as a Segment Selector - same bit map.</li>
+<li>LDTR has a visible and a hidden field, the hidden field is acquired from the GDT as catch.</li>
+</ul>
+<img src="image 3.png" width="500" height="353" /><br/>
+<br/>
+<br/>
+The Segment selector may be LDTR or one of the SR's.<br/>
+either one will contain '0' in the Table Indicator, in order to address GDT.<br/>
+The GDT will fill the Segment selector's hidden part, with detail of base, limit and attributes of the LDT.<br/>
+<img src="image 4.png" width="700" height="335" /><br/>
+<br/>
+<img src="image 5.png" width="500" height="380" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

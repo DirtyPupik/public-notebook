@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multi/Hyper Threading</title>
+</head><body>Main two types of threads:<ul><li><b>User thread </b>- supported above the kernel and managed without kernel support.</li>
+<li><b>Kernel thread</b>&nbsp;- supported and managed directly by the OS.</li>
+</ul>
+There must exist a relationship between the user and the kernel threads.<br/>
+<br/>
+There are 3 main models to establish the relationship:<br/>
+<ul><li><b>Many to One Model</b></li>
+<li style="list-style-type: none"><ul><li>Many user threads assosiate to one kernel thread.</li>
+<li>Thread management is done by thread library in <b>user space</b>. </li>
+<li>Limitations:</li>
+<li style="list-style-type: none"><ul><li>The entire process will block if a thread makes a blocking system call.</li>
+<li>Because only one thread can access the kernel at any givien time, multiplie threads are unable to run parallel on multiprocessors.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="image.png" width="250" height="239" /><br/>
+<ul><li><b>One to One Model</b></li>
+<li style="list-style-type: none"><ul><li>One user thread is mapped to exacly one kernel thread.</li>
+<li>Allows other threads to run while one makes a system call.</li>
+<li>Allows parallel running on multiprocessor.</li>
+<li>Limitations:</li>
+<li style="list-style-type: none"><ul><li>Creating a kernel thread over every user thread (costly).</li>
+<li>Most implementations of this model restrict the number of kernel threads that may be created. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="image 2.png" width="250" height="188" /><br/>
+<ul><li style="list-style-type: none"><ul><li><b>One to Many Model - the most common model.</b></li>
+<li style="list-style-type: none"><ul><li>Multiplexes many user-threads to a smaller or equal number of kernel-threads.</li>
+<li>No limitation to the number of user-threads. The corresponding kernel-threads can run parrallel.</li>
+<li>When a thread preforms a blocking system call, the kernel can schedule another thread for execution.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="image 3.png" width="250" height="256" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

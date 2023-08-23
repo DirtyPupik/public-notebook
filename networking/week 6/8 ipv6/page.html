@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8 IPv6</title>
+</head><body><span style="font-size: 12pt"><img src="image.png" width="500" height="255" /><br/>
+<br/>
+<b>Version field - </b>4 bit for what version is used<br/>
+<b>Traffic class field</b>&nbsp;- &nbsp;8-bit field that defines the type of traffic contained within the IP datagram and allows for different classes of traffic to receive different priorities.<br/>
+<b>Flow label field </b>- &nbsp;20-bit field that's used in conjunction with the traffic class field for routers to make decisions about the quality of service level for a specific datagram.<br/>
+<b>Payload lenght - </b>16bit to define how long the payload of the datagram is<br/>
+<b>Next header - </b>uniqe to IPv6, because v6 is longer than v4 and that means sending more data, in order to minimize amount of data sent, next header abstracts optional fields, if next header specified another header, it would come after the destination address<br/>
+<b>hop limit - </b>same as TTL<br/>
+source and destination take 128 bit - 4 lines each<br/>
+<br/>
+data payload comes at the end after everything<br/>
+<br/>
+<br/>
+<br/>
+</span><span style="font-size: 12pt"><b>IPv6 mapped address space - </b>any v6 that starts with </span><span style="font-size: 15pt">0:0:0:0:0:ffff:</span><span style="font-size: 12pt">&nbsp; (80 zeros and 16 one's) is routable to v4<br/>
+</span><span style="font-size: 12pt"><img src="image 2.png" width="400" height="22" /><br/>
+each :12ab: is 16bits - so the v4 translates perfectly to v6 (its the same 32 bits)<br/>
+<br/>
+now the problem is not to get from v4 to v6, but rather to get from v6 to v4-<br/>
+<b>IPv6 Tunnels</b>&nbsp;- servers that take v6 trafic and encapsulate it inside traditional v4 datagrams<br/>
+<img src="image 3.png" width="500" height="200" /><br/>
+<br/>
+<b>IPv6 Tunnel Broker - </b>companies that provide v6 tunneling<br/>
+<br/>
+</span>&nbsp;<br/>
+<div style="text-align: left"><span style="color: #1f1f1f"><span style="font-family: Source Sans Pro"><span style="font-size: 18pt"><b>Three types of tunnels</b></span></span></span><br/>
+</div>&nbsp;<br/>
+<span style="font-size: 12pt"><div style="text-align: left"><span style="color: #1f1f1f"><span style="font-family: Source Sans Pro">Since IPv6 tunneling is still an evolving technology, there are several competing protocols used to establish IPv6 tunnels. Here are three commonly used tunnel protocols:</span></span><br/>
+</div>&nbsp;<br/>
+&nbsp;<ul><li style="list-style-type: none"><span style="font-family: unset"><b>6in4/manual protocol</b></span><span style="font-family: Source Sans Pro">&nbsp;encapsulates IPv6 packets immediately inside an IPv4 packet, without using additional headers to configure the setup of the tunnel endpoints. Setup is configured manually instead. This makes performance predictable and easy to debug. Unfortunately, this protocol often will not function if the host uses network address translation (NAT) technology to map its IPv4 address. This makes the 6in4/manual protocol difficult to deploy.</span></li>
+<li><span style="font-family: unset"><b>Tunnel Setup Protocol (TSP) </b></span><span style="font-family: Source Sans Pro">specifies rules for negotiating the setup parameters between tunnel endpoints. This allows for a variety of tunnel encapsulation methods and wider deployment than is possible with the 6in4/manual protocol.</span></li>
+<li><span style="font-family: unset"><b>Anything in Anything (AYIYA)</b></span><span style="font-family: Source Sans Pro">&nbsp;protocol defines a method for encapsulating any protocol in any other protocol. AYIYA was developed for tunnel brokers, a service which provides a network tunnel. This protocol specifies the encapsulation, identification, checksum, security, and management operations that can be used once the tunnel is established. A key advantage of AYIYA is that it can provide a stable tunnel through an IPv4 NAT. It allows users behind a NAT or a dynamic address to maintain connectivity even when roaming between networks.</span></li>
+</ul>
+<br/>
+<div style="text-align: left"><span style="color: #1f1f1f"><span style="font-family: Source Sans Pro">Each protocol has its pros and cons, depending on the nature of the communicating endpoints of the IPv6 connection.</span></span><br/>
+</div>&nbsp;<br/>
+&nbsp;<br/>
+&nbsp; &nbsp; <br/>
+</span></body></html>
