@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>jcc</title>
 </head><body><ul><li>Jump by condition. comes in many forms. will usually come after cmp instruction.</li>
 </ul>
@@ -10,25 +9,25 @@
 <ul><li>From the Hardware prespective, it doesn't matter if the integer was signed or unsigned, the arithmithic operation will be done the in same manner</li>
 </ul>
 <br/>
-"<span style="font-family: Open Sans"><span style="font-size: 14pt"><div style="text-align: left">The hardware keeps various status flags in RFLAGs. Some are relevant to operations on signed numbers, some are relevant to ops on unsigned numbers. Some (e.g. like the zero flag) don't care whether it's signed or unsigned. The hardware sets all flags, based on internal logic which accounts for whether the values could have been signed or could have been unsigned. The compiler is what ultimately is responsible for emitting the correct assembly instructions which behind the scenes check the right bits to honor the behavior as if something had been been signed or unsigned."</div></span></span>&nbsp; <br/>
+&quot;<span style="font-family: Open Sans"><span style="font-size: 14pt"><div style="text-align: left">The hardware keeps various status flags in RFLAGs. Some are relevant to operations on signed numbers, some are relevant to ops on unsigned numbers. Some (e.g. like the zero flag) don't care whether it's signed or unsigned. The hardware sets all flags, based on internal logic which accounts for whether the values could have been signed or could have been unsigned. The compiler is what ultimately is responsible for emitting the correct assembly instructions which behind the scenes check the right bits to honor the behavior as if something had been been signed or unsigned.&quot;</div></span></span> <br/>
 <br/>
-<ul><li style="list-style-type: none"><img src="image.png" width="300" height="156" /></li>
+<ul><li style="list-style-type: none"><img height="156" src="image.png" width="300"/></li>
 </ul>
-<ul><li>JZ / JE &#09;&#09;(jump if equal, jump if zero): if ZF == 1</li>
-<li>JNZ / JNE &#09;&#09;(jump if not equal, jump if not zero): if ZF == 0</li>
-<li>JLE / JNG &#09;&#09;(jump if less than or equal, jump if not greater than): if ZF == 1 OR if SF != OF</li>
-<li>JGE / JNL &#09;&#09;(jump if greater than or equal, jump if not less than): if SF == OF</li>
-<li>JAE&#09;&#09;&#09;(jump if above or equal - <b>unsigned notation)</b></li>
+<ul><li>JZ / JE 		(jump if equal, jump if zero): if ZF == 1</li>
+<li>JNZ / JNE 		(jump if not equal, jump if not zero): if ZF == 0</li>
+<li>JLE / JNG 		(jump if less than or equal, jump if not greater than): if ZF == 1 OR if SF != OF</li>
+<li>JGE / JNL 		(jump if greater than or equal, jump if not less than): if SF == OF</li>
+<li>JAE			(jump if above or equal - <b>unsigned notation)</b></li>
 </ul>
-<ul><li>Jump Above (ja) &#09;&#09;&#09;&#09;==&#09; Jump Not Below or Equal (jnbe)</li>
-<li>Jump Not Above (jna) &#09;&#09;==&#09; Jump Below or Equal (jbe)</li>
-<li>Jump Below (jb) &#09;&#09;&#09;&#09;==&#09; Jump Not Above or Equal (jnae)</li>
-<li>Jump Not Below (jnb) &#09;&#09;==&#09; Jump Above or Equal (jae)</li>
+<ul><li>Jump Above (ja) 				==	 Jump Not Below or Equal (jnbe)</li>
+<li>Jump Not Above (jna) 		==	 Jump Below or Equal (jbe)</li>
+<li>Jump Below (jb) 				==	 Jump Not Above or Equal (jnae)</li>
+<li>Jump Not Below (jnb) 		==	 Jump Above or Equal (jae)</li>
 </ul>
-<ul><li>Jump Greater-than (jg) &#09;&#09;==&#09; Jump Not Less-than or Equal (jnle)</li>
-<li>Jump Not Greater-than (jng) &#09;==&#09; Jump Less-than or Equal (jle)</li>
-<li>Jump Less-than (jl) &#09;&#09;&#09;==&#09; Jump Not Greater-than or Equal (jnge)</li>
-<li>Jump Not Less-than (jnl) &#09;&#09;==&#09; Jump Greater-than or Equal (jge)</li>
+<ul><li>Jump Greater-than (jg) 		==	 Jump Not Less-than or Equal (jnle)</li>
+<li>Jump Not Greater-than (jng) 	==	 Jump Less-than or Equal (jle)</li>
+<li>Jump Less-than (jl) 			==	 Jump Not Greater-than or Equal (jnge)</li>
+<li>Jump Not Less-than (jnl) 		==	 Jump Greater-than or Equal (jge)</li>
 </ul>
 <br/>
-<img src="image 2.png" width="500" height="329" /></body></html>
+<img height="329" src="image 2.png" width="500"/></body></html>

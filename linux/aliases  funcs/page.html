@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>aliases &amp; funcs</title>
 </head><body><span style="font-size: 14pt">in order to restart .zshrc from terminal:<br/>
 <b>. ~/.zshrc<br/>
@@ -15,49 +14,49 @@
 <br/>
 <br/>
 alias lla='ls -la'<br/>
-alias llag='ls -la | grep "'<br/>
-alias hisg='history | grep "'<br/>
+alias llag='ls -la | grep &quot;'<br/>
+alias hisg='history | grep &quot;'<br/>
 alias vpn-htb='sudo openvpn --config /home/kali/Documents/hackthebox/starting_point_dirtypupik.ovpn'<br/>
 alias filepath='readlink -f'<br/>
 <br/>
 function status() {<br/>
-&nbsp; &nbsp; if &nbsp;[ "$#" -ne 1 ] ; then<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; echo "usage: status &lt;service name&gt;";<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; return 1;<br/>
-&nbsp; &nbsp; fi<br/>
-&nbsp; &nbsp; service $1 status;<br/>
+  if [ &quot;$#&quot; -ne 1 ] ; then<br/>
+    echo &quot;usage: status &lt;service name&gt;&quot;;<br/>
+    return 1;<br/>
+  fi<br/>
+  service $1 status;<br/>
 }<br/>
 <br/>
 function sstart() {<br/>
-&nbsp; &nbsp; if &nbsp;[ "$#" -ne 1 ] ; then<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; echo "usage: sstart &lt;service name&gt; &nbsp; - &nbsp; will start service and enable";<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; return 1;<br/>
-&nbsp; &nbsp; fi<br/>
-&nbsp; &nbsp; service $1 start &amp;&amp; systemctl enable $1;<br/>
+  if [ &quot;$#&quot; -ne 1 ] ; then<br/>
+    echo &quot;usage: sstart &lt;service name&gt;  -  will start service and enable&quot;;<br/>
+    return 1;<br/>
+  fi<br/>
+  service $1 start &amp;&amp; systemctl enable $1;<br/>
 }<br/>
 <br/>
 function sstop() {<br/>
-&nbsp; &nbsp; if &nbsp;[ "$#" -ne 1 ] ; then<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; echo "usage: sstop &lt;service name&gt; &nbsp; - &nbsp; will stop service and disable";<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; return 1;<br/>
-&nbsp; &nbsp; fi<br/>
-&nbsp; &nbsp; service $1 stop &amp;&amp; systemctl disable $1;<br/>
+  if [ &quot;$#&quot; -ne 1 ] ; then<br/>
+    echo &quot;usage: sstop &lt;service name&gt;  -  will stop service and disable&quot;;<br/>
+    return 1;<br/>
+  fi<br/>
+  service $1 stop &amp;&amp; systemctl disable $1;<br/>
 }<br/>
 <br/>
 function timestamp() {<br/>
-&nbsp; &nbsp; if ! ([ "$#" -eq 1 ] | [[ $1 =~ ^-?[0-9]+$ ]]); then<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; echo "usage: timestamp &lt;time stamp&gt;";<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; return 1;<br/>
-&nbsp; &nbsp; fi<br/>
-&nbsp; &nbsp; python3 -c "from datetime import datetime; print(datetime.fromtimestamp($1))";<br/>
+  if ! ([ &quot;$#&quot; -eq 1 ] | [[ $1 =~ ^-?[0-9]+$ ]]); then<br/>
+    echo &quot;usage: timestamp &lt;time stamp&gt;&quot;;<br/>
+    return 1;<br/>
+  fi<br/>
+  python3 -c &quot;from datetime import datetime; print(datetime.fromtimestamp($1))&quot;;<br/>
 }<br/>
 <br/>
 function apt-updater {<br/>
-&#09;apt-get update &amp;&amp;<br/>
-&#09;apt-get dist-upgrade -Vy &amp;&amp;<br/>
-&#09;apt-get autoremove -y &amp;&amp;<br/>
-&#09;apt-get autoclean &amp;&amp;<br/>
-&#09;apt-get clean &amp;&amp;<br/>
-&#09;reboot<br/>
-&#09;}<br/>
+	apt-get update &amp;&amp;<br/>
+	apt-get dist-upgrade -Vy &amp;&amp;<br/>
+	apt-get autoremove -y &amp;&amp;<br/>
+	apt-get autoclean &amp;&amp;<br/>
+	apt-get clean &amp;&amp;<br/>
+	reboot<br/>
+	}<br/>
 </body></html>

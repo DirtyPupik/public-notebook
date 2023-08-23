@@ -1,11 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>call</title>
 </head><body>CALL's job is to transfer control to a different function, in a way that the control can be later resumed where it was left off.<br/>
 <br/>
-first it pushes the address of the <b>next</b>&nbsp;instruction onto the stack (to be used by RET when procedure is done)<br/>
+first it pushes the address of the <b>next</b>instruction onto the stack (to be used by RET when procedure is done)<br/>
 (PUSH RSP-8h, RIP)<br/>
 <br/>
 than is changes RIP (instruction poiner) to the address given in the instructions<br/>

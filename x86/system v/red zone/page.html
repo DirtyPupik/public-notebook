@@ -1,17 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>red zone</title>
-</head><body><b>red zone - </b>128-byte of dedicated zone that <b>leaf (and others?)</b>&nbsp;functions may use to store their data. <br/>
+</head><body><b>red zone - </b>128-byte of dedicated zone that <b>leaf (and others?)</b>functions may use to store their data. <br/>
 <br/>
 <div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">System V x86-64 ABI gives us about a fixed-size area (128 bytes) in the stack frame, called <b>red zone</b>.<br/>
-</span></span></div><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">As a result there's no need for </span></span></div><b>sub rsp, 12</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">. Just </span></span></div><b>mov [rbp-12], X</b>&nbsp; <br/>
+</span></span></div><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">As a result there's no need for </span></span></div><b>sub rsp, 12</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">. Just </span></span></div><b>mov [rbp-12], X</b> <br/>
 <br/>
 SingleLocalVariable.c<br/>
-<img src="image 2.png" /><br/>
+<img src="image 2.png"/><br/>
 There is no <b>sub rsp </b>and <b>add rsp</b>.<br/>
 This area according to sysV is called the <b>red zone.<br/>
 </b><b><br/>
 </b><b>red zone - 128-byte of dedicated zone that leaf functions may use to store their data. </b><br/>
-<img src="image.png" width="650" height="473" /></body></html>
+<img height="473" src="image.png" width="650"/></body></html>

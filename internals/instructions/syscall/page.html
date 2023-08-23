@@ -1,29 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>SYSCALL</title>
 </head><body><ul><li>Saves the RIP of the address after SYSCALL into RCX.</li>
 <li>Changes RIP to the value stored in IA32_LSTAR MSR (0xC0000082)</li>
 <li>Save RFLAGS into R11</li>
 <li>Mask clear each bit of RFLAGS against IA32_FMASK MSR (0xC0000084):</li>
 <li style="list-style-type: none"><ul><li>Every bit that is set to 1 in the MSR, will clear any bit that is set to 1 in the RFLAGS.</li>
-<li>effectively&#09;RFLAGS &amp;= ~(IA32_FMASK)&#09;&#09;~() being invert</li>
+<li>effectively	RFLAGS &amp;= ~(IA32_FMASK)		~() being invert</li>
 </ul>
 </li>
 <li>Loads CS with value stored in IA32_STAR MSR (0xC0000081) bits [47:32] and set SS = (CS + 8) - the value loaded is a segment selector</li>
-<li>Doesn't save RSP! Either kernel or userspace SYSCALL <b>handler</b>&nbsp;is responsible for that.</li>
+<li>Doesn't save RSP! Either kernel or userspace SYSCALL <b>handler</b>is responsible for that.</li>
 <li>SYSCALL Arguments are not defined at the x86 level, its up to each OS.</li>
 </ul>
-&nbsp;<br/>
 <br/>
-<img src="image.png" width="600" height="438" /><br/>
+<br/>
+<img height="438" src="image.png" width="600"/><br/>
 <br/>
 <br/>
 <br/>
 The segment registers are 16-bit value treated as segment selectors with a hidden part:<br/>
-<img src="image 2.png" width="600" height="378" /><br/>
-<img src="image 3.png" width="600" height="371" /><br/>
+<img height="378" src="image 2.png" width="600"/><br/>
+<img height="371" src="image 3.png" width="600"/><br/>
 <br/>
 <br/>
 <br/>

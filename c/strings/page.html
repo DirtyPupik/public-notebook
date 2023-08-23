@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Strings</title>
 </head><body><ul><li>There are no strings in C, but char arrays (we may say string..).</li>
 <li>A String will always end with a null char (\0).</li>
@@ -10,17 +9,17 @@
 <li>Otherwise, declaration and initialization must be done together.</li>
 </ul>
 <br/>
-Initialization may be done in serval ways:<ul><li>char c[] = "ABCD";&#09;&#09;&#09;&#09;&#09;// Size is not required with initialization.</li>
-<li>char c[5] = "ABCD";&#09;&#09;&#09;&#09;&#09;// The last slot is required for null char.</li>
-<li>char c[36] = "ABCD";&#09;&#09;&#09;&#09;&#09;// Array size may be greater than string itself.</li>
+Initialization may be done in serval ways:<ul><li>char c[] = &quot;ABCD&quot;;					// Size is not required with initialization.</li>
+<li>char c[5] = &quot;ABCD&quot;;					// The last slot is required for null char.</li>
+<li>char c[36] = &quot;ABCD&quot;;					// Array size may be greater than string itself.</li>
 <li>char c[] = {'a', 'b', 'c', 'd', '\0'};</li>
 <li>char c[5] = {'a', 'b', 'c', 'd', '\0'};</li>
 </ul>
 <br/>
 Declaration of an empty string must come with size:<ul><li>char s[5];</li>
-<li>char s[5] = "";</li>
+<li>char s[5] = &quot;&quot;;</li>
 </ul>
-<img src="image.png" width="250" height="63" /><br/>
+<img height="63" src="image.png" width="250"/><br/>
 the last slot is for a null char, so that s[n] may contain (n-1) char's.<br/>
 <br/>
 <br/>

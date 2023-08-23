@@ -1,27 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>2 DHCP in action</title>
 </head><body>DHCP discovery - the process by which a client that uses DHCP attempts to get network configuration.<br/>
 discovery has 4 steps:<br/>
 <br/>
-1. <b>server discovery msg</b>&nbsp; (DHCPDISCOVER) - the client sends DHCP discovery messege to the network<br/>
+1. <b>server discovery msg</b> (DHCPDISCOVER) - the client sends DHCP discovery messege to the network<br/>
 since the client doesnt have an IP and doesnt knows the DHCP server IP - is sends a broadcast<br/>
-<img src="image.png" width="550" height="239" /><br/>
+<img height="239" src="image.png" width="550"/><br/>
 the broadcast UDP segment source port is 68 and destinaiton 67 is encapsulated in IP datagram originating 0.0.0.0 and broadcast destination.<br/>
 the DHCP server examines the request and its own configuration to decide what IP (if any) to allocate<br/>
 <br/>
 2. IP offer (DHCPOFFER) - offer msg on broadcast as described in img.<br/>
 the offer is made on broadcast but contains destination MAC ad<br/>
-<img src="image 2.png" width="550" height="245" /><br/>
+<img height="245" src="image 2.png" width="550"/><br/>
 the client can accept or decline the offer (declining is rare, yet possible in cases that many DHCP servers are running on the network and the client is configured to accept IP in certain range)<br/>
 <br/>
 3. client responds with DHCPREQUEST - since the ip hasent been set it takes the same form of the DISCOVER<br/>
-<img src="image.png" width="550" height="239" /><br/>
+<img height="239" src="image.png" width="550"/><br/>
 <br/>
 4. the DHCP server will respond ACK (acknolegment msg) containing the client MAD ad<br/>
 the client can now use the configuration sent to him<br/>
 <br/>
-all this process is known as <b>DHCP Lease</b>&nbsp;- it has expiry<br/>
+all this process is known as <b>DHCP Lease</b>- it has expiry<br/>
 a client will relase its lease when he disconnects from a network</body></html>

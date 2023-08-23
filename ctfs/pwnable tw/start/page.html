@@ -1,55 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>start</title>
 </head><body><b><div style="text-align: left">nc chall.pwnable.tw 10000<br/>
 <br/>
 </div></b><div style="text-align: left">challange starts with downloading an ELF file<br/>
-<img src="image.png" width="500" height="25" /><br/>
+<img height="25" src="image.png" width="500"/><br/>
 <b>--------------------------------------------------------------------------------------<br/>
-<img src="image 2.png" width="850" height="36" /><br/>
+<img height="36" src="image 2.png" width="850"/><br/>
 <br/>
 </b>the file seems to be a buffer overflow exploit, it displays a messege and takes input.<b><br/>
-</b><b><img src="image 3.png" width="350" height="53" /><br/>
+</b><b><img height="53" src="image 3.png" width="350"/><br/>
 </b>we are able to overwrite the IP and seems there are no canaries<br/>
-<img src="image 4.png" width="650" height="60" /><b><br/>
+<img height="60" src="image 4.png" width="650"/><b><br/>
 </b><br/>
 disassembling and further examin:<br/>
 there are no precautions at all, making it simpler<br/>
-<img src="image 5.png" width="300" height="89" /><br/>
+<img height="89" src="image 5.png" width="300"/><br/>
 <br/>
-at the symbol table we see <b>_start</b>&nbsp;enrty point, and <b>_exit</b><br/>
+at the symbol table we see <b>_start</b>enrty point, and <b>_exit</b><br/>
 (there's no main() function, _start is main() caller, its an early low-level initialization, <a href="https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/#:~:text=happens%20before%20main%20.-,The%20_start%20Function,is%20merely%20a%20general%20convention.">futrther read</a>)<br/>
-<img src="image 7.png" width="450" height="40" /><br/>
+<img height="40" src="image 7.png" width="450"/><br/>
 <br/>
 in the disassembly we see:<br/>
-<img src="image 6.png" width="350" height="399" /><br/>
+<img height="399" src="image 6.png" width="350"/><br/>
 (+0) esp address is pushed onto the stack (we'll get back to it)<br/>
 (+1) a return address to _exit is pushed onto the stack<br/>
-(+6 to +34) register zeroing and pushing a string (little endian representation of "Lets start the CTF:")<br/>
+(+6 to +34) register zeroing and pushing a string (little endian representation of &quot;Lets start the CTF:&quot;)<br/>
 (+32) pointer to the string is pushed to ecx<br/>
 further, there are are some register value setting and 2 <b>int 0x80<br/>
 </b><b><br/>
-</b>the <b>int 0x80</b>&nbsp;is interrupt call to 0x80 interrupt number, which handler is the kernel, to invoke a system call, it takes the value in eax as the program to run and values in the other registers as parameters by order, eg B, C, D... (<a href="https://stackoverflow.com/questions/1817577/what-does-int-0x80-mean-in-assembly-code">futher read</a>)<br/>
+</b>the <b>int 0x80</b>is interrupt call to 0x80 interrupt number, which handler is the kernel, to invoke a system call, it takes the value in eax as the program to run and values in the other registers as parameters by order, eg B, C, D... (<a href="https://stackoverflow.com/questions/1817577/what-does-int-0x80-mean-in-assembly-code">futher read</a>)<br/>
 <b><br/>
-</b><b>/usr/include/asm/unistd_32.h</b>&#09;&#09;&#09;path to syscall argument number table<br/>
-(with &lt;<b>gcc -m32</b>&gt; the m32 defines __i386, so <b>/usr/include/asm/unistd.h</b>&nbsp;includes &lt;<b>asm/unistd_32.h</b>&gt;)<br/>
+</b><b>/usr/include/asm/unistd_32.h</b>			path to syscall argument number table<br/>
+(with &lt;<b>gcc -m32</b>&gt; the m32 defines __i386, so <b>/usr/include/asm/unistd.h</b>includes &lt;<b>asm/unistd_32.h</b>&gt;)<br/>
 <br/>
-so the first interrupt (eax = 4) is <b>write(int &nbsp;fd, &nbsp;*buffer, size )</b>, ebx being the file descriptor stdout, ecx is the pointer to the buffer (&lt;+39&gt; the address of esp is pushed to ecx), and edx is being the size of 0x14 - 20 bytes long.<br/>
+so the first interrupt (eax = 4) is <b>write(int fd, *buffer, size )</b>, ebx being the file descriptor stdout, ecx is the pointer to the buffer (&lt;+39&gt; the address of esp is pushed to ecx), and edx is being the size of 0x14 - 20 bytes long.<br/>
 this interrupt will read 20 bytes of the address pointed by ecx to stdout (Lets start the CTF:)<br/>
 <br/>
-second interrupt is for <b>read(int fd, &nbsp;*bufer, size)</b>, taking user input from stdin and writing it to the stack.<br/>
+second interrupt is for <b>read(int fd, *bufer, size)</b>, taking user input from stdin and writing it to the stack.<br/>
 <br/>
 afterwards (&lt;+57&gt;) the program returns to _exit and quits the program with interrupt to exit()<br/>
-<img src="image 8.png" width="350" height="87" /><br/>
+<img height="87" src="image 8.png" width="350"/><br/>
 <br/>
 so summing it up, program starts, takes an input and writes it to the stack, than exits.<br/>
 seeing that we may overwrite esp, we can try and alter execution order.<br/>
 <br/>
 trying to overflow the program, we see that we have control over esp at an offset of 20 bytes<br/>
 also we see the original SP that was pushed onto the at &lt;+0&gt;<br/>
-<img src="image 9.png" width="1000" height="371" /><br/>
+<img height="371" src="image 9.png" width="1000"/><br/>
 (*ASLR disabled)<br/>
 <br/>
 as we have an SP address on the stack, we may try and insert a shellcode onto the stack, return orient to that address and execute that code.<br/>
@@ -57,24 +56,24 @@ but first we need to leak that ESP.<br/>
 <br/>
 looking at the disassembly again we see that if we redirect to _start +39, where the next ESP value the stack address pushed at &lt;+0&gt;.<br/>
 this address is can be leaked by printing it to stdout.<br/>
-<img src="image 10.png" width="400" height="204" /><br/>
+<img height="204" src="image 10.png" width="400"/><br/>
 <br/>
 so our first payload is in order to leak a stack address is:<br/>
-(b"A"*20 + b"\x87\x80\x04\x08")<br/>
+(b&quot;A&quot;*20 + b&quot;\x87\x80\x04\x08&quot;)<br/>
 <br/>
 after redirecting, we capture the leaked stack address, and get ready to send another payload.<br/>
 this time, the payload will contain 20 bytes of spacing as before, the leaked SP + 20 bytes and our shellcode.<br/>
-(its SP+20 casue of <b>add 0x14,</b>&nbsp;at 20 byte offset is where we will place our shellcode)<br/>
+(its SP+20 casue of <b>add 0x14,</b>at 20 byte offset is where we will place our shellcode)<br/>
 <br/>
 the shellcode i will insert will invoke a syscall to execve to spawn an sh shell.<br/>
 <br/>
 so now that we know the route of our solution. we may write a script for the exploit and run it.<br/>
 <br/>
-<img src="image 11.png" /><br/>
+<img src="image 11.png"/><br/>
 <br/>
 <br/>
 running the exploit, we get a shell<br/>
-<img src="image 12.png" width="500" height="261" /><b><br/>
+<img height="261" src="image 12.png" width="500"/><b><br/>
 </b><br/>
 <br/>
 <br/>
@@ -82,7 +81,7 @@ running the exploit, we get a shell<br/>
 externals:<br/>
 <span style="font-family: -apple-system"><span style="font-size: 15pt"><a href="https://stackoverflow.com/questions/2535989/what-are-the-calling-conventions-for-unix-linux-system-calls-and-user-space-f">in x86-32 parameters for Linux system call are passed using registers. %eax for syscall_number. %ebx, %ecx, %edx, %esi, %edi, %ebp are used for passing 6 parameters to system calls.<br/>
 </a><a href="https://stackoverflow.com/questions/2535989/what-are-the-calling-conventions-for-unix-linux-system-calls-and-user-space-f">The return value is in %eax. All other registers (including EFLAGS) are preserved across the int $0x80.</a><br/>
-</span></span>&nbsp; <br/>
+</span></span> <br/>
 <a href="https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/">The Definitive Guide to Linux System Calls</a><br/>
 <br/>
 </div></body></html>

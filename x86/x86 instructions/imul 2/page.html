@@ -1,18 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>imul</title>
 </head><body><b>Signed Multiplication </b>(MUL is for unsigned)<br/>
 because this is <b>signed, </b>when taking x84 it is actually Two's complement of the number<br/>
 (two's complement =&gt; logic NOT +1)<br/>
 <br/>
-There are three general forms of multiplication, using a <b>one</b>, <b>two</b>&nbsp;and <b>three</b>&nbsp;operands<ul><li>imul r/mX&#09;&#09;&#09;&#09;&#09;&#09;&#09;one operand</li>
-<li>imul reg, r/mX&#09;&#09;&#09;&#09;&#09;&#09;two operands</li>
-<li>imul reg, r/mX, immediate&#09;&#09;&#09;&#09;three operands</li>
+There are three general forms of multiplication, using a <b>one</b>, <b>two</b>and <b>three</b>operands<ul><li>imul r/mX							one operand</li>
+<li>imul reg, r/mX						two operands</li>
+<li>imul reg, r/mX, immediate				three operands</li>
 </ul>
 <br/>
-where X = &#09;b for 8 bits<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">w for 16 bits</li>
+where X = 	b for 8 bits<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">w for 16 bits</li>
 <li style="list-style-type: none">d for 32 bits</li>
 <li style="list-style-type: none">q (or no letter at all) for 64 bits</li>
 </ul>
@@ -25,48 +24,48 @@ where X = &#09;b for 8 bits<ul><li style="list-style-type: none"><ul><li style="
 <br/>
 <br/>
 <span style="font-size: 12pt">*VS prefers the use of imul over MUL (even in cases where MUL seems legit)<br/>
-</span><span style="font-size: 12pt">* it is possiby the only "basic" instruction containing three operands!</span><br/>
+</span><span style="font-size: 12pt">* it is possiby the only &quot;basic&quot; instruction containing three operands!</span><br/>
 <br/>
 <br/>
 <br/>
 <span style="font-size: 18pt"><b>Single operand</b></span><br/>
 with single operand, the calculation is done over EAX and the operand. at the end, result is put to EAX<br/>
-<img src="image.png" width="400" height="162" /><ul><li>DX:AX - means, store the result in the concatination of DX and AX - most significant bits in DX and least significant bits in AX, same goes for the others</li>
+<img height="162" src="image.png" width="400"/><ul><li>DX:AX - means, store the result in the concatination of DX and AX - most significant bits in DX and least significant bits in AX, same goes for the others</li>
 </ul>
 <ul><li>example, for the registers</li>
-<li style="list-style-type: none"><img src="image 5.png" width="250" height="43" /></li>
+<li style="list-style-type: none"><img height="43" src="image 5.png" width="250"/></li>
 <li style="list-style-type: none">and the instruction</li>
 <li style="list-style-type: none"><b>imul r12b</b></li>
 <li style="list-style-type: none">the solution to this one is by imul r/m8 (b=byte)</li>
 <li style="list-style-type: none">AX = AL * r12b</li>
 <li style="list-style-type: none">since 0x84 is negative, we will take his 2's complement - <b>0x84 NOT + 0x1 = 0x7C</b></li>
 <li style="list-style-type: none">we only care about the last 8 bits - so we get 7C</li>
-<li style="list-style-type: none">0x77 * 0x7C = &nbsp;0x39A4&#09;&#09;- we get a positive representation but we need negative: (-) * (+) = (-)</li>
-<li style="list-style-type: none"><b>0x39A4 NOT + 1 = <u>C65C</u></b>&#09;&#09;- since AX is only 16 bits (2 byte, word), result will occupy only AX</li>
-<li style="list-style-type: none"><img src="image 6.png" width="250" height="43" /></li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none">0x77 * 0x7C = 0x39A4		- we get a positive representation but we need negative: (-) * (+) = (-)</li>
+<li style="list-style-type: none"><b>0x39A4 NOT + 1 = <u>C65C</u></b>		- since AX is only 16 bits (2 byte, word), result will occupy only AX</li>
+<li style="list-style-type: none"><img height="43" src="image 6.png" width="250"/></li>
+<li style="list-style-type: none"/>
 </ul>
 <br/>
 <br/>
 <br/>
 <span style="font-size: 18pt"><b>Two operands</b></span><br/>
-<img src="image 2.png" width="300" height="162" /><ul><li>there is a risk of truncation - 16*16 is stored in 16 bit register (same for 32 and 64)</li>
+<img height="162" src="image 2.png" width="300"/><ul><li>there is a risk of truncation - 16*16 is stored in 16 bit register (same for 32 and 64)</li>
 </ul>
 <ul><li>example, for the registers</li>
-<li style="list-style-type: none"><img src="image 5.png" width="250" height="43" /></li>
+<li style="list-style-type: none"><img height="43" src="image 5.png" width="250"/></li>
 <li style="list-style-type: none">and the instruction</li>
 <li style="list-style-type: none"><b>imul r12d, eax</b></li>
-<li style="list-style-type: none">the solution to this one is by <b>imul r32 r/m32</b>&nbsp;(d=doubleword=32bits=4bytes)</li>
+<li style="list-style-type: none">the solution to this one is by <b>imul r32 r/m32</b>(d=doubleword=32bits=4bytes)</li>
 <li style="list-style-type: none"><b>r32 = r32 * r/m32</b></li>
 <li style="list-style-type: none">0x84 is positve</li>
 <li style="list-style-type: none">0xA977E177 is negative, we will take his 2's complement </li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><b>0xA977E177 NOT + 1 = 0x56881E89</b></li>
-<li style="list-style-type: none"><b>0x56881E89 * 0x84 = &nbsp;0x9E2FBEA4</b>&#09;&#09;&#09;- a positive representation</li>
-<li style="list-style-type: none"><b>0x9E2FC558 NOT + 1 =</b>&nbsp;<b>61D0415C</b>&#09;&#09;&#09;&#09;- turn negative again</li>
+<li style="list-style-type: none"><b>0x56881E89 * 0x84 = 0x9E2FBEA4</b>			- a positive representation</li>
+<li style="list-style-type: none"><b>0x9E2FC558 NOT + 1 =</b><b>61D0415C</b>				- turn negative again</li>
 </ul>
 </li>
-<li style="list-style-type: none"><img src="image 7.png" width="250" height="44" /></li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><img height="44" src="image 7.png" width="250"/></li>
+<li style="list-style-type: none"/>
 </ul>
 <br/>
 <br/>
@@ -74,27 +73,27 @@ with single operand, the calculation is done over EAX and the operand. at the en
 <br/>
 <br/>
 <span style="font-size: 18pt"><b>Three operands - it has 3 versions - using imm(8,16,32)</b></span><ul><li>first group, imm8 - sign-extended means to extend the 8bit to the register size</li>
-<li style="list-style-type: none"><img src="image 3.png" width="300" height="161" /></li>
+<li style="list-style-type: none"><img height="161" src="image 3.png" width="300"/></li>
 </ul>
 <ul><li>second group, imm16, contains only one operation.</li>
-<li style="list-style-type: none"><b>imul r16, r/m16, imm16&#09;|&#09;r16 = r/m16 * imm16</b></li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><b>imul r16, r/m16, imm16	|	r16 = r/m16 * imm16</b></li>
+<li style="list-style-type: none"/>
 <li>third group, imm32.</li>
-<li style="list-style-type: none"><img src="image 4.png" width="300" height="164" /></li>
+<li style="list-style-type: none"><img height="164" src="image 4.png" width="300"/></li>
 <li>there is a risk of truncation for all 3 groups</li>
 </ul>
 <ul><li>example, for the registers</li>
-<li style="list-style-type: none"><img src="image 5.png" width="250" height="43" /></li>
+<li style="list-style-type: none"><img height="43" src="image 5.png" width="250"/></li>
 <li style="list-style-type: none">and the instruction</li>
 <li style="list-style-type: none"><b>imul r12, rax, 12341234</b></li>
 <li style="list-style-type: none">the solution to this one is by <b>imul r64, r/m64, imm32</b></li>
-<b><li style="list-style-type: none">r64 = r/m64 * sign extended imm32&#09;&#09;(rax * 12341234 --&gt; r12)</li>
+<b><li style="list-style-type: none">r64 = r/m64 * sign extended imm32		(rax * 12341234 --&gt; r12)</li>
 </b><li style="list-style-type: none">both are positive</li>
 <li style="list-style-type: none"><ul><b><li style="list-style-type: none">0x609966C1A977E177 * 0x12341234 = 0xE5A3577504602A2C</li>
 </b></ul>
 </li>
 <li style="list-style-type: none"><b>r12 = 0xE5A3577504602A2C</b></li>
-<li style="list-style-type: none"></li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
 </ul>
 </body></html>

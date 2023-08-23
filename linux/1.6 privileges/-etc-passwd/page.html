@@ -1,29 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>/etc/passwd</title>
 </head><body>reads the passwd file<br/>
-it stores user account information,  user ID, group ID, home directory, shell, and more. &nbsp;essential during login<br/>
+it stores user account information,  user ID, group ID, home directory, shell, and more. essential during login<br/>
 <br/>
 users other then root and default system users will be shown at the bottom.<br/>
 <br/>
 format:<br/>
-<b><span style="font-size: 18pt">&nbsp;yahel:x:1000:1000:yahel abraham,,,:/home/yahel:/usr/bin/zsh</span></b><br/>
+<b><span style="font-size: 18pt">yahel:x:1000:1000:yahel abraham,,,:/home/yahel:/usr/bin/zsh</span></b><br/>
 <br/>
-<img src="image.png" width="700" height="125" /><br/>
+<img height="125" src="image.png" width="700"/><br/>
 <br/>
 1. <b>username</b><br/>
 <br/>
-2. <b>password</b>&nbsp;- an x character indicates that encrypted password is stored in /etc/shadow file.<br/>
-<img src="https://www.cyberciti.biz/media/ssb.images/uploaded_images/passwd-file-791527.png" /><br/>
+2. <b>password</b>- an x character indicates that encrypted password is stored in /etc/shadow file.<br/>
+<img src="https://www.cyberciti.biz/media/ssb.images/uploaded_images/passwd-file-791527.png"/><br/>
 <br/>
-3. <b>user id</b>&nbsp;- each user must be assigned a user ID (UID).<br/>
+3. <b>user id</b>- each user must be assigned a user ID (UID).<br/>
 UID 0 (zero) is reserved for root and UIDs 1-99 are reserved for other predefined accounts. Further UID 100-999 are reserved by system for administrative and system accounts/groups.<br/>
 <br/>
 4. <b>group id</b><br/>
 <br/>
-5. <b>user id info (GECOS)</b>&nbsp;- a comment field. It allow you to add extra information about the users such as user’s full name<br/>
+5. <b>user id info (GECOS)</b>- a comment field. It allow you to add extra information about the users such as user’s full name<br/>
 <br/>
 6. <b>user's home dir</b><br/>
 <br/>

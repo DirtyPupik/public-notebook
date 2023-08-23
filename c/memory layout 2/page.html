@@ -1,29 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Memory layout</title>
 </head><body><a href="https://www.geeksforgeeks.org/memory-layout-of-c-program/">see examples at the end of the page</a><br/>
 <a href="https://www.scaler.com/topics/c/memory-layout-in-c/">see also</a><br/>
-<img src="image.png" width="450" height="349" /><br/>
+<img height="349" src="image.png" width="450"/><br/>
 <br/>
 <b>1. text segment (aka code segment) - </b>contains executable instructions. used for frequently executed programs, such as text editors, the C compiler, the shells, and so on. Also, the text segment is often <b>read-only</b><br/>
 <br/>
-<b>2. Initialized Data Segment</b>&nbsp;- contains initialized global variables and static variables. <br/>
-it has two areas: <b>initialized only-read area</b>&nbsp;and the <b>initialized read-write area</b>.<ul><li style="list-style-type: none"><b>initialized read-write</b>&nbsp;- will store:</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>global<b>&nbsp;string char s[] = “hello world”</b></li>
+<b>2. Initialized Data Segment</b>- contains initialized global variables and static variables. <br/>
+it has two areas: <b>initialized only-read area</b>and the <b>initialized read-write area</b>.<ul><li style="list-style-type: none"><b>initialized read-write</b>- will store:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>global<b>string char s[] = “hello world”</b></li>
 <li>global <b>int x = 10</b></li>
 <li><b>static int x = 10</b></li>
-<li>global <b>const char* string = “hello world”&#09;&#09;&#09;; </b>the char pointer variable "<b>string"</b>&nbsp;will be stored in r.w (cause the const refers to the literal)</li>
+<li>global <b>const char* string = “hello world”			; </b>the char pointer variable &quot;<b>string&quot;</b>will be stored in r.w (cause the const refers to the literal)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"/>
 <li style="list-style-type: none"><b>initialized only-read - </b>will store:</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>in a global <b>const char* string = “hello world”&#09;&#09;</b>; the const literal "hello world"</li>
-<li>in a global <b>const char* const string = “hello world”&#09;</b>; both the pointer and the literal are r.o</li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>in a global <b>const char* string = “hello world”		</b>; the const literal &quot;hello world&quot;</li>
+<li>in a global <b>const char* const string = “hello world”	</b>; both the pointer and the literal are r.o</li>
+<li style="list-style-type: none"/>
 </ul>
 </li>
 </ul>
@@ -35,13 +34,13 @@ it has two areas: <b>initialized only-read area</b>&nbsp;and the <b>initialized 
 </ul>
 </li>
 <li style="list-style-type: none">the are initialized to 0.</li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"/>
 </ul>
-<b>4. Stack - </b>a LIFO structure, on x86 it starts from high address and grows towards 0, built of stack frames, the frames contain a minimum of return address, a pointer points to the top of the stack, Each time a recursive function calls itself, a new stack frame is used, so one set of variables doesn’t interfere with the variables from another instance of the function. the stack can allocate <b>both</b>&nbsp;static and dynamic memory<br/>
+<b>4. Stack - </b>a LIFO structure, on x86 it starts from high address and grows towards 0, built of stack frames, the frames contain a minimum of return address, a pointer points to the top of the stack, Each time a recursive function calls itself, a new stack frame is used, so one set of variables doesn’t interfere with the variables from another instance of the function. the stack can allocate <b>both</b>static and dynamic memory<br/>
 <br/>
 <b>5. heap - </b>can allocate only dynamic memory, begins at the end of the bss (uninitialized data) and grows larger<br/>
 <br/>
 <b>6. above the stack - </b>enviroment variables, argv and argc are stored above the stack. argc is defined by argv, which in he's case, defined by user input, env is the result of heridity from the current enviroment.<br/>
 <br/>
 <br/>
-&nbsp;</body></html>
+</body></html>

@@ -1,21 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>python3</title>
 </head><body>timestamp to date (also see one-liner)<br/>
-<b>python3 -c "from datetime import datetime; print(datetime.fromtimestamp(</b>timestamp<b>))"<br/>
+<b>python3 -c &quot;from datetime import datetime; print(datetime.fromtimestamp(</b>timestamp<b>))&quot;<br/>
 </b><b><br/>
 </b>execute python file:<br/>
-<b>python filename.py</b>&#09;&#09;&#09;- if interpreter is not specified<br/>
+<b>python filename.py</b>			- if interpreter is not specified<br/>
 <b><br/>
-</b><b>#! /usr/bin/python&#09;&#09;&#09;-</b>&nbsp;include interpreter<b><br/>
-</b><b>./filename.py&#09;&#09;<br/>
+</b><b>#! /usr/bin/python			-</b>include interpreter<b><br/>
+</b><b>./filename.py		<br/>
 <br/>
-python3 -c "import sys; sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')" | <br/>
+python3 -c &quot;import sys; sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')&quot; | <br/>
 <br/>
 <br/>
-</b>r &lt;&lt;&lt; $(python3 -c "import sys; sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xbe\xba\xfe\xca')") &nbsp;<br/>
+</b>r &lt;&lt;&lt; $(python3 -c &quot;import sys; sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xbe\xba\xfe\xca')&quot;) <br/>
 <br/>
 import sys;<br/>
 sys.stdout.buffer.write(b'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\xbe\xba\xfe\xca');<br/>

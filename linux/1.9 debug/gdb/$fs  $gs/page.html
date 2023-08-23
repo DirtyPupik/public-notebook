@@ -1,19 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>$fs &amp; $gs</title>
 </head><body>To access fs and gs register during runtime<br/>
 $fs_base<br/>
 $gs_base<br/>
 <br/>
 Example - for the instruction:<br/>
-<b>mov &nbsp; &nbsp;%fs:0x28,%rax</b><br/>
+<b>mov  %fs:0x28,%rax</b><br/>
 <br/>
 One can print the register base address:<br/>
 <b>(gdb) x/gx $fs_base<br/>
-0x7ffff7fb7580:&#09;0x00007ffff7fb7580<br/>
+0x7ffff7fb7580:	0x00007ffff7fb7580<br/>
 </b><br/>
 To access the location in memory, add the offset to the base register:<br/>
 <b>(gdb) x/gx 0x7ffff7fb7580+0x28<br/>
-0x7ffff7fb75a8:&#09;0x58f6b1f9673d2400</b></body></html>
+0x7ffff7fb75a8:	0x58f6b1f9673d2400</b></body></html>

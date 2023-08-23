@@ -1,24 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>String literals</title>
 </head><body>It is a type of initialized read only string pointer.<br/>
 The pointer holds the address of the first element of the array.<br/>
 <br/>
 Example:<br/>
-<b>char *amessage = "This is a string literal.";<br/>
+<b>char *amessage = &quot;This is a string literal.&quot;;<br/>
 <br/>
 </b>They cannot be changed:<br/>
-<b>char* s = "hallo";<br/>
-</b><b>s[0] = 'W';</b>&#09;&#09;&#09;&#09;&#09; /* undefined behaviour */ &nbsp;<br/>
+<b>char* s = &quot;hallo&quot;;<br/>
+</b><b>s[0] = 'W';</b>					 /* undefined behaviour */ <br/>
 <br/>
 So its better to make them constant, to cause compiler error:<br/>
-<b>char const* s1 = "welcome";<br/>
-</b><b>s1[0] = 'W';</b>&#09;&#09;&#09;&#09;&#09; /* compiler error! */<br/>
+<b>char const* s1 = &quot;welcome&quot;;<br/>
+</b><b>s1[0] = 'W';</b>					 /* compiler error! */<br/>
 <br/>
 <br/>
 see also:<br/>
-<a href="https://stackoverflow.com/questions/2589949/string-literals-where-do-they-go">string literals in memory are stored in<b>&nbsp;.rodata</b>, and the linker dumps them in a read execute section (no write), see second answer.<br/>
+<a href="https://stackoverflow.com/questions/2589949/string-literals-where-do-they-go">string literals in memory are stored in<b>.rodata</b>, and the linker dumps them in a read execute section (no write), see second answer.<br/>
 </a><br/>
-&nbsp;</body></html>
+</body></html>

@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>1 IP Address &amp; datagram</title>
 </head><body>IP addresses are a 32 bit long numbers made up of four octets<br/>
 <br/>
@@ -13,42 +12,42 @@ when assigned with DHCP its known as dynamic IP ad<br/>
 static IP must be configured on a node manually - they are reserved for servers and network devices (in most cases)<br/>
 <br/>
 Packets under the IP protocol are refered to as <b>IP datagram</b><br/>
-<b>IP datagram</b>&nbsp;- a highly structured series of fields that are strictly defined<br/>
+<b>IP datagram</b>- a highly structured series of fields that are strictly defined<br/>
 <br/>
 each line in the datagram is 4 bytes (32 bits), the last line is optional, which results in <b>20 bytes of mandatory header data </b>(5 lines x 4 bytes)<br/>
-the <b>option </b>field max size is 40 bytes (10 lines of 4 bytes max), giving a<b>&nbsp;total header lenght between 20 to 60 bytes<br/>
+the <b>option </b>field max size is 40 bytes (10 lines of 4 bytes max), giving a<b>total header lenght between 20 to 60 bytes<br/>
 </b><br/>
-<img src="image.png" width="600" height="486" /><br/>
+<img height="486" src="image.png" width="600"/><br/>
 <br/>
-<b>VER -</b>&nbsp;version - IPv4 or 6<br/>
+<b>VER -</b>version - IPv4 or 6<br/>
 <br/>
-<b>IHL -</b>&nbsp;4 bits (0 - 15) to define the header lenght by number of lines:<br/>
-if &nbsp;we got 0101 that is 5 in dec, meaning 5 lines of 4 bytes = 20 bytes - which is the minimum lenght of the header<br/>
+<b>IHL -</b>4 bits (0 - 15) to define the header lenght by number of lines:<br/>
+if we got 0101 that is 5 in dec, meaning 5 lines of 4 bytes = 20 bytes - which is the minimum lenght of the header<br/>
 since header lenght is counted by lines, it explains why there's padding to the option - in order to complete to a whole line and not lose data.<br/>
 - its nesscecery since header lenght varies<br/>
 <br/>
 <b>TOS </b>{<br/>
-<b>Precedence (priority - חשיבות)</b>&nbsp;- if the router needs to discard some datagrams, the datagrams with lowest precedence will be discarted first<br/>
+<b>Precedence (priority - חשיבות)</b>- if the router needs to discard some datagrams, the datagrams with lowest precedence will be discarted first<br/>
 afterwards comes the service type itself<br/>
-<img src="image 2.png" width="500" height="175" /><br/>
+<img height="175" src="image 2.png" width="500"/><br/>
 }<br/>
 <br/>
 <b>TL-</b><br/>
-<img src="image 3.png" width="600" height="218" /><br/>
+<img height="218" src="image 3.png" width="600"/><br/>
 <br/>
 <b>identification - </b>16 bit used to group msgs together, in case size is over the max size of 65535, the identification makes sure that the receiving end will know which packets come together<br/>
 <b><br/>
-</b><b>flags -</b>&nbsp;indicates if datagram has been fragmented or allowed to be fragmented<br/>
+</b><b>flags -</b>indicates if datagram has been fragmented or allowed to be fragmented<br/>
 <b><br/>
 </b><b>framentation offset - </b>which fragment is that? no 1, 2, 3 or 34?<br/>
 <br/>
-<b>TTL - time to live</b>&nbsp;- 8 bits to hold a timestamp, decremented by each router, so packets wont travel indefinitly trying to get to nowhere<br/>
+<b>TTL - time to live</b>- 8 bits to hold a timestamp, decremented by each router, so packets wont travel indefinitly trying to get to nowhere<br/>
 the datagram is discarted when TOL reaches 0<br/>
 64, 128 and 255 are the most common TTL start values - when looking at the TTL of an arrived packet, number of hops can be calculated<br/>
 <br/>
 <b>Protocol - </b>defines the higher level protocol that uses the services of the IP layer<br/>
 <br/>
-<b>Header checksum - </b>checksums to see if packet arrived intact, changes due to <b>total lenght </b>&nbsp;and <b>time to live</b><br/>
+<b>Header checksum - </b>checksums to see if packet arrived intact, changes due to <b>total lenght </b>and <b>time to live</b><br/>
 <br/>
 <b>Option + padding - </b>optional field, may contain options for - security, record route, timestamp and etc<br/>
 </body></html>

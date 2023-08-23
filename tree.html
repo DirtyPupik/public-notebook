@@ -1,0 +1,565 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<style>
+.node
+{
+    padding-left: 20px;
+    display: block;
+}
+
+.node_collapsed
+{
+    padding-left: 20px;
+    display: none;
+
+    
+    visibility: hidden;
+    display: none;
+}
+
+
+
+a:active
+{
+text-decoration:none;
+color: #0000FF;
+font-weight: bold;
+}
+
+a:visited
+{
+text-decoration:none;
+color: #000;
+font-weight: bold;
+}
+
+a:link
+{
+text-decoration:none;
+color: #000;
+font-weight: bold;
+}
+
+a:hover
+{
+text-decoration: underline;
+color: #500;
+font-weight: bold;
+}
+
+</style>
+
+
+<script language="javascript">
+  
+    var displayStates = [];
+
+    function showDiv(div)
+    {    
+        div.style.height     = "";
+        div.style.display    = "block";
+        div.style.visibility = "visible";
+    }
+
+    function hideDiv(div)
+    {
+        div.style.height     = "0px";
+        div.style.display    = "none";      
+        div.style.visibility = "hidden";
+    }
+
+    function toggleDiv(div, defaultState)
+    {
+
+        // set default on first use
+        if (displayStates[div] == undefined)
+            displayStates[div] = defaultState;
+
+        // toggle state
+        displayStates[div] = !displayStates[div];       
+
+        // hide / show
+        if (displayStates[div])
+            showDiv(div);
+        else {
+            hideDiv(div);
+        }
+    }
+
+    function toggleDivName(divname, defaultState)
+    {
+        toggleDiv(document.getElementById(divname), defaultState);
+    }
+
+</script>
+
+<nobr><tt><a href='javascript: toggleDivName("8e941f80-edbf-42fe-b3fc-42cef5ceb74f", true)'>+</a>&nbsp;</tt>Hallo</nobr><br/>
+<div id='8e941f80-edbf-42fe-b3fc-42cef5ceb74f' class='node'><nobr><tt><a href='javascript: toggleDivName("0695f7f4-f75f-45d5-b165-da053dd4732f", false)'>+</a>&nbsp;</tt>x86</nobr><br/>
+<div id='0695f7f4-f75f-45d5-b165-da053dd4732f' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("f468143c-2f34-41e5-8d9b-0e911ac3a76a", false)'>+</a>&nbsp;</tt>x86 Instructions</nobr><br/>
+<div id='f468143c-2f34-41e5-8d9b-0e911ac3a76a' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/nop%202/page.html' target='viewer'>nop</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/endbr32-64/page.html' target='viewer'>endbr32/64</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/push%202/page.html' target='viewer'>push</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/pop%202/page.html' target='viewer'>pop</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("2cddc10c-2cd0-4396-824a-6f0db4471e25", true)'>+</a>&nbsp;</tt><a href='x86/x86%20instructions/call%202/page.html' target='viewer'>call</a></nobr><br/>
+<div id='2cddc10c-2cd0-4396-824a-6f0db4471e25' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/call%202/near%20%20far/page.html' target='viewer'>near &amp; far</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/ret%202/page.html' target='viewer'>ret</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/mov%202/page.html' target='viewer'>mov</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/add%20%20sub/page.html' target='viewer'>add &amp; sub</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("2b1ea608-f78c-405c-a7b4-3ec0bd99dd73", true)'>+</a>&nbsp;</tt><a href='x86/x86%20instructions/imul%202/page.html' target='viewer'>imul</a></nobr><br/>
+<div id='2b1ea608-f78c-405c-a7b4-3ec0bd99dd73' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/imul%202/mul/page.html' target='viewer'>mul</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/idiv/page.html' target='viewer'>idiv</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/div/page.html' target='viewer'>div</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/movzx%20%20movsx%20%20movsxd/page.html' target='viewer'>movzx &amp; movsx &amp; movsxd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/lea/page.html' target='viewer'>lea</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/cmp/page.html' target='viewer'>cmp</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/jmp%202/page.html' target='viewer'>jmp</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/jcc%202/page.html' target='viewer'>jcc</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/js%20-%20jns/page.html' target='viewer'>js / jns</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/inc%20-%20dec/page.html' target='viewer'>inc / dec</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/test/page.html' target='viewer'>test</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/shl%20-%20shr/page.html' target='viewer'>shl / shr</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/sal%20-%20sar/page.html' target='viewer'>sal / sar</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/rep%20stos/page.html' target='viewer'>rep stos</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/rep%20movs/page.html' target='viewer'>rep movs</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/leave/page.html' target='viewer'>leave</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/x86%20instructions/cmovcc/page.html' target='viewer'>CMOVcc</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/general%20notes/page.html' target='viewer'>general notes</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/intel%20vs%20att/page.html' target='viewer'>Intel vs AT&amp;T</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/twos%20complement/page.html' target='viewer'>Two's complement</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/endianess/page.html' target='viewer'>Endianess</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/canonical%20address/page.html' target='viewer'>Canonical address</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/memory%20hierarchy/page.html' target='viewer'>Memory Hierarchy</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/registers/page.html' target='viewer'>Registers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/segment%20registers/page.html' target='viewer'>Segment registers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/flags%202/page.html' target='viewer'>Flags</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/the%20stack/page.html' target='viewer'>The Stack</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/r-mx%20addressing%20forms/page.html' target='viewer'>r/mX addressing forms</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/modr-m/page.html' target='viewer'>ModR/M</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/effective%20address/page.html' target='viewer'>Effective address</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/two-operand%20instruction%20-%20intel%20vs%20amd/page.html' target='viewer'>two-operand instruction - intel vs amd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/32%20to%2064%20zero-extention/page.html' target='viewer'>32 to 64 zero-extention</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/array%20access%202/page.html' target='viewer'>Array Access</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/ms%20shadow%20store/page.html' target='viewer'>MS Shadow Store</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/64%20calling%20conventions/page.html' target='viewer'>64 Calling Conventions</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/32%20calling%20conventions/page.html' target='viewer'>32 Calling Conventions</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/control%20flow/page.html' target='viewer'>Control Flow</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/operand%20size/page.html' target='viewer'>Operand size</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/short%2C%20near%2C%20far/page.html' target='viewer'>Short, Near, Far</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/interrupts%20%20exceptions%202/page.html' target='viewer'>Interrupts &amp; Exceptions</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/reciprocal%20multiplication/page.html' target='viewer'>Reciprocal Multiplication</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/writing%20assembly/page.html' target='viewer'>Writing assembly</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='x86/boolean%20operations/page.html' target='viewer'>Boolean Operations</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("6f4d52d0-4b14-4be9-acbb-3a83548bd2d3", false)'>+</a>&nbsp;</tt>System V</nobr><br/>
+<div id='6f4d52d0-4b14-4be9-acbb-3a83548bd2d3' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='x86/system%20v/red%20zone/page.html' target='viewer'>red zone</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("894edc95-7bd5-43e8-b5ba-aada4001863f", false)'>+</a>&nbsp;</tt>Internals</nobr><br/>
+<div id='894edc95-7bd5-43e8-b5ba-aada4001863f' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/execution%20modes/page.html' target='viewer'>Execution Modes</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/privilege%20rings/page.html' target='viewer'>Privilege Rings</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/msrs%202/page.html' target='viewer'>MSR's</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/segmentation/page.html' target='viewer'>Segmentation</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/implicit%20segmentation/page.html' target='viewer'>Implicit Segmentation</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/segment%20selector%202/page.html' target='viewer'>Segment Selector</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/descriptor%20cache/page.html' target='viewer'>Descriptor Cache</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/gdt%20%20ldt/page.html' target='viewer'>GDT &amp; LDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/segment%20descriptor%202/page.html' target='viewer'>Segment Descriptor</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/call%20gate%20descriptor/page.html' target='viewer'>Call Gate Descriptor</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/interrupts%20%20exceptions/page.html' target='viewer'>Interrupts &amp; Exceptions</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/tasks%20%20tss/page.html' target='viewer'>Tasks &amp; TSS</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/idt/page.html' target='viewer'>IDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/interrupt%20descriptor/page.html' target='viewer'>Interrupt Descriptor</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/interrupt%20masking%202/page.html' target='viewer'>Interrupt Masking</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/syscall/page.html' target='viewer'>syscall</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("8888ff35-d162-4635-9c83-d5873358751c", true)'>+</a>&nbsp;</tt><a href='internals/paging/page.html' target='viewer'>Paging</a></nobr><br/>
+<div id='8888ff35-d162-4635-9c83-d5873358751c' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/maxphyaddr/page.html' target='viewer'>MAXPHYADDR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/paging%20by%20chatgpt/page.html' target='viewer'>Paging by ChatGPT </a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/control%20registers%20-%20paging/page.html' target='viewer'>Control Registers - Paging</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("b27f4840-a015-4e0a-af45-3ab01835b048", true)'>+</a>&nbsp;</tt>Paging modes</nobr><br/>
+<div id='b27f4840-a015-4e0a-af45-3ab01835b048' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/paging%20modes%202/32-32%204kb/page.html' target='viewer'>32-&gt;32 4KB</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/paging%20modes%202/32-40%2C%204kb%2C%204mb/page.html' target='viewer'>32-&gt;40, 4KB, 4MB</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/paging%20modes%202/48-52%20%284%20level%29/page.html' target='viewer'>48-&gt;52 (4 level)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/paging%20modes%202/57-52%20la57/page.html' target='viewer'>57-&gt;52 LA57</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/cr3/page.html' target='viewer'>CR3</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/pml4/page.html' target='viewer'>PML4</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/paging/pdpt/page.html' target='viewer'>PDPT</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("f6d56321-d6f7-4d84-b6f8-61b87475e365", true)'>+</a>&nbsp;</tt>MSRs</nobr><br/>
+<div id='f6d56321-d6f7-4d84-b6f8-61b87475e365' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/msrs/ia32_efer/page.html' target='viewer'>IA32_EFER</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/msrs/ia32_fs_base/page.html' target='viewer'>IA32_FS_BASE</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/msrs/ia32_gs_base/page.html' target='viewer'>IA32_GS_BASE</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("379575e5-3840-41d7-bd07-4a789abc864f", true)'>+</a>&nbsp;</tt>Instructions</nobr><br/>
+<div id='379575e5-3840-41d7-bd07-4a789abc864f' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/cpuid/page.html' target='viewer'>CPUID</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/pushfq/page.html' target='viewer'>PUSHFQ</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/popfq/page.html' target='viewer'>POPFQ</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/rdmsr/page.html' target='viewer'>RDMSR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/wrmsr/page.html' target='viewer'>WRMSR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/sr/page.html' target='viewer'>SR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/lgdt/page.html' target='viewer'>LGDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/sgdt/page.html' target='viewer'>SGDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/lldt/page.html' target='viewer'>LLDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/sldt/page.html' target='viewer'>SLDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/ltr%20%20str/page.html' target='viewer'>LTR &amp; STR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/lidt%20%20sidt/page.html' target='viewer'>LIDT &amp; SIDT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/cli%20%20sti%20%28if%20flag%29/page.html' target='viewer'>CLI &amp; STI (IF flag)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/syscall/page.html' target='viewer'>SYSCALL</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/sysret/page.html' target='viewer'>SYSRET</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/swapgs/page.html' target='viewer'>SWAPGS</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/rdfsbase%20-%20rdgsbase/page.html' target='viewer'>RDFSBASE / RDGSBASE</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/wrfsbase%20-%20wrgsbase/page.html' target='viewer'>WRFSBASE / WRGSBASE</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/rdtsc/page.html' target='viewer'>RDTSC</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("6f22405d-de23-47dd-b429-9e8c6d77b9e7", true)'>+</a>&nbsp;</tt>Interrupts</nobr><br/>
+<div id='6f22405d-de23-47dd-b429-9e8c6d77b9e7' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/int/page.html' target='viewer'>INT</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/iret/page.html' target='viewer'>IRET</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/int3/page.html' target='viewer'>INT3</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/int1/page.html' target='viewer'>INT1</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/into/page.html' target='viewer'>INTO</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='internals/instructions/interrupts/ud2/page.html' target='viewer'>UD2</a></nobr><br/>
+</div>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("7d2f6e44-d027-47af-bae4-399c894d224a", false)'>+</a>&nbsp;</tt>C</nobr><br/>
+<div id='7d2f6e44-d027-47af-bae4-399c894d224a' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("946c7436-b2f7-4932-867f-67e748b5ca52", false)'>+</a>&nbsp;</tt>Preprocessor Directives</nobr><br/>
+<div id='946c7436-b2f7-4932-867f-67e748b5ca52' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='c/preprocessor%20directives/library%20vs%20header/page.html' target='viewer'>library vs header</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/preprocessor%20directives/%23pragma%20pack/page.html' target='viewer'>#pragma pack</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/preprocessor%20directives/%23define%20vs%20const/page.html' target='viewer'>#define vs const</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/preprocessor%20directives/%23define%20directive/page.html' target='viewer'>#define Directive</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/memory%20layout%202/page.html' target='viewer'>Memory layout</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/argc%20argv/page.html' target='viewer'>argc argv</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/strings/page.html' target='viewer'>Strings</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/pointers%202/page.html' target='viewer'>Pointers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/null%20vs%20-0/page.html' target='viewer'>NULL vs '\0'</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/string%20pointers/page.html' target='viewer'>String pointers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/void%20pointer%20%20type%20cast/page.html' target='viewer'>Void pointer &amp; type cast</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/type%20casting%202/page.html' target='viewer'>Type Casting 2</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/function%20declaration/page.html' target='viewer'>Function Declaration</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/string%20literals/page.html' target='viewer'>String literals</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/const%20char/page.html' target='viewer'>const char*</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/static%20variables/page.html' target='viewer'>Static variables</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/union/page.html' target='viewer'>Union</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/struct/page.html' target='viewer'>Struct</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/malloc/page.html' target='viewer'>malloc</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/linked%20list/page.html' target='viewer'>Linked list</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/placeholders/page.html' target='viewer'>placeholders</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/static%20%20dynamic%20memory%20allocation/page.html' target='viewer'>Static &amp; Dynamic memory allocation</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/type%20punning/page.html' target='viewer'>type punning</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/size/page.html' target='viewer'>size</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/precedence/page.html' target='viewer'>Precedence</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/signs/page.html' target='viewer'>signs</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/-%20arrow%20operator/page.html' target='viewer'>-&gt; arrow operator</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/undefined%20behaviour/page.html' target='viewer'>undefined behaviour</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/local%20labels/page.html' target='viewer'>local labels</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/recommended%20c%20style%20and%20coding%20standards/page.html' target='viewer'>Recommended C Style and Coding Standards
+</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='c/c%20tricky%20questions/page.html' target='viewer'>C tricky questions</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("8c7ea4ce-a1a3-46b5-a7de-fd599f6108cc", false)'>+</a>&nbsp;</tt>Linux</nobr><br/>
+<div id='8c7ea4ce-a1a3-46b5-a7de-fd599f6108cc' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/aliases%20%20funcs/page.html' target='viewer'>aliases &amp; funcs</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("12eb8353-513d-444b-b0ff-f12aadd72e79", false)'>+</a>&nbsp;</tt>Structure</nobr><br/>
+<div id='12eb8353-513d-444b-b0ff-f12aadd72e79' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/task_struct/page.html' target='viewer'>task_struct</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("6f6069fe-8fb0-464d-afc0-df4c3aac0f93", false)'>+</a>&nbsp;</tt>Files &amp; Folders</nobr><br/>
+<div id='6f6069fe-8fb0-464d-afc0-df4c3aac0f93' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/folders/page.html' target='viewer'>folders</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/file%20types/page.html' target='viewer'>file types</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/char%20%20block/page.html' target='viewer'>char &amp; block</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/%28fifo%29%20named%20pipes/page.html' target='viewer'>(FIFO) named pipes</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/major%20%20minor%20numbers/page.html' target='viewer'>major &amp; minor numbers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/file%20hierarchy%20structure/page.html' target='viewer'>File Hierarchy Structure</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/-usr%20merge/page.html' target='viewer'>/usr Merge</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/file%20mode%20bits/page.html' target='viewer'>File mode bits</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/files%20%20folders/sticky%20bit/page.html' target='viewer'>Sticky bit</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/threads/page.html' target='viewer'>Threads</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/multi-threading/page.html' target='viewer'>Multi-threading</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/structure/hyper-threading/page.html' target='viewer'>Hyper-threading</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("a8e787a0-7057-4479-ab21-8f77301b2d7a", false)'>+</a>&nbsp;</tt>1.0 Signs</nobr><br/>
+<div id='a8e787a0-7057-4479-ab21-8f77301b2d7a' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/-%20%20%20%7E/page.html' target='viewer'>.    ..   /   ~</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/operators%202/page.html' target='viewer'>Operators</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/%28%29%20pipe/page.html' target='viewer'>(|) Pipe</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/%28-%29%20hyphen/page.html' target='viewer'>(-) Hyphen</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/%28%29%20ampersand/page.html' target='viewer'>(&amp;) Ampersand</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/%28%29%20asterisk/page.html' target='viewer'>(*) Asterisk</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.0%20signs/%24/page.html' target='viewer'>$?</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("fe1b9553-15df-48ff-a063-327cf9140b34", false)'>+</a>&nbsp;</tt>1.2 basic cmd</nobr><br/>
+<div id='fe1b9553-15df-48ff-a063-327cf9140b34' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/echo/page.html' target='viewer'>echo</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/id/page.html' target='viewer'>id</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/whoami/page.html' target='viewer'>whoami</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/pwd/page.html' target='viewer'>pwd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/cd/page.html' target='viewer'>cd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/which/page.html' target='viewer'>which</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/cat/page.html' target='viewer'>cat</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/cp/page.html' target='viewer'>cp</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/mv/page.html' target='viewer'>mv</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/ls/page.html' target='viewer'>ls</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/mkdir/page.html' target='viewer'>mkdir</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/rm/page.html' target='viewer'>rm</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/rmdir/page.html' target='viewer'>rmdir</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/locate/page.html' target='viewer'>locate</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/find/page.html' target='viewer'>find</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/updatedb/page.html' target='viewer'>updatedb</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/man%20%28manual%29/page.html' target='viewer'>man (manual)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/printenv/page.html' target='viewer'>printenv</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/test/page.html' target='viewer'>test</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.2%20basic%20cmd/stat/page.html' target='viewer'>stat</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("a1878989-b8e9-4118-8a64-e8db862886b8", false)'>+</a>&nbsp;</tt>1.4 text manipulation</nobr><br/>
+<div id='a1878989-b8e9-4118-8a64-e8db862886b8' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/nano/page.html' target='viewer'>nano</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/sort%20%2B%20uniq/page.html' target='viewer'>sort + uniq</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/touch/page.html' target='viewer'>touch</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/gedit/page.html' target='viewer'>gedit</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/grep/page.html' target='viewer'>grep</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/awk/page.html' target='viewer'>awk</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/less/page.html' target='viewer'>less</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/wc/page.html' target='viewer'>wc</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/sed/page.html' target='viewer'>sed</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/head%20-n/page.html' target='viewer'>head -n</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/tail%20-n/page.html' target='viewer'>tail -n</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/nl/page.html' target='viewer'>nl</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/cut/page.html' target='viewer'>cut</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.4%20text%20manipulation/tr/page.html' target='viewer'>tr</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("49ca63af-3d33-46a1-ac29-605ada837682", false)'>+</a>&nbsp;</tt>1.6 Privileges</nobr><br/>
+<div id='49ca63af-3d33-46a1-ac29-605ada837682' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/sudo/page.html' target='viewer'>sudo</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/su/page.html' target='viewer'>su</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/passwd/page.html' target='viewer'>passwd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/chown/page.html' target='viewer'>chown</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/chmod/page.html' target='viewer'>chmod</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/chgrp/page.html' target='viewer'>chgrp</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/adduser/page.html' target='viewer'>adduser</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/usermod/page.html' target='viewer'>usermod</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/-etc-passwd/page.html' target='viewer'>/etc/passwd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/-etc-shadow/page.html' target='viewer'>/etc/shadow</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/pwck%20%20-%20verify%20pw%20integrity/page.html' target='viewer'>pwck  - verify pw integrity</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.6%20privileges/chage%20-%20change%20user%20password%20expiry%20info/page.html' target='viewer'>chage - change user password expiry information</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("4632b4b5-964b-4a4f-bb7e-ac651663c896", false)'>+</a>&nbsp;</tt>1.8 usefull</nobr><br/>
+<div id='4632b4b5-964b-4a4f-bb7e-ac651663c896' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/xxd%20%28hexdump%29/page.html' target='viewer'>| xxd (hexdump)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/base64/page.html' target='viewer'>| base64</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/dmesg/page.html' target='viewer'>dmesg</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/python3/page.html' target='viewer'>python3</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/aslr%20%20stackguard/page.html' target='viewer'>ASLR &amp; StackGuard</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.8%20usefull/tmux/page.html' target='viewer'>tmux</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("4fcf10b1-6ded-4486-81b5-ffc9ae64f437", false)'>+</a>&nbsp;</tt>1.9 Debug</nobr><br/>
+<div id='4fcf10b1-6ded-4486-81b5-ffc9ae64f437' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gnu%20binutils/page.html' target='viewer'>GNU Binutils
+</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("b9edc3ed-302d-4f46-aff2-f05f6060e029", true)'>+</a>&nbsp;</tt>GDB</nobr><br/>
+<div id='b9edc3ed-302d-4f46-aff2-f05f6060e029' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/_start/page.html' target='viewer'>_start</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/breakpoints/page.html' target='viewer'>Breakpoints</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/-fmt%20format/page.html' target='viewer'>/FMT Format</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/registers/page.html' target='viewer'>Registers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/print/page.html' target='viewer'>print</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/x%20%20memory/page.html' target='viewer'>x &amp; Memory</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/display/page.html' target='viewer'>display</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/backtrace%20%28bt%29%202/page.html' target='viewer'>backtrace (bt)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/step/page.html' target='viewer'>step</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/until%20%28u%29/page.html' target='viewer'>until (u)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/%24fs%20%20%24gs/page.html' target='viewer'>$fs &amp; $gs</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/attach/page.html' target='viewer'>attach</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/syntax/page.html' target='viewer'>Syntax</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/configuration/page.html' target='viewer'>Configuration</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gdb/hardware%20vs.%20software%20breakpoints%20on%20int/page.html' target='viewer'>Hardware vs. Software Breakpoints on Intel Hardware
+</a></nobr><br/>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/1.9%20debug/gef/page.html' target='viewer'>gef</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("b14d17a4-e934-4417-9046-66d867182fd0", false)'>+</a>&nbsp;</tt>2.0 net cmds</nobr><br/>
+<div id='b14d17a4-e934-4417-9046-66d867182fd0' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/ifconfig/page.html' target='viewer'>ifconfig</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/iwconfig/page.html' target='viewer'>iwconfig</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/hostname%20-i/page.html' target='viewer'>hostname -I</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/arp%20-a/page.html' target='viewer'>arp -a</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/netstat/page.html' target='viewer'>netstat</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/route/page.html' target='viewer'>route</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/traceroute/page.html' target='viewer'>traceroute</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/nslookup/page.html' target='viewer'>nslookup</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/dig/page.html' target='viewer'>dig</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/host/page.html' target='viewer'>host</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.0%20net%20cmds/nc%20%28netcat%29/page.html' target='viewer'>nc (netcat)</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("a4aa17fe-ae8b-46ec-9932-380333fdd7f6", false)'>+</a>&nbsp;</tt>2.5 Processes</nobr><br/>
+<div id='a4aa17fe-ae8b-46ec-9932-380333fdd7f6' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.5%20processes/ps/page.html' target='viewer'>ps</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/2.5%20processes/ptrace/page.html' target='viewer'>ptrace</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("b08d8193-7f52-437a-ad9c-28093683f2b2", false)'>+</a>&nbsp;</tt>3.0 services</nobr><br/>
+<div id='b08d8193-7f52-437a-ad9c-28093683f2b2' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/service/page.html' target='viewer'>service</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/systemctl/page.html' target='viewer'>systemctl</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/ufw%202/page.html' target='viewer'>UFW</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/ssh/page.html' target='viewer'>SSH</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/ftp/page.html' target='viewer'>FTP</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/mysql/page.html' target='viewer'>mysql</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/apache2/page.html' target='viewer'>apache2</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/simplehttpserver/page.html' target='viewer'>simpleHTTPServer</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/3.0%20services/http.server/page.html' target='viewer'>http.server</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("766ab40c-0d57-4e4f-a6ac-d56468682ae8", false)'>+</a>&nbsp;</tt>4.0 install</nobr><br/>
+<div id='766ab40c-0d57-4e4f-a6ac-d56468682ae8' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='linux/4.0%20install/apt%20%20%28advanced%20package%20tool%29/page.html' target='viewer'>apt  (advanced package tool)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='linux/4.0%20install/git/page.html' target='viewer'>git</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("84111c83-ff70-4c11-953f-1d6df8539573", false)'>+</a>&nbsp;</tt>WinDbg</nobr><br/>
+<div id='84111c83-ff70-4c11-953f-1d6df8539573' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/temp/page.html' target='viewer'>temp</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/start/page.html' target='viewer'>start</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/backtrace/page.html' target='viewer'>Backtrace</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/breakpoints/page.html' target='viewer'>Breakpoints</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/break%20on%20access/page.html' target='viewer'>Break on access</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/registers/page.html' target='viewer'>Registers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/memory/page.html' target='viewer'>Memory</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/display%20%28d%29/page.html' target='viewer'>Display (d)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/unassamble%20%28u%29/page.html' target='viewer'>Unassamble (u)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/set%20exception%20%28sx%29/page.html' target='viewer'>Set Exception (sx)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/l%20%28list%29%20m-n/page.html' target='viewer'>l (list) m/n</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/modules%20vs%20symbols/page.html' target='viewer'>Modules vs Symbols</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/plugin/page.html' target='viewer'>Plugin</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/swishdbg/page.html' target='viewer'>SwishDbg </a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/process/page.html' target='viewer'>Process</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/msrs/page.html' target='viewer'>MSRs</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/pool/page.html' target='viewer'>pool</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/miscellaneous/page.html' target='viewer'>miscellaneous</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='windbg/%21pte/page.html' target='viewer'>!pte</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("7e8e4be1-9ffd-4977-abe5-dd904f960321", false)'>+</a>&nbsp;</tt>Networking</nobr><br/>
+<div id='7e8e4be1-9ffd-4977-abe5-dd904f960321' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/general/page.html' target='viewer'>general</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("128c465f-2cb2-468f-b562-3cadfb442dc1", false)'>+</a>&nbsp;</tt>Week 1</nobr><br/>
+<div id='128c465f-2cb2-468f-b562-3cadfb442dc1' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/1%20the%20tcp-ip%20five-layer%20network%20model/page.html' target='viewer'>1 The TCP/IP Five-Layer Network Model</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/2%20tcp/page.html' target='viewer'>2 TCP</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/3%20udp/page.html' target='viewer'>3 UDP</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/4%20cables/page.html' target='viewer'>4 Cables</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/4.5%20network%20ports/page.html' target='viewer'>4.5 Network ports</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/5%20hubs%2C%20switches%20and%20routers/page.html' target='viewer'>5 Hubs, switches and routers</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("a5ede76a-9684-4476-b7d1-b5866d912b53", false)'>+</a>&nbsp;</tt>6 The Data Link Layer</nobr><br/>
+<div id='a5ede76a-9684-4476-b7d1-b5866d912b53' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/6%20the%20data%20link%20layer/1%20ethernet%20and%20mac%20address/page.html' target='viewer'>1 Ethernet and MAC address</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/6%20the%20data%20link%20layer/2%20unicast%2C%20multicast%2C%20and%20broadcast/page.html' target='viewer'>2 Unicast, Multicast, and Broadcast</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%201/6%20the%20data%20link%20layer/3%20ethernet%20frame%20structure/page.html' target='viewer'>3 Ethernet frame structure</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("02a132c2-3cdb-4b72-aac3-57a5b5c1f8dd", false)'>+</a>&nbsp;</tt>Week 2</nobr><br/>
+<div id='02a132c2-3cdb-4b72-aac3-57a5b5c1f8dd' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/1%20ip%20address%20%20datagram/page.html' target='viewer'>1 IP Address &amp; datagram</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/2%20ip%20classes/page.html' target='viewer'>2 IP classes</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/3%20arp%20-%20address%20resolution%20protocol/page.html' target='viewer'>3 ARP - Address Resolution Protocol</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/4%20subnetting%20%20cidr/page.html' target='viewer'>4 Subnetting &amp; CIDR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/5%20routers/page.html' target='viewer'>5 Routers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/6%20interior%20gateway%20protocols/page.html' target='viewer'>6 Interior Gateway Protocols</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/7%20exterior%20gateway%20protocols/page.html' target='viewer'>7 Exterior Gateway Protocols</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/8%20non-routable%20address%20space/page.html' target='viewer'>8 Non-Routable Address Space</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%202/8.2%20rfc/page.html' target='viewer'>8.2 RFC</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("bdcb4c3d-9f1e-4103-b36b-8f8b249f893e", false)'>+</a>&nbsp;</tt>Week 3</nobr><br/>
+<div id='bdcb4c3d-9f1e-4103-b36b-8f8b249f893e' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("f3e10c0c-5e85-4ab1-b302-8c75d43a3957", false)'>+</a>&nbsp;</tt>The Transport Layer</nobr><br/>
+<div id='f3e10c0c-5e85-4ab1-b302-8c75d43a3957' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20transport%20layer/1%20de-multiplexing/page.html' target='viewer'>1 De/Multiplexing</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20transport%20layer/2%20tcp%20%20segment/page.html' target='viewer'>2 TCP &amp; Segment</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20transport%20layer/3%20tcp%20control%20flags%20and%20the%20three-way%20ha/page.html' target='viewer'>3 TCP Control Flags and the Three-way Handshake</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20transport%20layer/4%20tcp%20socket%20states/page.html' target='viewer'>4 TCP Socket states</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20transport%20layer/5%20system%20ports%20versus%20ephemeral%20ports/page.html' target='viewer'>5 System Ports versus Ephemeral Ports</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("370b3aa9-2ebb-4d39-8c9d-c7fe9a4ea654", false)'>+</a>&nbsp;</tt>The Application Layer</nobr><br/>
+<div id='370b3aa9-2ebb-4d39-8c9d-c7fe9a4ea654' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%203/the%20application%20layer/new%20page/page.html' target='viewer'>New Page</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("339799a5-4c75-4428-a4c7-06fb1d2abc81", false)'>+</a>&nbsp;</tt>Week 4</nobr><br/>
+<div id='339799a5-4c75-4428-a4c7-06fb1d2abc81' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("97d87221-f901-42db-a2c1-4d93d88661ee", true)'>+</a>&nbsp;</tt>DNS</nobr><br/>
+<div id='97d87221-f901-42db-a2c1-4d93d88661ee' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dns/1%20name%20resolution%20-%20dns/page.html' target='viewer'>1 Name Resolution - DNS</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dns/1.2%20anycast/page.html' target='viewer'>1.2 Anycast</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dns/2%20resource%20record%20types/page.html' target='viewer'>2 Resource Record Types</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dns/3%20anatomy%20of%20a%20domain%20name/page.html' target='viewer'>3 Anatomy of a Domain Name</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dns/4%20dns%20zones/page.html' target='viewer'>4 DNS zones</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("a5ff33f5-b521-4fe2-a0db-d364eee067e1", false)'>+</a>&nbsp;</tt>DHCP</nobr><br/>
+<div id='a5ff33f5-b521-4fe2-a0db-d364eee067e1' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dhcp/1%20dhcp/page.html' target='viewer'>1 DHCP</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/dhcp/2%20dhcp%20in%20action/page.html' target='viewer'>2 DHCP in action</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("6417f194-e0dd-43c1-87c5-d32e7b2b2e1d", false)'>+</a>&nbsp;</tt>NAT</nobr><br/>
+<div id='6417f194-e0dd-43c1-87c5-d32e7b2b2e1d' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/nat/nat/page.html' target='viewer'>NAT</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("5eaaf75e-b939-4c2b-b9e3-cce64fc01089", false)'>+</a>&nbsp;</tt>VPNs &amp; Proxies</nobr><br/>
+<div id='5eaaf75e-b939-4c2b-b9e3-cce64fc01089' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/vpns%20%20proxies/vpn/page.html' target='viewer'>VPN</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%204/vpns%20%20proxies/proxy/page.html' target='viewer'>Proxy</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("79d5cbb1-5d34-4d4b-90da-164e17aee620", false)'>+</a>&nbsp;</tt>Week 5</nobr><br/>
+<div id='79d5cbb1-5d34-4d4b-90da-164e17aee620' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/1%20broadband/page.html' target='viewer'>1 Broadband</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/2%20t-carrier/page.html' target='viewer'>2 T-Carrier</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/3%20dsl/page.html' target='viewer'>3 DSL</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/4%20cable%20broadband/page.html' target='viewer'>4 Cable broadband</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/5%20fiber%20connections/page.html' target='viewer'>5 Fiber Connections</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/5%20ppp%20-%20point%20to%20point/page.html' target='viewer'>5 PPP - point to point</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/6%20wan/page.html' target='viewer'>6 WAN</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/7%20ieee%20802.11/page.html' target='viewer'>7 IEEE 802.11</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/8%20wifi%206/page.html' target='viewer'>8 WiFi 6</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/9%20wifi%20standards/page.html' target='viewer'>9 WiFi standards</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/10%20wireless%20network%20configuration/page.html' target='viewer'>10 Wireless network configuration</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/11%20channels/page.html' target='viewer'>11 Channels</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/12%20wireless%20security/page.html' target='viewer'>12 Wireless security</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%205/13%20cellular%20%28mobile%29/page.html' target='viewer'>13 Cellular (mobile)</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("295df297-b9ef-4997-8ea6-cc7cc0b4828e", true)'>+</a>&nbsp;</tt>Week 6</nobr><br/>
+<div id='295df297-b9ef-4997-8ea6-cc7cc0b4828e' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/1%20icmp%20-%20internet%20control%20messege%20protoc/page.html' target='viewer'>1 ICMP - internet control messege protocol</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/2%20traceroute%20-%20tracert/page.html' target='viewer'>2 Traceroute / tracert</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/3%20testing%20port%20connectivity/page.html' target='viewer'>3 Testing Port Connectivity</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/4%20name%20resolution%20tools/page.html' target='viewer'>4 Name Resolution Tools</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/5%20public%20dns%20servers/page.html' target='viewer'>5 Public DNS servers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/6%20hosts%20files/page.html' target='viewer'>6 Hosts files</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/7%20cloud/page.html' target='viewer'>7 Cloud</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking/week%206/8%20ipv6/page.html' target='viewer'>8 IPv6</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("420356a1-6f19-400d-84f6-8c830334b197", false)'>+</a>&nbsp;</tt>ARM</nobr><br/>
+<div id='420356a1-6f19-400d-84f6-8c830334b197' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='arm/word%20size/page.html' target='viewer'>word size</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/arm%20%20thumb/page.html' target='viewer'>arm &amp; thumb</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/branch%20instructions/page.html' target='viewer'>Branch instructions</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/addressing%20modes/page.html' target='viewer'>Addressing modes</a></nobr><br/>
+<nobr><tt><a href='javascript: toggleDivName("e0141e55-d1b5-4006-ade9-884c0c728fe4", true)'>+</a>&nbsp;</tt>memory segments</nobr><br/>
+<div id='e0141e55-d1b5-4006-ade9-884c0c728fe4' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='arm/memory%20segments/text/page.html' target='viewer'>.text</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/memory%20segments/data/page.html' target='viewer'>.data</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/memory%20segments/stack/page.html' target='viewer'>stack</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("b13b404d-f000-480a-9a51-78689af2ba48", true)'>+</a>&nbsp;</tt>Registers</nobr><br/>
+<div id='b13b404d-f000-480a-9a51-78689af2ba48' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='arm/registers%202/registers/page.html' target='viewer'>registers</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/registers%202/lr/page.html' target='viewer'>lr</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/registers%202/pc/page.html' target='viewer'>pc</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/registers%202/cpsr/page.html' target='viewer'>cpsr</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/registers%202/spsr/page.html' target='viewer'>spsr</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("2194491c-6d92-41e1-b1be-6c47e7df7121", true)'>+</a>&nbsp;</tt>instructions</nobr><br/>
+<div id='2194491c-6d92-41e1-b1be-6c47e7df7121' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='arm/instructions/%21/page.html' target='viewer'>!</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/instructions/mov/page.html' target='viewer'>MOV</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/instructions/swi/page.html' target='viewer'>SWI</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/instructions/ldr%20str%202/page.html' target='viewer'>LDR STR</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='arm/instructions/ldm%20stm/page.html' target='viewer'>LDM STM</a></nobr><br/>
+</div>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("47e9bc20-988e-494b-817a-333d8a6a0687", false)'>+</a>&nbsp;</tt>miscellaneous</nobr><br/>
+<div id='47e9bc20-988e-494b-817a-333d8a6a0687' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/binary%20shifts/page.html' target='viewer'>Binary shifts</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/shadow%20stack%202/page.html' target='viewer'>Shadow Stack</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/stack%20canaries/page.html' target='viewer'>Stack Canaries</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/format%20string%20attack/page.html' target='viewer'>Format string attack</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/paging%20%28memory%29/page.html' target='viewer'>Paging (memory)</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='miscellaneous/binary%20bomb/page.html' target='viewer'>Binary Bomb</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("0cdd5b9a-385b-4ebc-b1f5-5cab52a9bab0", false)'>+</a>&nbsp;</tt>CTF's</nobr><br/>
+<div id='0cdd5b9a-385b-4ebc-b1f5-5cab52a9bab0' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("685c504c-d6f2-40bd-b965-d07227b69af7", false)'>+</a>&nbsp;</tt>pwnable tw</nobr><br/>
+<div id='685c504c-d6f2-40bd-b965-d07227b69af7' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20tw/start/page.html' target='viewer'>start</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("72dde071-6305-44f1-b3b6-545fca4df25c", false)'>+</a>&nbsp;</tt>pwnable kr</nobr><br/>
+<div id='72dde071-6305-44f1-b3b6-545fca4df25c' class='node_collapsed'><nobr><tt><a href='javascript: toggleDivName("e6d1edfc-b45b-4930-90aa-bafdd330e22d", true)'>+</a>&nbsp;</tt>Toddler's Bottle</nobr><br/>
+<div id='e6d1edfc-b45b-4930-90aa-bafdd330e22d' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/fd/page.html' target='viewer'>fd</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/col/page.html' target='viewer'>col</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/bof/page.html' target='viewer'>bof</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/flag/page.html' target='viewer'>flag</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/random/page.html' target='viewer'>random</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/passcode/page.html' target='viewer'>passcode</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='ctfs/pwnable%20kr/toddlers%20bottle/mistake/page.html' target='viewer'>mistake</a></nobr><br/>
+</div>
+</div>
+</div>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='trash' target='viewer'>Trash</a></nobr><br/>
+</div>
+</body></html>

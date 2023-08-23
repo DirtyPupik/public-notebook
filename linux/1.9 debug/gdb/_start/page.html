@@ -1,27 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>_start</title>
 </head><body>opening a file:<br/>
 from terminal, <b>gdb ./filename </b>or <b>gdb &lt;filename&gt;<br/>
-</b>from inside gdb, <b>file</b>&nbsp;command may be used<br/>
--q&#09;quite<br/>
+</b>from inside gdb, <b>file</b>command may be used<br/>
+-q	quite<br/>
 -fno-stack-protector<br/>
--static&#09;do not use dynamic linked library<br/>
+-static	do not use dynamic linked library<br/>
 <br/>
 <br/>
 running:<br/>
-<b>run / r&#09;&lt;arg1&gt; &lt;arg2&gt; ...</b><br/>
-<b>start</b>&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;start and break at entry point.<br/>
+<b>run / r	&lt;arg1&gt; &lt;arg2&gt; ...</b><br/>
+<b>start</b>										start and break at entry point.<br/>
 <b>c - continue<br/>
 </b>s - step<br/>
 <br/>
 <b><br/>
 </b>Disassembling<br/>
-<b>disas</b>&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;disas at current location<br/>
-<b>disas &lt;address or symbol name&gt;&#09;&#09;&#09;&#09;</b><br/>
-<b>disas /r&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;&#09;</b>display <b>raw</b>&nbsp;byte opcodes<br/>
+<b>disas</b>										disas at current location<br/>
+<b>disas &lt;address or symbol name&gt;				</b><br/>
+<b>disas /r										</b>display <b>raw</b>byte opcodes<br/>
 <br/>
 <br/>
 Continuously-updating Disassembly Display<br/>
@@ -29,12 +28,12 @@ Continuously-updating Disassembly Display<br/>
 <br/>
 <br/>
 Watchpoints - are utilizing hardware breakpoints behind the scene<br/>
-<b>watch &lt;address&gt;&#09;</b>&#09;&#09;&#09;Break On Write-Only Access<br/>
-<b>rwatch &lt;address&gt;</b>&#09;&#09;&#09;&#09;Break On Read-Only Access<br/>
-<b>awatch &lt;address&gt;&#09;</b>&#09;&#09;&#09;Break On Read-And-Write Access<br/>
+<b>watch &lt;address&gt;	</b>			Break On Write-Only Access<br/>
+<b>rwatch &lt;address&gt;</b>				Break On Read-Only Access<br/>
+<b>awatch &lt;address&gt;	</b>			Break On Read-And-Write Access<br/>
 <br/>
-Setting the access-size of watchpoints - can be done with C type casting<ul><li><b>watch *(char *) &lt;address&gt;</b>&#09;&#09;will set break if 1 byte is accessed from address (address+2 wouldnt set break)</li>
-<li><b>watch *(long long *) &lt;address&gt;</b>&#09;will set break if any of 8 bytes starting from address are acceessed.</li>
+Setting the access-size of watchpoints - can be done with C type casting<ul><li><b>watch *(char *) &lt;address&gt;</b>		will set break if 1 byte is accessed from address (address+2 wouldnt set break)</li>
+<li><b>watch *(long long *) &lt;address&gt;</b>	will set break if any of 8 bytes starting from address are acceessed.</li>
 </ul>
 <br/>
 <br/>

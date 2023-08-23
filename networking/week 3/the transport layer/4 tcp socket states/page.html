@@ -1,24 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>4 TCP Socket states</title>
-</head><body><b>LISTEN</b>&nbsp;- Listen means that a TCP socket is ready and listening for incoming connections.You'd see this on the server side only.<br/>
+</head><body><b>LISTEN</b>- Listen means that a TCP socket is ready and listening for incoming connections.You'd see this on the server side only.<br/>
 <br/>
-<b>SYN_SENT</b>&nbsp;- This means that a synchronization request has been sent, but the connection hasn't been established yet. You'd see this on the client side only.<br/>
+<b>SYN_SENT</b>- This means that a synchronization request has been sent, but the connection hasn't been established yet. You'd see this on the client side only.<br/>
 <br/>
-<b>SYN_RECEIVED</b>&nbsp;- This means that a socket previously in a listener state, has received a synchronization request and sent a SYN_ACK back. But it hasn't received the final ACK from the client yet. You'd see this on the server side only.<br/>
+<b>SYN_RECEIVED</b>- This means that a socket previously in a listener state, has received a synchronization request and sent a SYN_ACK back. But it hasn't received the final ACK from the client yet. You'd see this on the server side only.<br/>
 <br/>
 <br/>
 all the next states can exist for both sides:<br/>
 <br/>
-<b>ESTABLISHED</b>&nbsp;- This means that the TCP connection is in working order, and both sides are free to send each other data.<br/>
+<b>ESTABLISHED</b>- This means that the TCP connection is in working order, and both sides are free to send each other data.<br/>
 <br/>
-<b>FIN_WAIT</b>&nbsp;- This means that a FIN has been sent, but the corresponding ACK from the other end hasn't been received yet.<br/>
+<b>FIN_WAIT</b>- This means that a FIN has been sent, but the corresponding ACK from the other end hasn't been received yet.<br/>
 <br/>
-<b>CLOSE_WAIT</b>&nbsp;- This means that the connection has been closed at the TCP layer, but that the application that opened the socket hasn't released its hold on the socket yet.<br/>
+<b>CLOSE_WAIT</b>- This means that the connection has been closed at the TCP layer, but that the application that opened the socket hasn't released its hold on the socket yet.<br/>
 <br/>
-<b>CLOSED</b>&nbsp;- This means that the connection has been fully terminated, and that no further communication is possible.<br/>
+<b>CLOSED</b>- This means that the connection has been fully terminated, and that no further communication is possible.<br/>
 <br/>
 <br/>
 socket states and their names, can vary from operating system to operating system. That's because they exist outside of the scope of the definition of TCP itself.</body></html>

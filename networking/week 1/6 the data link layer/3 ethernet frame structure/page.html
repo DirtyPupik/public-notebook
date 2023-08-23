@@ -1,16 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>3 Ethernet frame structure</title>
 </head><body><b>Ethernet frame - </b>a highly structured collection of information presented in a specific order<br/>
 <br/>
-<img src="image.png" width="700" height="131" /><br/>
+<img height="131" src="image.png" width="700"/><br/>
 <br/>
-<b>Preamble</b>&nbsp;is 8 bytes or 64 bits long and can itself be split into two sections.<br/>
+<b>Preamble</b>is 8 bytes or 64 bits long and can itself be split into two sections.<br/>
 The first seven bytes are a series of alternating ones and zeros.<br/>
 These act partially as a buffer between frames and can also be used by the network interfaces to synchronize internal clocks they use, to regulate the speed at which they send data.<br/>
 <br/>
-<b>SFD (</b>last byte in the preamble<b>)</b>&nbsp;or start frame delimiter. This signals to a receiving device that the preamble is over and that the actual frame contents will now follow.<br/>
+<b>SFD (</b>last byte in the preamble<b>)</b>or start frame delimiter. This signals to a receiving device that the preamble is over and that the actual frame contents will now follow.<br/>
 <br/>
 </body></html>

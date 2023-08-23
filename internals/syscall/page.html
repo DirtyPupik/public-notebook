@@ -1,22 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>syscall</title>
-</head><body>Communication between kernel and user spaces is preformed via a central dispatcher - several options exist.<ul><li>Call gates (not in use since win95)&#09;</li>
-<li>INT (0x2E in win XP-7, 10[1].&#09; 0x80 in linux, BSDs, macOS), up to 0x31 is reserved, beyoned is OS dependent.</li>
+</head><body>Communication between kernel and user spaces is preformed via a central dispatcher - several options exist.<ul><li>Call gates (not in use since win95)	</li>
+<li>INT (0x2E in win XP-7, 10[1].	 0x80 in linux, BSDs, macOS), up to 0x31 is reserved, beyoned is OS dependent.</li>
 </ul>
-<img src="image.png" width="500" height="242" /><br/>
+<img height="242" src="image.png" width="500"/><br/>
 <br/>
 But the most used method now is SYSCALL / SYSRET instructions.<br/>
 SYSENTER / SYSEXIT were aim to 32-bit.<br/>
 SYSCALL / SYSRET were aimed at 64-bit, instead of extending the previous ones.<br/>
-<img src="image 2.png" width="500" height="243" /><br/>
+<img height="243" src="image 2.png" width="500"/><br/>
 <br/>
 in terms of compatibility:<br/>
-<img src="image 3.png" width="500" height="353" /><br/>
+<img height="353" src="image 3.png" width="500"/><br/>
 <br/>
-<img src="image 4.png" width="650" height="221" /><br/>
+<img height="221" src="image 4.png" width="650"/><br/>
 <br/>
 <br/>
 <br/>
@@ -33,12 +32,12 @@ in terms of compatibility:<br/>
 0: kd&gt; rdmsr 0xC0000082<br/>
 msr[c0000082] = fffff804`2c437180<br/>
 0: kd&gt; ln fffff804`2c437180<br/>
-(fffff804`2c437180) &nbsp; nt!KiSystemCall64Shadow &#09;&#09;&lt;- this is the function name in kernel<br/>
+(fffff804`2c437180)  nt!KiSystemCall64Shadow 		&lt;- this is the function name in kernel<br/>
 <ul><li>What is the first assembly instruction?</li>
 </ul>
 looking at the disassembly:<br/>
-&nbsp; &nbsp; nt!KiSystemCall64Shadow:<br/>
-fffff804`2c437180 &#09;&#09;0f01f8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swapgs &nbsp;<br/>
+  nt!KiSystemCall64Shadow:<br/>
+fffff804`2c437180 		0f01f8        swapgs <br/>
 <ul><li>What is the ring 0 CS segment selector?</li>
 </ul>
 Loads CS with value stored in IA32_STAR MSR (0xC0000081) bits [47:32] and set SS = (CS + 8)<br/>
@@ -72,11 +71,11 @@ looking at GDT - DPL = 0x3, type data R+W accessed, BIG (32-bit stack pointer mo
 i really dont remember<br/>
 <ul><li>What is MSR 0xC0000083 probably used for based on it's value?</li>
 </ul>
-cheating - #define MSR_CSTAR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#09;0xc0000083 &#09;/* compat mode SYSCALL target */<br/>
+cheating - #define MSR_CSTAR       	0xc0000083 	/* compat mode SYSCALL target */<br/>
 0: kd&gt; rdmsr 0xc0000083 <br/>
 msr[c0000083] = fffff804`2c436e40<br/>
 0: kd&gt; ln fffff804`2c436e40<br/>
-(fffff804`2c436e40) &nbsp;&#09;&#09; nt!KiSystemCall32Shadow&#09;&#09;&lt;- it says syscall 32, compatibility mode<br/>
+(fffff804`2c436e40) 		 nt!KiSystemCall32Shadow		&lt;- it says syscall 32, compatibility mode<br/>
 <ul><li>What are the specific bits from RFLAGS which are masked out on SYSCALL?</li>
 </ul>
 Mask clear each bit of RFLAGS against IA32_FMASK MSR (0xC0000084)<br/>

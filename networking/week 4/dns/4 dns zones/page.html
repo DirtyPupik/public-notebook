@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>4 DNS zones</title>
 </head><body>the zones are hirarchial<br/>
 root servers are responsible for the root zone<br/>
@@ -9,10 +8,10 @@ TLD servers are responsible for the TLD zone<br/>
 <br/>
 zones don't overlap. For example, the administrative authority of the TLD name server for the.com TLD doesn't encompass the google.com domain. Instead, it ends at the authoritative server responsible for google.com<br/>
 <br/>
-<b>Zone files</b>&nbsp;- zones are configured through what are known as zone files, simple configuration files that declare all resource records for a particular zone.<br/>
+<b>Zone files</b>- zones are configured through what are known as zone files, simple configuration files that declare all resource records for a particular zone.<br/>
 zone files must contain SOA, NS records<br/>
-<b>SOA record</b>&nbsp;declares the zone and the name of the name server that is authoritative for it.<br/>
+<b>SOA record</b>declares the zone and the name of the name server that is authoritative for it.<br/>
 <b>NS records </b>indicate other name servers that may also be responsible for this zone.<br/>
 <br/>
-<b>reverse lookup zone files</b>&nbsp;these let DNS resolvers ask for an IP, and get the FQDN associated with it returned.<br/>
+<b>reverse lookup zone files</b>these let DNS resolvers ask for an IP, and get the FQDN associated with it returned.<br/>
 these files contain pointer resource record declarations (a different type of record like A and AAAA). a PTR, or Pointer Record, resolves an IP to a name.</body></html>

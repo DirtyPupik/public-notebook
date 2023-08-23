@@ -1,91 +1,90 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Segment Descriptor</title>
 </head><body>Segment Descriptor is a record in GDT or LDT, it is selected by the segment selector and catched into the hidden part of a segment register.<br/>
 <br/>
-<img src="image.png" width="700" height="562" /><br/>
-<img src="image 2.png" width="450" height="170" /><br/>
+<img height="562" src="image.png" width="700"/><br/>
+<img height="170" src="image 2.png" width="450"/><br/>
 if L-bit is set (1) we are in 64-bit mode. otherwise 32.<br/>
 <br/>
 <br/>
 <br/>
-<img src="image 3.png" width="700" height="534" /><ul><li style="list-style-type: none">The Base address is stored in MSR's.</li>
+<img height="534" src="image 3.png" width="700"/><ul><li style="list-style-type: none">The Base address is stored in MSR's.</li>
 </ul>
 <br/>
-<img src="image 4.png" width="600" height="364" /><br/>
-<img src="image 5.png" width="600" height="350" /><br/>
-<img src="image 6.png" width="600" height="370" /><ul><li style="list-style-type: none">Error will arise when trying to access a segment descriptor with 0 P flag.</li>
+<img height="364" src="image 4.png" width="600"/><br/>
+<img height="350" src="image 5.png" width="600"/><br/>
+<img height="370" src="image 6.png" width="600"/><ul><li style="list-style-type: none">Error will arise when trying to access a segment descriptor with 0 P flag.</li>
 </ul>
 <br/>
-<img src="image 7.png" width="600" height="267" /><br/>
+<img height="267" src="image 7.png" width="600"/><br/>
 <br/>
 0x<br/>
 <br/>
-<img src="image 8.png" width="600" height="303" /><br/>
-<img src="image 9.png" width="800" height="581" /><br/>
-<img src="image 10.png" width="600" height="356" /><br/>
+<img height="303" src="image 8.png" width="600"/><br/>
+<img height="581" src="image 9.png" width="800"/><br/>
+<img height="356" src="image 10.png" width="600"/><br/>
 <b><br/>
-</b><b>Conforming VS Non-Conforming</b><ul><li style="list-style-type: none"><b>Conforming</b>&nbsp;segments allow lower privilege code to execute them.</li>
+</b><b>Conforming VS Non-Conforming</b><ul><li style="list-style-type: none"><b>Conforming</b>segments allow lower privilege code to execute them.</li>
 <li style="list-style-type: none"><ul><li>Ring 3 code could jump into ring 0 conforming segments and keep running</li>
 <li>The purpose of Conforming code is to allow movement from ring 3 to ring 2. but no one applies use of rings 1&amp;2.</li>
 </ul>
 </li>
-<li><b>Non-Conforming</b>&nbsp;segments will throw a general protection fault if lower privilege level tries to execute them.</li>
+<li><b>Non-Conforming</b>segments will throw a general protection fault if lower privilege level tries to execute them.</li>
 </ul>
 <br/>
 Reminder of whats really happening with the ringy thingy:<br/>
-<img src="image 11.png" width="350" height="210" /><br/>
+<img height="210" src="image 11.png" width="350"/><br/>
 <br/>
 ***Note in Code segment - there is no E+W - essential for security - it is a metodology to only allow E^W for code segments. (execute xor write).<br/>
 <br/>
 <br/>
 <br/>
-<img src="image 12.png" width="800" height="531" /><br/>
+<img height="531" src="image 12.png" width="800"/><br/>
 <br/>
 <br/>
 <b>KGDTENRTY62 - Kernel GDT Entry 64<br/>
 </b>A struct used to view GDT records, in WinDbg:<br/>
-<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Open Sans"><b>dt -r (nt!_KGDTENTRY64)gdtr+(0x8*2)&#09;&#09;</b>2 being the index, can be replaced.</span></span></div>&nbsp;<b>&nbsp;<br/>
+<div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Open Sans"><b>dt -r (nt!_KGDTENTRY64)gdtr+(0x8*2)		</b>2 being the index, can be replaced.</span></span></div><b><br/>
 </b><b><br/>
 </b><br/>
-<img src="image 13.png" width="600" height="504" /><br/>
+<img height="504" src="image 13.png" width="600"/><br/>
 <br/>
 <br/>
-<img src="image 14.png" width="500" height="225" /><br/>
+<img height="225" src="image 14.png" width="500"/><br/>
 Bit-22 (D/B Flag) has different use's according to the descriptor type.<br/>
 <br/>
-When the type of the segment descriptor is <b>Code Segment</b><ul><li>bit-22 stands for "D" (Default Opcode Size) flag.</li>
+When the type of the segment descriptor is <b>Code Segment</b><ul><li>bit-22 stands for &quot;D&quot; (Default Opcode Size) flag.</li>
 <li>D flag is what actually controls whether an overloaded opcode is interpreted as dealing with 16 or 32 bit register / memory size.</li>
-<li style="list-style-type: none"><span style="font-size: 11pt">***An<b>&nbsp;"overloaded opcode"</b>&nbsp;refers to a situation in which a single opcode or mnemonic can have different meanings or perform different operations depending on the context or operands involved. In other words, the same opcode can be used to represent multiple instructions with different functionalities.</span></li>
+<li style="list-style-type: none"><span style="font-size: 11pt">***An<b>&quot;overloaded opcode&quot;</b>refers to a situation in which a single opcode or mnemonic can have different meanings or perform different operations depending on the context or operands involved. In other words, the same opcode can be used to represent multiple instructions with different functionalities.</span></li>
 </ul>
-<img src="image 15.png" width="300" height="52" /><br/>
+<img height="52" src="image 15.png" width="300"/><br/>
 The answer to how to interprete the 0x25 opcode is based on the code segment the code was found in.<ul><li>if D flag == 0 its 16 bit default size</li>
 <li>if D flag == 1 its 32 bit default size</li>
 </ul>
-"The instruction prefix 66H (0x66) can be used to select an operand size other than default."<br/>
+&quot;The instruction prefix 66H (0x66) can be used to select an operand size other than default.&quot;<br/>
 <br/>
-When the type of the segment descriptor is <b>Stack segment</b><ul><li>bit-22 stands for "B" (Big) flag</li>
+When the type of the segment descriptor is <b>Stack segment</b><ul><li>bit-22 stands for &quot;B&quot; (Big) flag</li>
 <li>Controls whether implicit stack pointer usage (e.g. push/pop/call) moves stack pointer by 16 bits (if B==0) or 32 bits (if B==1) at a time.</li>
 </ul>
 <br/>
 When the type of the segment descriptor is <b>Expand-Down Data segment</b><br/>
-<b>*not actually in use</b><ul><li>bit-22 stands for "B" (Bounds) flag</li>
+<b>*not actually in use</b><ul><li>bit-22 stands for &quot;B&quot; (Bounds) flag</li>
 </ul>
 <br/>
 if B==0 upper bound of 0xFFFF, if B==1 upper bound of 0xFFFFFFFF.<br/>
 <br/>
 <br/>
-<img src="image 16.png" width="600" height="455" /><br/>
+<img height="455" src="image 16.png" width="600"/><br/>
 <br/>
 <br/>
 <br/>
-<img src="image 17.png" width="600" height="298" /><br/>
+<img height="298" src="image 17.png" width="600"/><br/>
 <br/>
 The System descriptor is 16-bytes long.<br/>
 it is extended to be able to contain a 64-bit address (regular segement descriptor can contain 32bit address, and FS &amp; GS base address is stored in MSR's).<br/>
-<img src="image 18.png" width="600" height="627" /><br/>
+<img height="627" src="image 18.png" width="600"/><br/>
 <br/>
 <br/>
 <br/>

@@ -1,20 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>NAT</title>
 </head><body>Network Address Translation<br/>
 Unlike protocols like DNS and DHCP, network address translation or NAT, is a technique instead of a defined standard.<br/>
 NAT takes one IP and translates it to another, it has few ways to do that, the most common is PAT (port address translation, aka NAT overload)<br/>
 the NAT changes the private IP of a device on a network to a public global IP of the router (supplied by the ISP), the router keeps the port number<br/>
-<b>Port preservation</b>&nbsp;is a technique where the source port chosen by a client, is the same port used by the router.<br/>
+<b>Port preservation</b>is a technique where the source port chosen by a client, is the same port used by the router.<br/>
 through the port number, the router will know to which device and what app the response should be returned<br/>
 the router builds a NAT table:<br/>
-<img src="image.png" width="300" height="77" /><br/>
+<img height="77" src="image.png" width="300"/><br/>
 the port chosen by a device is ephemeral port (49152–65535), <b>collision is possible</b><br/>
 <br/>
 port forwarding - 1 to 1 port address translation, its kinda like a fixed port per device<br/>
-<img src="image 2.png" width="500" height="243" /><br/>
+<img height="243" src="image 2.png" width="500"/><br/>
 <br/>
 <br/>
 <br/>

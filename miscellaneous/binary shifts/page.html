@@ -1,24 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Binary shifts</title>
-</head><body><b>Logic shift</b>&nbsp;- shift all bits, left or right.<br/>
+</head><body><b>Logic shift</b>- shift all bits, left or right.<br/>
 <br/>
 shift left (&lt;&lt;) will double the number by 2<br/>
-0001 &lt;&lt; 1 &#09;= 0010 &lt;&lt; 1&#09; = 0100<br/>
-1&#09;&#09;&#09;&#09;2&#09;&#09;&#09;4<br/>
+0001 &lt;&lt; 1 	= 0010 &lt;&lt; 1	 = 0100<br/>
+1				2			4<br/>
 <br/>
 right shift will divide by 2 and a modulus of 1 might be left (round the number down)<br/>
-1101 &gt;&gt; 1&#09;=&#09;0110 &gt;&gt; 1&#09;=&#09;0011 &gt;&gt; 1&#09;=&#09;0001<br/>
-13&#09;&#09;&#09;&#09;6 mod 1&#09;&#09;&#09;3&#09;&#09;&#09;&#09;1 mod 1<br/>
+1101 &gt;&gt; 1	=	0110 &gt;&gt; 1	=	0011 &gt;&gt; 1	=	0001<br/>
+13				6 mod 1			3				1 mod 1<br/>
 <br/>
 <b>Arithmetic shift - </b>only right shift<b><br/>
 </b><br/>
-<b>right shift</b>&nbsp;- will preserve the sign bit (round the number up)<br/>
+<b>right shift</b>- will preserve the sign bit (round the number up)<br/>
 (to calculate two's complement, substract 1 and flip all bits to get the absolute value)<br/>
-1110`0101 &gt;&gt; 1&#09;=&#09;1111`0010 &gt;&gt; 1 &#09;=&#09;1111`1001<br/>
--27&#09;&#09;&#09;&#09;&#09;-14&#09;&#09;&#09;&#09;&#09;-7 <br/>
-<img src="image.png" width="450" height="84" /><br/>
+1110`0101 &gt;&gt; 1	=	1111`0010 &gt;&gt; 1 	=	1111`1001<br/>
+-27					-14					-7 <br/>
+<img height="84" src="image.png" width="450"/><br/>
 <br/>
-<b>left arithmetic shift</b>&nbsp;is the same as left logical shift</body></html>
+<b>left arithmetic shift</b>is the same as left logical shift</body></html>

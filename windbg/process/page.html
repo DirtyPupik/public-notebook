@@ -1,19 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Process</title>
 </head><body><div style="text-align: left"><span style="font-family: Open Sans"><span style="font-size: 16pt">Documentation for (Display information) </span></span></div><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-process">!process</a><br/>
-<span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">Documentation for (Set Process Context) </div></span></span><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-process--set-process-context-">.process</a>&nbsp; <br/>
+<span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left">Documentation for (Set Process Context) </div></span></span><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-process--set-process-context-">.process</a> <br/>
 <br/>
 When examining the current process context in windbg, DirBase points to the directory base address of the process (i.e PML5\4 \ PDPT..).<br/>
-It has the same value of the CR3. <ul><li style="list-style-type: none">&nbsp; <img src="image 2.png" /></li>
+It has the same value of the CR3. <ul><li style="list-style-type: none"> <img src="image 2.png"/></li>
 </ul>
 <br/>
 <br/>
 Display the current process context<ul><li style="list-style-type: none">!process -1 [flags]</li>
 <b><li style="list-style-type: none">0: kd&gt; !process -1 0</li>
-<li style="list-style-type: none"></li>
+<li style="list-style-type: none"/>
 </b></ul>
 Listing all processes:<ul><li style="list-style-type: none">!process 0 [flags]</li>
 <li style="list-style-type: none"><b>2: kd&gt; !process 0 0</b></li>
@@ -28,7 +27,7 @@ Search for the process context based on executable process ID (PID):<ul><li styl
 Where the Process ID can be found with tools like Task Manager.<ul><li style="list-style-type: none"><b>0: kd&gt; !process 0x1b44 0</b></li>
 </ul>
 <br/>
-<b>Change</b>&nbsp;process context to target executable:<ul><li style="list-style-type: none">.process /i /r /p ["PROCESS" address from !process output]</li>
+<b>Change</b>process context to target executable:<ul><li style="list-style-type: none">.process /i /r /p [&quot;PROCESS&quot; address from !process output]</li>
 <li style="list-style-type: none"><b>0: kd&gt; .process /i /r /p ffffcd089d5d4300</b></li>
 </ul>
 You need to continue execution (press 'g' &lt;enter&gt;) for the context<br/>

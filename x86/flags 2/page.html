@@ -1,28 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Flags</title>
 </head><body>in x64, the eflags register is extended to 64 bit rflags, though the upper 32 bits of the register are reserved and not in use.<br/>
 <ul><li>When suspending a task, the processor automatically saves the state of the EFLAGS register in the task state segment (TSS). </li>
 <li>When a call is made to an interrupt or exception handler procedure, the processor automatically saves the state of the EFLAGS registers on the procedure stack. When an interrupt or exception is handled with a task switch, the state of the EFLAGS register is saved in the TSS.</li>
 </ul>
 <br/>
-&nbsp; <br/>
+ <br/>
 <br/>
 mainly there are 3 types of flags, Status flags, Control flags and System flags.<br/>
 <br/>
 <br/>
 <b>ZF - Zero Flag (6) - </b>flag is set to 1 (true) if the result of an arithmetic operation equals to zero, set to 0 otherwise.<br/>
-<b>SF - Sign Flag (7) - </b>set to 1 (true), if the<b>&nbsp;</b>most significant bit of a result of is 1 (negative)<br/>
+<b>SF - Sign Flag (7) - </b>set to 1 (true), if the<b/>most significant bit of a result of is 1 (negative)<br/>
 <br/>
-| Overflow &nbsp;&#09;| OV |<br/>
-| Direction &#09;| UP |<br/>
-| Interrupt &#09;| EI &#09;|<br/>
-| Sign &nbsp; &nbsp; &nbsp;&#09;| PL |<br/>
-| Zero &nbsp; &nbsp; &nbsp;&#09;| ZR |<br/>
-| Auxiliary &#09;| AC |<br/>
-| Parity &nbsp; &nbsp;&#09;| PE |<br/>
-| Carry &nbsp; &nbsp; &#09;| CY |<br/>
+| Overflow 	| OV |<br/>
+| Direction 	| UP |<br/>
+| Interrupt 	| EI 	|<br/>
+| Sign   	| PL |<br/>
+| Zero   	| ZR |<br/>
+| Auxiliary 	| AC |<br/>
+| Parity  	| PE |<br/>
+| Carry   	| CY |<br/>
 <br/>
-<img src="image.png" /></body></html>
+<img src="image.png"/></body></html>

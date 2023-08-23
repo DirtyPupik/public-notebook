@@ -1,15 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>SSH</title>
 </head><body>a <b>secure shell </b>connection<br/>
-<b>sshd</b>&nbsp;- daemon - server part<br/>
+<b>sshd</b>- daemon - server part<br/>
 <br/>
 syntex:<br/>
-<b><span style="font-size: 15pt">ssh &#09;&#09;-p2222&#09;&#09;fd@pwnable.kr&#09; </span></b><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">port&#09;&#09; &nbsp; &nbsp; &lt;user&gt; @ &lt;domain&gt;</li>
-<li style="list-style-type: none"></li>
-<li style="list-style-type: none"><b><u>&nbsp; commands</u></b></li>
+<b><span style="font-size: 15pt">ssh 		-p2222		fd@pwnable.kr	 </span></b><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">port		   &lt;user&gt; @ &lt;domain&gt;</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"><b><u> commands</u></b></li>
 </ul>
 </li>
 </ul>
@@ -17,26 +16,26 @@ syntex:<br/>
 </ul>
 </li>
 </ul>
-service ssh start &#09;&#09;&#09;start the ssh service <br/>
-service ssh stop &#09;&#09;&#09;stop the ssh service <br/>
-service ssh status &#09;&#09;&#09;check the status of the ssh service &nbsp;<br/>
-systemctl restart ssh.service&#09;<br/>
-ctrl+d &#09;&#09;log out<br/>
+service ssh start 			start the ssh service <br/>
+service ssh stop 			stop the ssh service <br/>
+service ssh status 			check the status of the ssh service <br/>
+systemctl restart ssh.service	<br/>
+ctrl+d 		log out<br/>
 <br/>
 <br/>
 <br/>
 <br/>
-every time a new ssh connection is made, it may be added to <b>known_hosts </b>file in the <b>root/.ssh</b>&nbsp;dir<br/>
+every time a new ssh connection is made, it may be added to <b>known_hosts </b>file in the <b>root/.ssh</b>dir<br/>
 each server has a uniqe <b>fingerprint </b><a href="https://www.pentestpartners.com/security-blog/how-to-abuse-ssh-keys/">(session faking? hijacking?)</a><br/>
 <br/>
 <br/>
-<b>"config" </b>file can be created in <b>root/.ssh </b>folder, its also where the <b>known_hosts </b>file is, allows to set up entries to frequently used servers<br/>
-<img src="image.png" width="250" height="101" /><br/>
+<b>&quot;config&quot; </b>file can be created in <b>root/.ssh </b>folder, its also where the <b>known_hosts </b>file is, allows to set up entries to frequently used servers<br/>
+<img height="101" src="image.png" width="250"/><br/>
 <br/>
 config file for our server / client info is at - <b>etc/ssh<br/>
 </b><b><br/>
-</b>in order to allow root login, change <b>PermitRootLogin </b>&nbsp;to <b>yes</b>&nbsp;and remove comment:<br/>
-<img src="image 2.png" width="400" height="42" /><br/>
+</b>in order to allow root login, change <b>PermitRootLogin </b>to <b>yes</b>and remove comment:<br/>
+<img height="42" src="image 2.png" width="400"/><br/>
 <br/>
 <br/>
 ssh can be set to use keys, in that case, the key is kept on the machine and no PW authentication is required.<br/>

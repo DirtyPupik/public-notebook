@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>passcode</title>
 </head><body>{Mommy told me to make a passcode based login system.<br/>
 My initial C code was compiled without any error!<br/>
@@ -11,84 +10,84 @@ ssh passcode@pwnable.kr -p2222 (pw:guest)}<br/>
 <br/>
 looking at the code<br/>
 we have main function that calls welcome and login functions<br/>
-<img src="image.png" width="750" height="201" /><br/>
+<img height="201" src="image.png" width="750"/><br/>
 <br/>
 welcome:<br/>
 takes a 100 chars from user input into main char array<br/>
-<img src="image 2.png" width="400" height="128" /><br/>
+<img height="128" src="image 2.png" width="400"/><br/>
 <br/>
 login:<br/>
 <b><span style="font-size: 18pt">(scanf takes an address and writes to it's memory.<br/>
-this&#09;&#09;&amp;var&#09;is an address<br/>
-this&#09;&#09;var&#09;&#09;is a value<br/>
+this		&amp;var	is an address<br/>
+this		var		is a value<br/>
 </span><span style="font-size: 18pt">scanf will take anything and treat it as an address.)</span><span style="font-size: 22pt"><br/>
 </span></b>takes a user input as a decimal integer and puts in the memory contained at the address passcode is pointing at<br/>
 in an initial state, passcode is initialized to 0.<br/>
-the correct writing is <b>scanf("%d", &amp;passcode)</b><br/>
+the correct writing is <b>scanf(&quot;%d&quot;, &amp;passcode)</b><br/>
 without the &amp;, it means, in our case, go to the value of passcode, eg 0, treat it as an address, and write to its memory.<br/>
-<img src="image 3.png" width="700" height="444" /><br/>
+<img height="444" src="image 3.png" width="700"/><br/>
 <br/>
 when trying to execute the program, welcome works fine, yet login() crashes with decimal number in segmentation fault and passes the second auth with string<br/>
-<img src="image 4.png" width="400" height="297" /><br/>
+<img height="297" src="image 4.png" width="400"/><br/>
 <br/>
 disassembling and playing<br/>
 main:<br/>
-<img src="image 5.png" width="550" height="297" /><br/>
+<img height="297" src="image 5.png" width="550"/><br/>
 <br/>
 welcome:<br/>
-<img src="image 6.png" width="600" height="497" /><br/>
+<img height="497" src="image 6.png" width="600"/><br/>
 lets write 100 A's to the buffer to fill it completely, set a break to the printf call at the end of welcome, and check that our name is at address of ebp-0x70<br/>
-<img src="image 7.png" width="450" height="95" /><br/>
+<img height="95" src="image 7.png" width="450"/><br/>
 name is stored at ebp-0x70 <br/>
 <br/>
 <br/>
 login:<br/>
-<img src="image 8.png" width="750" height="824" /><br/>
+<img height="824" src="image 8.png" width="750"/><br/>
 <br/>
 passcode1 is stored at $ebp-0x10, if we look at the memory, its overwritten by the name buffer, the last 4 characters of it<br/>
-<img src="image 9.png" /><br/>
+<img src="image 9.png"/><br/>
 accodingly. we are able to set passcode1's initial value through the name buffer<br/>
 <br/>
 to deeply understand the activity of scanf(), i have made a small scrip to examine it's assmbly.<br/>
-<img src="image 10.png" width="250" height="253" /><br/>
+<img height="253" src="image 10.png" width="250"/><br/>
 using &amp; will take the actual address with lea instruction<br/>
 while without &amp;, we are taking the value inside that address<br/>
-<img src="image 11.png" /><br/>
+<img src="image 11.png"/><br/>
 <br/>
 in the correct way of using scanf, the address of a variable is taken with lea, and the user input is written to memory of that address: <br/>
-<img src="image 12.png" /><br/>
+<img src="image 12.png"/><br/>
 <br/>
-in our case, <b>scanf("%d", passcode1)</b>, we take the value of passcode, treat it as an address and change the memory written at that address.<br/>
-we already know we can overwrite <b>passcode1</b>'s value, now we know that the value of <b>passcode1</b>&nbsp;will be treated as an address and it's memory will be changed.<br/>
+in our case, <b>scanf(&quot;%d&quot;, passcode1)</b>, we take the value of passcode, treat it as an address and change the memory written at that address.<br/>
+we already know we can overwrite <b>passcode1</b>'s value, now we know that the value of <b>passcode1</b>will be treated as an address and it's memory will be changed.<br/>
 we can change the value of an address of our choice, how could that be useful?<br/>
-lets consider <b>jmp *address</b>&nbsp;instruction - this instruction will take the address, resolve the memory content of that address and set that to be the IP. we may control the IP and redirect it to cat the flag.<br/>
+lets consider <b>jmp *address</b>instruction - this instruction will take the address, resolve the memory content of that address and set that to be the IP. we may control the IP and redirect it to cat the flag.<br/>
 <br/>
 look at the next function call after scanf, there is a fflush<br/>
-<img src="image 13.png" width="700" height="95" /><br/>
+<img height="95" src="image 13.png" width="700"/><br/>
 asm:<br/>
-<img src="image 14.png" width="550" height="100" /><br/>
+<img height="100" src="image 14.png" width="550"/><br/>
 <br/>
 here we have a jmp instruction we can take advantage of.<br/>
-we may change the memory value of the address <b>0x804a004</b>&nbsp;to an address of our choice, so when that jmp instruction hits, it will go to <b>0x804a004</b>, look at its memory, and jump where ever that memory is pointing.<br/>
+we may change the memory value of the address <b>0x804a004</b>to an address of our choice, so when that jmp instruction hits, it will go to <b>0x804a004</b>, look at its memory, and jump where ever that memory is pointing.<br/>
 <br/>
 picking an address to go to:<br/>
-we would like to go to the part in the code of - <b>system("/bin/cat flag");<br/>
+we would like to go to the part in the code of - <b>system(&quot;/bin/cat flag&quot;);<br/>
 </b>in login() disas, we see a call to system@plt after the 2 compares, and an address moved to esp<br/>
-<img src="image 15.png" width="600" height="191" /><br/>
+<img height="191" src="image 15.png" width="600"/><br/>
 the address moved to esp is the string used in the system()<br/>
-<img src="image 16.png" width="350" height="54" /><br/>
+<img height="54" src="image 16.png" width="350"/><br/>
 we would like our IP to be set as instruction login+127 = 0x080485e3 - this is where we want to go.<br/>
 <br/>
 to summerize it:<br/>
-payload = "A"*96 + "address of jmp = <b>0x804a004</b>" + "address of new IP = &nbsp;0x080485e3"<br/>
+payload = &quot;A&quot;*96 + &quot;address of jmp = <b>0x804a004</b>&quot; + &quot;address of new IP = 0x080485e3&quot;<br/>
 <br/>
 the address of new IP needs to be unsigned decimal number representation of the hex address<br/>
 0x080485e3 -&gt; 134514147<br/>
 <br/>
-giving a final payload = (b"A"*96 + b"\x04\xa0\x04\x08" + b"134514147")<br/>
+giving a final payload = (b&quot;A&quot;*96 + b&quot;\x04\xa0\x04\x08&quot; + b&quot;134514147&quot;)<br/>
 <br/>
 addmiting the exploit, and we have a flag<br/>
-<img src="image 17.png" width="1200" height="96" /><br/>
+<img height="96" src="image 17.png" width="1200"/><br/>
 <br/>
 <br/>
 <br/>

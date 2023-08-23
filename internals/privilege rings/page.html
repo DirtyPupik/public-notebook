@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Privilege Rings</title>
 </head><body><b>Privilege Rings</b><br/>
 <br/>
@@ -9,17 +8,17 @@ There are 4 Privilege Rings, 0 being the kernel.<br/>
 de-facto, there are only two: kernel and userspace.<br/>
 <br/>
 <b>Protection rings</b><ul><li>Are the interaction between the Requested Privilege Level (RPL), Descriptor Privilege Level (DPL) and the Current Privilege Level (CPL).</li>
-<li>"The CPL is defined as the protection level of the currently executing code segment." (vol 3, sect 2.1.1).</li>
+<li>&quot;The CPL is defined as the protection level of the currently executing code segment.&quot; (vol 3, sect 2.1.1).</li>
 <li>CPL field are bits 0 and 1 of the CS register.</li>
 </ul>
-<img src="image.png" width="500" height="44" /><br/>
-<img src="image 2.png" width="400" height="227" /><br/>
+<img height="44" src="image.png" width="500"/><br/>
+<img height="227" src="image 2.png" width="400"/><br/>
 <br/>
 Can't the CPL be edited to level 0?<br/>
-<img src="image 3.png" width="350" height="96" /><br/>
+<img height="96" src="image 3.png" width="350"/><br/>
 though there are other ways to control CS. (e.g. call gates)<br/>
 <br/>
-<img src="image 4.png" width="400" height="226" /><br/>
+<img height="226" src="image 4.png" width="400"/><br/>
 <br/>
 <br/>
 </body></html>

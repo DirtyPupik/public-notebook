@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>5 System Ports versus Ephemeral Ports</title>
 </head><body><b>Three categories of ports</b><br/>
 Since a 16-bit number identifies ports, there can be 65,535 of them. Given the number of ports available, they have been divided into three categories by the Internet Assigned Numbers Authority (IANA): System Ports, User Ports, and Ephemeral Ports.<br/>
 <br/>
-<b>System Ports</b>&nbsp;are identified as ports 1 through 1023. System ports are reserved for common applications like FTP (port 21) and Telnet over TLS/SSL (port 992). Many still are not assigned. Note: Modern operating systems do not use system ports for outbound traffic.<br/>
+<b>System Ports</b>are identified as ports 1 through 1023. System ports are reserved for common applications like FTP (port 21) and Telnet over TLS/SSL (port 992). Many still are not assigned. Note: Modern operating systems do not use system ports for outbound traffic.<br/>
 <br/>
-<b>User Ports</b>&nbsp;are identified as ports 1024 through 49151. Vendors register user ports for their specific server applications. The IANA has officially registered some but not all of them.<br/>
+<b>User Ports</b>are identified as ports 1024 through 49151. Vendors register user ports for their specific server applications. The IANA has officially registered some but not all of them.<br/>
 <br/>
-<b>Ephemeral Ports (Ephemeral = lasting for a very short time)</b>&nbsp;(Dynamic or Private Ports) are identified as ports 49152 through 65535. Ephemeral ports are used as temporary ports for private transfers. Only clients use ephemeral ports.</body></html>
+<b>Ephemeral Ports (Ephemeral = lasting for a very short time)</b>(Dynamic or Private Ports) are identified as ports 49152 through 65535. Ephemeral ports are used as temporary ports for private transfers. Only clients use ephemeral ports.</body></html>

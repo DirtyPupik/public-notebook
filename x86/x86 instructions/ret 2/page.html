@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>ret</title>
 </head><body>RET - return from procedure<br/>
 <br/>
-two forms<ul><li>"ret" - most common, pop the top of the stack into RIP - pop increments RSP</li>
+two forms<ul><li>&quot;ret&quot; - most common, pop the top of the stack into RIP - pop increments RSP</li>
 <li style="list-style-type: none">(top of stack (RSP) -&gt; RIP &amp;&amp; RSP+0x08)</li>
 </ul>
-<ul><li>"ret 0x08" - less common, do the same as above, but also add a number of bytes to RSP</li>
+<ul><li>&quot;ret 0x08&quot; - less common, do the same as above, but also add a number of bytes to RSP</li>
 <li style="list-style-type: none">eg. ret 0x08 - add 8 bytes extra to RSP, ret 0x20 - add 32 bytes extra to RSP, </li>
 </ul>
 </body></html>

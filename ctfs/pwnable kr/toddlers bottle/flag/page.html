@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>flag</title>
 </head><body>{Papa brought me a packed present! let's open it.<br/>
 <br/>
@@ -10,47 +9,47 @@ Download : http://pwnable.kr/bin/flag<br/>
 This is reversing task. all you need is binary}<br/>
 <br/>
 downloading and looking at the binary<br/>
-<img src="image.png" /><br/>
+<img src="image.png"/><br/>
 <br/>
-<img src="image 11.png" /><br/>
+<img src="image 11.png"/><br/>
 hmmm<br/>
 <br/>
 trying to get a read:<br/>
-<b>readelf -a&#09;</b>we get nothing (and a complete mess)<br/>
-<img src="image 3.png" /><br/>
-<img src="image 2.png" /><br/>
+<b>readelf -a	</b>we get nothing (and a complete mess)<br/>
+<img src="image 3.png"/><br/>
+<img src="image 2.png"/><br/>
 <br/>
 also with objdump<br/>
-<img src="image 4.png" /><br/>
+<img src="image 4.png"/><br/>
 <br/>
 strings has one piece of info (mostly load of crap)<br/>
-<img src="image 5.png" /><br/>
+<img src="image 5.png"/><br/>
 <br/>
 gdb - no main func, and practically nothing<br/>
-<img src="image 6.png" /><br/>
+<img src="image 6.png"/><br/>
 <br/>
-ghidra - same, only thing that comes up is the "packed with the UPX"<br/>
+ghidra - same, only thing that comes up is the &quot;packed with the UPX&quot;<br/>
 <br/>
 notice the fat clue at the instructions of the challange<br/>
-"Papa brought me a packed present! let's open it."<br/>
+&quot;Papa brought me a packed present! let's open it.&quot;<br/>
 after reading a bit, we are dealing with a file packekd by a lossless algoritm called UPX<br/>
-"Ultimate Packer for eXecutables (UPX) is a free and opensource executable packer."<br/>
+&quot;Ultimate Packer for eXecutables (UPX) is a free and opensource executable packer.&quot;<br/>
 there are methods for manual unpacking, though there's also:<br/>
-<b>upx -d &lt;filename&gt;&#09;&#09;&#09;</b>(-d for decompress)<br/>
+<b>upx -d &lt;filename&gt;			</b>(-d for decompress)<br/>
 <br/>
 after decompressing, looking at the file, its not stripped<br/>
-<img src="image 7.png" /><br/>
+<img src="image 7.png"/><br/>
 <br/>
 in gdb, breakpoint at main and disas<br/>
-<img src="image 8.png" /><br/>
+<img src="image 8.png"/><br/>
 look who's here..<br/>
 well, my asm skills are not that great yet, neither my debugging with gdb.<br/>
 so i'll just open the file in ghidra to make life simple<br/>
 <br/>
 in ghidra, we see our flag right away<br/>
-<img src="image 9.png" /><br/>
+<img src="image 9.png"/><br/>
 going to that address<br/>
-<img src="image 10.png" /><br/>
+<img src="image 10.png"/><br/>
 done<br/>
 <br/>
 <br/>

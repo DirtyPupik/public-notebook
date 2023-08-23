@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>IA32_EFER</title>
 </head><body><b>EFER - Extended Feature Enables Register</b><br/>
 <br/>
@@ -10,9 +9,9 @@
 <br/>
 this msr sets the LME bit, which enables 64 bit long mode <br/>
 <br/>
-<img src="image.png" width="700" height="386" /><br/>
+<img height="386" src="image.png" width="700"/><br/>
 <br/>
-The IA32_EFER register is a model-specific register (MSR), which means it is directly accessible by software running in <b>privileged mode (Ring 0)</b>&nbsp;on x86 processors. As an MSR, it can be read and written by using special instructions such as RDMSR (Read MSR) and WRMSR (Write MSR).<br/>
+The IA32_EFER register is a model-specific register (MSR), which means it is directly accessible by software running in <b>privileged mode (Ring 0)</b>on x86 processors. As an MSR, it can be read and written by using special instructions such as RDMSR (Read MSR) and WRMSR (Write MSR).<br/>
 <br/>
 To enable or disable the Long Mode Enable (LME) bit in the IA32_EFER register, software running in privileged mode (usually an operating system kernel) needs to perform a write operation to the IA32_EFER register. Specifically, the software sets or clears the LME bit depending on whether it wants to enable or disable long mode.<br/>
 <br/>

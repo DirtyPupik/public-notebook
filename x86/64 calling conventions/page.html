@@ -1,37 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>64 Calling Conventions</title>
 </head><body>calling conventions are compiler dependent<br/>
-they can be devided to<ul><li>Register conventions - which registers "belong" to caller / callee</li>
+they can be devided to<ul><li>Register conventions - which registers &quot;belong&quot; to caller / callee</li>
 <li>Parameter-passing conventions - how a caller and callee pass arguments between them</li>
 </ul>
 <br/>
 <br/>
 <br/>
-<b><a href="https://stackoverflow.com/questions/9268586/what-are-callee-and-caller-saved-registers#:~:text=Caller%2Dsaved%20registers%20(AKA%20volatile,not%20be%20preserved%20across%20calls.">Register Conventions</a></b><ul><li><b>Caller-saved registers</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system"> (AKA </span></span></div><b>volatile</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system"> registers, or </span></span></div><b>call-clobbered</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">) are used to hold temporary quantities that need not be preserved across calls.</span></span></div>&nbsp; </li>
+<b><a href="https://stackoverflow.com/questions/9268586/what-are-callee-and-caller-saved-registers#:~:text=Caller%2Dsaved%20registers%20(AKA%20volatile,not%20be%20preserved%20across%20calls.">Register Conventions</a></b><ul><li><b>Caller-saved registers</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system"> (AKA </span></span></div><b>volatile</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system"> registers, or </span></span></div><b>call-clobbered</b><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: -apple-system">) are used to hold temporary quantities that need not be preserved across calls.</span></span></div> </li>
 </ul>
-<img src="image.png" width="450" height="300" /><br/>
-<img src="image 2.png" width="450" height="299" /><br/>
+<img height="300" src="image.png" width="450"/><br/>
+<img height="299" src="image 2.png" width="450"/><br/>
 <br/>
 <span style="font-family: inherit"><span style="font-size: 15pt"><b>Callee-saved registers</b> (AKA <b>non-volatile</b> registers, or <b>call-preserved</b>) are used to hold long-lived values that should be preserved across calls.<br/>
 </span></span><br/>
-<span style="font-family: -apple-system"><div style="text-align: left"><span style="font-size: 15pt">When the caller makes a procedure call, it can expect that those registers will hold the same value after the callee returns, making it the responsibility of the callee to save them </span><span style="font-size: 21pt"><b>and restore</b></span><span style="font-size: 15pt">&nbsp;them before returning to the caller. Or to not touch them.<br/>
+<span style="font-family: -apple-system"><div style="text-align: left"><span style="font-size: 15pt">When the caller makes a procedure call, it can expect that those registers will hold the same value after the callee returns, making it the responsibility of the callee to save them </span><span style="font-size: 21pt"><b>and restore</b></span><span style="font-size: 15pt">them before returning to the caller. Or to not touch them.<br/>
 </span></div></span><br/>
-if sub sub sub process needs to use all the registers, he will save the "call preserved" registers, use and abuse them, do whatever's on his mind, and before returning them, he will restore them to the "preserved" state they were.<br/>
+if sub sub sub process needs to use all the registers, he will save the &quot;call preserved&quot; registers, use and abuse them, do whatever's on his mind, and before returning them, he will restore them to the &quot;preserved&quot; state they were.<br/>
 <br/>
 <br/>
-<img src="image 3.png" width="450" height="248" /><br/>
-<img src="image 4.png" width="650" height="415" /><br/>
+<img height="248" src="image 3.png" width="450"/><br/>
+<img height="415" src="image 4.png" width="650"/><br/>
 <br/>
 <br/>
 <br/>
 <b>Parameter-passing conventions</b><ul><li>both compilers use a subset of the caller-save (volatile) registers to pass parameters in and out of functions</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">the common for both compilers:</li>
-<li>RAX or RDX:RAX&#09;&#09;- will pass out the return value</li>
-<li style="list-style-type: none"><ul><li>RAX &#09;&#09;&#09;&#09; &nbsp;- anything up to 64 bit</li>
-<li>RDX:RAX&#09;&#09; &#09; &nbsp;- 64 to 128 bit</li>
+<li>RAX or RDX:RAX		- will pass out the return value</li>
+<li style="list-style-type: none"><ul><li>RAX 				 - anything up to 64 bit</li>
+<li>RDX:RAX		 	 - 64 to 128 bit</li>
 </ul>
 </li>
 </ul>
@@ -39,13 +38,13 @@ if sub sub sub process needs to use all the registers, he will save the "call pr
 </ul>
 <br/>
 not common:<br/>
-<img src="image 5.png" width="450" height="343" /><br/>
-<img src="image 6.png" width="450" height="177" />&#09;&#09;<br/>
+<img height="343" src="image 5.png" width="450"/><br/>
+<img height="177" src="image 6.png" width="450"/>		<br/>
 <br/>
 (d,s,d,c,8,9)<br/>
 <br/>
 the table from before with parameter order in parenthesis<br/>
-<img src="image 7.png" width="650" height="296" /><br/>
+<img height="296" src="image 7.png" width="650"/><br/>
 <br/>
 <br/>
 </body></html>

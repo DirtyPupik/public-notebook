@@ -1,23 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Breakpoints</title>
-</head><body>bp documentation <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/methods-of-controlling-breakpoints">one</a>&nbsp;<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bp--bu--bm--set-breakpoint-">two<br/>
+</head><body>bp documentation <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/methods-of-controlling-breakpoints">one</a><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bp--bu--bm--set-breakpoint-">two<br/>
 </a><br/>
 bp &lt;address or symbol name&gt; /&lt;number&gt;<br/>
 <br/>
-bp $exentry &#09;&#09;&#09;&#09;executable entry point - bp at first assembly line of the binary, prior to main(), usually at ntdll.dll<br/>
+bp $exentry 				executable entry point - bp at first assembly line of the binary, prior to main(), usually at ntdll.dll<br/>
 <br/>
-bp 14FD596 /2&#09;&#09;&#09;break at 0x14fd596<br/>
+bp 14FD596 /2			break at 0x14fd596<br/>
 <br/>
-bl&#09;&#09;&#09;&#09;&#09;&#09;breakpoint list<br/>
+bl						breakpoint list<br/>
 <br/>
-bc &lt;bp number&gt;&#09;&#09;&#09;clear bp<br/>
+bc &lt;bp number&gt;			clear bp<br/>
 <br/>
-bd &lt;bp number&gt;&#09;&#09;&#09;disable bp<ul><li style="list-style-type: none"></li>
+bd &lt;bp number&gt;			disable bp<ul><li style="list-style-type: none"/>
 </ul>
-be &lt;bp number&gt;&#09;&#09;&#09;enable bp<br/>
+be &lt;bp number&gt;			enable bp<br/>
 <br/>
-bu ProgramName!FunctionName &nbsp;&#09;<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/unresolved-breakpoints---bu-breakpoints-">break unresolved</a>, in case function dosnt have a defined location<br/>
+bu ProgramName!FunctionName 	<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/unresolved-breakpoints---bu-breakpoints-">break unresolved</a>, in case function dosnt have a defined location<br/>
 </body></html>

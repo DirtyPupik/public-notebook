@@ -1,58 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Tasks &amp; TSS</title>
 </head><body>Tasks and Task State Segment (TSS)<br/>
 <br/>
-<span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left"> <b>dt -b (nt!_KTSS64) TSS_address</b>&nbsp;- interpret the memory at that address as a Microsoft _KTSS64 structure type</div></span></span>&nbsp; <br/>
+<span style="font-family: Open Sans"><span style="font-size: 16pt"><div style="text-align: left"> <b>dt -b (nt!_KTSS64) TSS_address</b>- interpret the memory at that address as a Microsoft _KTSS64 structure type</div></span></span> <br/>
 <br/>
 <ul><li>Tasks were a hardware mechanism to support multi-tasking, by saving/restoring task state (e.g. registers).</li>
 <li>Tasks are not in use in x86-64 anymore.</li>
 <li>Task State Segment (TSS) is still (and MUST be) in use by the OS. it is consulted when task switching occure due to interrupt.</li>
 </ul>
 <br/>
-<img src="image.png" width="550" height="374" /><br/>
+<img height="374" src="image.png" width="550"/><br/>
 <br/>
 <br/>
 TR stores number of byte from base of GDT to the TSS.<br/>
 in the below image, GDTR ends in 0xafb0, GDTL is 0x57, that gives 0xafb0+0x57 = 0xb007.<br/>
 each record in GDT is 8 byte, 0x57/0x8 = A (10 decimal), meaning there are 10 records with indices 0 to 9.<br/>
 the last record ends at 0xb007.<br/>
-in the example below TR stores 0x40, devided by 8 byte gives the <b>8th</b>&nbsp;record, as shown.<br/>
+in the example below TR stores 0x40, devided by 8 byte gives the <b>8th</b>record, as shown.<br/>
 <b><span style="font-size: 15pt">***importent - TR is a segment selector, first 3 bits are RPL and TI, in order to correctly point at the index, right shift by 3 must be preformed and not devide, TR acctually stores record number and not number of bytes from base of GDT, it is just left shifed by 3.</span></b><br/>
-<img src="image 9.png" /><br/>
+<img src="image 9.png"/><br/>
 <br/>
 <br/>
 <br/>
 In 64 bit there is no <b>Task Gate.</b><br/>
-<img src="image 2.png" width="350" height="106" /><br/>
+<img height="106" src="image 2.png" width="350"/><br/>
 <br/>
-<img src="image 3.png" width="400" height="240" /><br/>
+<img height="240" src="image 3.png" width="400"/><br/>
 <br/>
 <br/>
 <br/>
-<img src="image 4.png" width="400" height="434" /><br/>
+<img height="434" src="image 4.png" width="400"/><br/>
 TR points at TSSD in GDT, then the hidden catch is filled, and the TR will point to the TSS.<br/>
-&nbsp;<br/>
 <br/>
-<img src="image 5.png" width="500" height="535" /><br/>
+<br/>
+<img height="535" src="image 5.png" width="500"/><br/>
 <br/>
 <br/>
 <br/>
 <ul><li>The stack address where the temporary task switch info is stored is in a kernel address, where one cannot temper.</li>
-<li>IST - &nbsp;Interrupt Stack Table.</li>
+<li>IST - Interrupt Stack Table.</li>
 <li>Back in 32 and 16 bit, the TSS was used as its name implies, now in 64 bit, it merely points to a protected stack location.</li>
 </ul>
-<img src="image 6.png" width="750" height="570" /><br/>
+<img height="570" src="image 6.png" width="750"/><br/>
 <br/>
 <br/>
 <br/>
 One can find TSS records in GDT in windbg.<br/>
 Base address can be conjugated with given info.<br/>
-<img src="image 7.png" /><br/>
+<img src="image 7.png"/><br/>
 After address is found, one can examine the TSS structure. notice the address.<br/>
-<img src="image 8.png" /><br/>
+<img src="image 8.png"/><br/>
 <br/>
 <br/>
 <br/>

@@ -1,28 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>File Hierarchy Structure</title>
 </head><body>The Linux File Hierarchy Structure follows the <a href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html"><b>Filesystem Hierarchy Standard (FHS)</b></a>, a standard that defines the directory structure and directory contents in Unix-like operating systems.<br/>
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/linuxDir.jpg" /><img src="image.png" width="450" height="466" /><br/>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/linuxDir.jpg"/><img height="466" src="image.png" width="450"/><br/>
 <br/>
 *Binary files are the files which contain compiled source code (or machine code). They are also called executable files because they can be executed on the machine.<br/>
-Binary directory contains following directories:<ul><li><b>/bin</b>&#09;- contains user binaries, executable files, Linux commands that are used in single user mode, and common commands that are used by all the users, like cat, cp, cd, ls, etc.</li>
-<li><b>/sbin</b>&#09;- The '/sbin' directory also contains executable files, but unlike '/bin' it only contains system binaries which require root privilege to perform certain tasks and are helpful for system maintenance purpose. e.g. fsck, root, init, ifconfig, etc.</li>
-<li><b>/lib</b>&#09;- contains shared libraries which are often used by the '/bin' and '/sbin' directories. It also contains kernel module. These filenames are identable as ld* or lib*.so.*. For example, ld-linux.so.2 and libfuse.so.2.8.6</li>
-<li><b>/opt</b>&#09;- The term 'opt' is short for optional. Its main purpose is to store optional application software packages.</li>
+Binary directory contains following directories:<ul><li><b>/bin</b>	- contains user binaries, executable files, Linux commands that are used in single user mode, and common commands that are used by all the users, like cat, cp, cd, ls, etc.</li>
+<li><b>/sbin</b>	- The '/sbin' directory also contains executable files, but unlike '/bin' it only contains system binaries which require root privilege to perform certain tasks and are helpful for system maintenance purpose. e.g. fsck, root, init, ifconfig, etc.</li>
+<li><b>/lib</b>	- contains shared libraries which are often used by the '/bin' and '/sbin' directories. It also contains kernel module. These filenames are identable as ld* or lib*.so.*. For example, ld-linux.so.2 and libfuse.so.2.8.6</li>
+<li><b>/opt</b>	- The term 'opt' is short for optional. Its main purpose is to store optional application software packages.</li>
 </ul>
 <br/>
-other folders under root dir are:<ul><li><b>/boot</b>&#09;- Boot loader files, e.g., kernels, initrd.</li>
-<li><b>/dev</b>&#09;- Essential device files, e.g., /dev/null. These include terminal devices, usb, or any device attached to the system.</li>
-<li><b>/etc</b>&#09;- Host-specific system-wide configuration files. Contains configuration files required by all programs. This also contains startup and shutdown shell scripts used to start/stop individual programs.</li>
-<li><b>/media</b>&#09;- Mount points for removable media such as CD-ROMs. Temporary mount directory for removable devices.</li>
-<li><b>/mnt</b>&#09;- Temporarily mounted filesystems. Temporary mount directory where sysadmins can mount filesystems.</li>
-<li><b>/srv</b>&nbsp;&#09;- Site-specific data served by this system, such as data and scripts for web servers, data offered by FTP servers, and repositories for version control systems. srv stands for service. Contains server specific services related data.</li>
-<li><b>/tmp</b>&#09;- Temporary files. Often not preserved between system reboots, and may be severely size restricted. Files under this directory are deleted when system is rebooted.</li>
-<li><b>/proc&#09;</b>- Virtual filesystem providing process and kernel information as files. In Linux, corresponds to a procfs mount. Generally automatically generated and populated by the system, on the fly. Contains information about system process. This is a pseudo filesystem contains information about running process. For example: /proc/{pid} directory contains information about the process with that particular pid. This is a virtual filesystem with text information about system resources. For example: /proc/uptime</li>
-<li></li>
-<li></li>
+other folders under root dir are:<ul><li><b>/boot</b>	- Boot loader files, e.g., kernels, initrd.</li>
+<li><b>/dev</b>	- Essential device files, e.g., /dev/null. These include terminal devices, usb, or any device attached to the system.</li>
+<li><b>/etc</b>	- Host-specific system-wide configuration files. Contains configuration files required by all programs. This also contains startup and shutdown shell scripts used to start/stop individual programs.</li>
+<li><b>/media</b>	- Mount points for removable media such as CD-ROMs. Temporary mount directory for removable devices.</li>
+<li><b>/mnt</b>	- Temporarily mounted filesystems. Temporary mount directory where sysadmins can mount filesystems.</li>
+<li><b>/srv</b>	- Site-specific data served by this system, such as data and scripts for web servers, data offered by FTP servers, and repositories for version control systems. srv stands for service. Contains server specific services related data.</li>
+<li><b>/tmp</b>	- Temporary files. Often not preserved between system reboots, and may be severely size restricted. Files under this directory are deleted when system is rebooted.</li>
+<li><b>/proc	</b>- Virtual filesystem providing process and kernel information as files. In Linux, corresponds to a procfs mount. Generally automatically generated and populated by the system, on the fly. Contains information about system process. This is a pseudo filesystem contains information about running process. For example: /proc/{pid} directory contains information about the process with that particular pid. This is a virtual filesystem with text information about system resources. For example: /proc/uptime</li>
+<li/>
+<li/>
 </ul>
 <br/>
 <br/>

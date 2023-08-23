@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>dmesg</title>
 </head><body>dmesg prints the kernel ring buffer logs<br/>
 <br/>
 kernel keeps all the logs in a ring buffer<br/>
 this is done to avoid boot logs beeing lost until the syslog daemon starts and collects them and store them in var/log/dmesg<br/>
 <br/>
-dmesg -c&#09;&#09;will clear ring buffer after printing kernel<br/>
-dmesg -C&#09;&#09;will clear ring buffer, WILL NOT print kernel<br/>
-dmesg -t&#09;&#09;&#09;will <b>NOT</b>&nbsp;print timestamp<br/>
-dmesg -T&#09;&#09;will convert timestamp into human readble format</body></html>
+dmesg -c		will clear ring buffer after printing kernel<br/>
+dmesg -C		will clear ring buffer, WILL NOT print kernel<br/>
+dmesg -t			will <b>NOT</b>print timestamp<br/>
+dmesg -T		will convert timestamp into human readble format</body></html>

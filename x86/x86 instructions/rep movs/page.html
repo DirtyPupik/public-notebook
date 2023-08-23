@@ -1,17 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>rep movs</title>
 </head><body>rep movs - <b>Rep</b>eat <b>Mo</b>ve Data String to <b>S</b>tring<ul><li>Seen in JourneyToTheCenterOfMemcpy.c</li>
 <li>Occures when struct size is above 0x2000 and below 0x18000.</li>
 <li>rep movs is a memcpy instruction, it repeativly copies a string from a source to a destination.</li>
-<li>Unlike <b>mov</b>, <b>rep movs</b>&nbsp;can move memory to memory, but only between *si and *di.</li>
-<li><b>rep movs</b>&nbsp;is forced to use *si and *di, these registers are callee saved.</li>
-<li><b>Direction Flag (DF control flag)</b>&nbsp;affects the direction of writing, can be incrementing or decrementing *di and *si</li>
+<li>Unlike <b>mov</b>, <b>rep movs</b>can move memory to memory, but only between *si and *di.</li>
+<li><b>rep movs</b>is forced to use *si and *di, these registers are callee saved.</li>
+<li><b>Direction Flag (DF control flag)</b>affects the direction of writing, can be incrementing or decrementing *di and *si</li>
 </ul>
 <br/>
-<b>rep instruction:</b><ul><li>All rep operations use *cx register as a "counter".</li>
+<b>rep instruction:</b><ul><li>All rep operations use *cx register as a &quot;counter&quot;.</li>
 <li>Each time rep executes, *cx is decremented by 1.</li>
 <li>Once *cx == 0, it continues to the next instruction.</li>
 </ul>
@@ -23,6 +22,6 @@ Specifically for <b>rep movs</b>, it will either:<ul><li>Case 1: fill 1 byte at 
 <br/>
 Prerequisites for rep movs:<ul><li>Set *di to start of destination.</li>
 <li>Set *ax/al to the initializing value (value to store).</li>
-<li>Set *cx to the number of repeats.&#09;</li>
+<li>Set *cx to the number of repeats.	</li>
 </ul>
 </body></html>

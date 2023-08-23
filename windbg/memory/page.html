@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Memory</title>
 </head><body><a href="https://p.ost2.fyi/courses/course-v1:OpenSecurityTraining2+Dbg1011_WinDbg1+2021_v1/courseware/d020f57557e347529fa87b316a43c4e5/19803fcd787841369365ba76577b81a0/?child=first">Examine &amp; Modify Registers &amp; Memory</a><br/>
 <br/>
 <b>Read memory</b><br/>
 <br/>
-d*&#09;-&#09;display. b-byte, w-word, d-double, q-quad<br/>
+d*	-	display. b-byte, w-word, d-double, q-quad<br/>
 <br/>
 <span style="font-size: 16pt"><span style="font-family: Open Sans"><div style="text-align: left">db &lt;address&gt; L&lt;number&gt; == <b>d</b>isplays &lt;number&gt; <b>b</b>ytes starting at &lt;address&gt; <br/>
 </div></span></span><br/>
@@ -18,7 +17,7 @@ d*&#09;-&#09;display. b-byte, w-word, d-double, q-quad<br/>
 <span style="font-size: 16pt"><span style="font-family: Open Sans"><div style="text-align: left">da &lt;address&gt; == <b>d</b>isplays as <b>A</b>SCII string at that<span style="font-family: inherit"><span style="font-size: 1pt"> address until first null terminator</span></span><br/>
 </div></span></span><br/>
 <span style="font-size: 16pt"><span style="font-family: Open Sans"><div style="text-align: left">e.g.<br/>
-</div></span></span>0:000&gt; db rsp L6<ul><li style="list-style-type: none">00000000`0014fe08 &#09; ef be ad de 01 00</li>
+</div></span></span>0:000&gt; db rsp L6<ul><li style="list-style-type: none">00000000`0014fe08 	 ef be ad de 01 00</li>
 </ul>
 <br/>
 0:000&gt; dd rsp L6 <ul><li style="list-style-type: none">00000000`0014fe08  deadbeef 11100001 00000001 0000693d </li>
@@ -30,7 +29,7 @@ d*&#09;-&#09;display. b-byte, w-word, d-double, q-quad<br/>
 <li style="list-style-type: none">00000000`0014fe28  00000001`40001a4d 00000000`00000001</li>
 </ul>
 <br/>
-0:000&gt; da 00000001`40002220 <ul><li style="list-style-type: none">00000001`40002220 "First %d elements of the Fibbona" 00000001`40002240 "cci sequence: " &nbsp;</li>
+0:000&gt; da 00000001`40002220 <ul><li style="list-style-type: none">00000001`40002220 &quot;First %d elements of the Fibbona&quot; 00000001`40002240 &quot;cci sequence: &quot; </li>
 </ul>
 <br/>
 <br/>
@@ -43,14 +42,14 @@ d*&#09;-&#09;display. b-byte, w-word, d-double, q-quad<br/>
 <span style="font-size: 16pt"><span style="font-family: Open Sans"><div style="text-align: left">Utilize the e* forms, similar to the d* forms, to <b>e</b>nter values of a specific size into memory at a given address<br/>
 </div></span></span><br/>
 0:000&gt; eb rsp 0x11 0x22 0x33 0x44<br/>
-0:000&gt; db rsp L4<ul><li style="list-style-type: none">00000000`0014fe08  11 22 33 44                                      ."3D</li>
+0:000&gt; db rsp L4<ul><li style="list-style-type: none">00000000`0014fe08  11 22 33 44                                      .&quot;3D</li>
 </ul>
 <br/>
 0:000&gt; ed rsp 0xdeadbeef<br/>
 0:000&gt; dd rsp L1<ul><li style="list-style-type: none">00000000`0014fe08  deadbeef</li>
 </ul>
 <span style="font-size: 16pt"><span style="font-family: Open Sans"><div style="text-align: left"><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/e--ea--eb--ed--ed--ef--ep--eq--eu--ew--eza--ezu--enter-values-">MS documentation for full e* forms</a><br/>
-</div></span></span>&nbsp; <br/>
+</div></span></span> <br/>
 <br/>
 <br/>
 <br/>

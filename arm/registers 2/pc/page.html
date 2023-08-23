@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>pc</title>
-</head><body>&nbsp;The program counter is accessed as r15 (or pc). It is incremented by one word (four bytes - 32) for each instruction in ARM state, or by two bytes (16) in Thumb state. &nbsp;<br/>
-&nbsp; <br/>
-&nbsp;Branch instructions load the destination address into the program counter. &nbsp;<br/>
-&nbsp; <br/>
-&nbsp;The address of the currently executing instruction is typically pc–8 for ARM, or pc–4 for Thumb. <br/>
+</head><body>The program counter is accessed as r15 (or pc). It is incremented by one word (four bytes - 32) for each instruction in ARM state, or by two bytes (16) in Thumb state. <br/>
+ <br/>
+Branch instructions load the destination address into the program counter. <br/>
+ <br/>
+The address of the currently executing instruction is typically pc–8 for ARM, or pc–4 for Thumb. <br/>
 <br/>
 this means -<br/>
 <b><span style="font-size: 15pt">The actual PC value is always the address of the current instruction + 8 in ARM mode and +4 in Thumb</span></b><br/>
-&nbsp; </body></html>
+ </body></html>

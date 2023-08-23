@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>fd</title>
 </head><body><span style="font-size: 12pt">{<br/>
 Mommy! what is a file descriptor in Linux?<br/>
@@ -14,7 +13,7 @@ ssh fd@pwnable.kr -p 2222<br/>
 <br/>
 this task also refers to <b>setuid privilege escalation</b><br/>
 <br/>
-<b>A file descriptor</b>&nbsp;is a number that uniquely identifies an open file in a computer's operating system. It describes a data resource, and how that resource may be accessed.<br/>
+<b>A file descriptor</b>is a number that uniquely identifies an open file in a computer's operating system. It describes a data resource, and how that resource may be accessed.<br/>
 <br/>
 When a program asks to open a file — or another data resource, like a network socket — the kernel:<br/>
 1. Grants access.<br/>
@@ -27,37 +26,37 @@ File descriptors were first used in Unix, and are used by modern operating syste
 When a process makes a successful request to open a file, the kernel returns a file descriptor which points to an entry in the kernel's global file table. The file table entry contains information such as the inode of the file, byte offset, and the access restrictions for that data stream (read-only, write-only, etc.).<br/>
 <br/>
 On a Unix-like operating system, the first three file descriptors, by default, are STDIN (standard input), STDOUT (standard output), and STDERR (standard error).<br/>
-<img src="image.png" width="600" height="264" /><br/>
+<img height="264" src="image.png" width="600"/><br/>
 <br/>
 the stdout stream is buffered<br/>
 stderr is not buffered<br/>
 <br/>
-* file descriptors can be redirected (eg: find / -name '*something*' 2&gt;/dev/null &#09;&#09;all errors will be redirected)<br/>
+* file descriptors can be redirected (eg: find / -name '*something*' 2&gt;/dev/null 		all errors will be redirected)<br/>
 <br/>
 <b>solution:<br/>
 </b>after connection to the SSH we look at the files present<br/>
-<img src="image 2.png" width="550" height="157" /><br/>
+<img height="157" src="image 2.png" width="550"/><br/>
 <br/>
 our id is <b>fd,<br/>
-</b><img src="image 9.png" /><br/>
+</b><img src="image 9.png"/><br/>
 the flag isn't readble (its owned by <b>fd_pwn)</b><br/>
 <br/>
-the file <b>"fd"</b>&nbsp;if owned by <b>fd_pwn</b>, and group owner is <b>fd (thats us)</b>, in the group permission it has <b>x (exe)</b>, and in the owner permission <b>s (setuid),<br/>
-</b>meaning, the user <b>fd (us)</b>&nbsp;can execute the file "<b>fd"</b>&nbsp; as the owner (<b>fd_pwn), </b>who also happens to own the flag!<br/>
+the file <b>&quot;fd&quot;</b>if owned by <b>fd_pwn</b>, and group owner is <b>fd (thats us)</b>, in the group permission it has <b>x (exe)</b>, and in the owner permission <b>s (setuid),<br/>
+</b>meaning, the user <b>fd (us)</b>can execute the file &quot;<b>fd&quot;</b> as the owner (<b>fd_pwn), </b>who also happens to own the flag!<br/>
 <br/>
-<b>fd.c</b>&nbsp;is readable by our user:<br/>
-<img src="image 3.png" width="550" height="500" /><br/>
+<b>fd.c</b>is readable by our user:<br/>
+<img height="500" src="image 3.png" width="550"/><br/>
 looking at the source code:<br/>
 theres a 32 char long buffer<br/>
 when executing, a number needs to be passed, if passed, than exe continues.<br/>
 <br/>
-<img src="image 4.png" /><br/>
-<b>atoi - </b>converts a string <b>A</b>rgument <b>To</b>&nbsp;<b>I</b>nteger, specificaly, converts the user input into INT and than decresses 0x1234<br/>
+<img src="image 4.png"/><br/>
+<b>atoi - </b>converts a string <b>A</b>rgument <b>To</b><b>I</b>nteger, specificaly, converts the user input into INT and than decresses 0x1234<br/>
 <br/>
 in python3 in the terminal - int('number', base)<br/>
-<img src="image 5.png" /><br/>
+<img src="image 5.png"/><br/>
 or more simply<br/>
-<img src="image 10.png" /><br/>
+<img src="image 10.png"/><br/>
 <br/>
 <br/>
 so we have <b>fd = number - 4660</b><br/>
@@ -65,27 +64,27 @@ so we have <b>fd = number - 4660</b><br/>
 next we have declared <b>len = 0.<br/>
 </b>and than assigned <b>len = read(fd , buf , 32)</b><br/>
 <b>fd </b>- a valid file descriptor to preform read operation<br/>
-<b>buf</b>&nbsp;- memory address of where to write to<br/>
+<b>buf</b>- memory address of where to write to<br/>
 <b>int 32 </b>- how many bytes to write<br/>
 so, we read 32 bytes from standard input (if fd = 1 (= 4661-4660)) and write them to the buf array<br/>
 <br/>
 next<br/>
-<img src="image 6.png" width="300" height="22" /><br/>
-<b>strcmp</b>&nbsp;- string compare - returns 0 if both strings compare<br/>
-since theres exclamation mark, when <b>buf</b>&nbsp;== <b>LETMEWIN</b>&nbsp;we will get 1, and the IF statement will be true.<br/>
+<img height="22" src="image 6.png" width="300"/><br/>
+<b>strcmp</b>- string compare - returns 0 if both strings compare<br/>
+since theres exclamation mark, when <b>buf</b>== <b>LETMEWIN</b>we will get 1, and the IF statement will be true.<br/>
 buf comes from our input if fd=1.<br/>
 <br/>
 and if we get a true statement:<br/>
-<img src="image 7.png" width="250" height="24" /><br/>
+<img height="24" src="image 7.png" width="250"/><br/>
 <b>system - </b>executes shell command <br/>
-<b>/bin/cat</b>&nbsp;- the location of the binary<br/>
+<b>/bin/cat</b>- the location of the binary<br/>
 so, we execute a shell command - <b>cat flag<br/>
-</b>"The <b>system</b>() library function uses <a href="https://man7.org/linux/man-pages/man2/fork.2.html">fork(2)</a>&nbsp;to create a child process that executes the shell command specified in <i>command</i>&nbsp;using <a href="https://man7.org/linux/man-pages/man3/execl.3.html">execl(3)</a>&nbsp;"<br/>
+</b>&quot;The <b>system</b>() library function uses <a href="https://man7.org/linux/man-pages/man2/fork.2.html">fork(2)</a>to create a child process that executes the shell command specified in <i>command</i>using <a href="https://man7.org/linux/man-pages/man3/execl.3.html">execl(3)</a>&quot;<br/>
 note that the command will be executed as the owner of the file, <b>fd_pwn</b><br/>
 <br/>
 <br/>
-after executing the <b>fd</b>&nbsp;file and inserting the correct input, we get what's in the flag<br/>
-<img src="image 8.png" width="550" height="95" /><br/>
+after executing the <b>fd</b>file and inserting the correct input, we get what's in the flag<br/>
+<img height="95" src="image 8.png" width="550"/><br/>
 <br/>
 <br/>
 </span></body></html>

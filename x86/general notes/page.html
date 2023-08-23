@@ -1,20 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>general notes</title>
 </head><body>local variables lead to space allocation on the stack<br/>
 <br/>
-there is a 16 byte alligment padding in the stack, "the stack will always be maintained 16 byte aligned"<br/>
+there is a 16 byte alligment padding in the stack, &quot;the stack will always be maintained 16 byte aligned&quot;<br/>
 <br/>
-local variables <b>do not need</b>&nbsp;to be stored on the stack in the same order they are defined in the higher level language<br/>
-while fields in <b>struct</b>&nbsp;mush be stored the same order they are defined in the higher lever lan<br/>
+local variables <b>do not need</b>to be stored on the stack in the same order they are defined in the higher level language<br/>
+while fields in <b>struct</b>mush be stored the same order they are defined in the higher lever lan<br/>
 <br/>
 usually in 32bit call conventions:<br/>
 function parameters tend to get referenced as <b>ebp+offset</b><br/>
 local variables tend to get referenced as <b>ebp-offset<br/>
 </b><b><br/>
-</b>When there's no <b>return</b>&nbsp;from main(), the compiler will automatically return 0 upon success.<br/>
+</b>When there's no <b>return</b>from main(), the compiler will automatically return 0 upon success.<br/>
 <br/>
 main() takes <ul><li>argc into rdi</li>
 <li>argv** into rsi</li>

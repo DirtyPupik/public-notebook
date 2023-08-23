@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>2 TCP &amp; Segment</title>
 </head><body>* TCP is a Conection-Oriented protocol - it establishes a connection and uses that to ensure all data is properly transmitted<br/>
 in the IP and ethernet layers, if a packet has a non-valid checksum, it is discarded.<br/>
@@ -10,7 +9,7 @@ sequence number allow for all data to be put together in the right order<br/>
 <br/>
 UDP - conecctionless protocol - no validation - less bandwidth is used to send the same amount of data<br/>
 <br/>
-Once a TPC segment tells a service to listen for requests through a port, that listening port becomes a "socket." In other words, a socket is an active port used by a service.<br/>
+Once a TPC segment tells a service to listen for requests through a port, that listening port becomes a &quot;socket.&quot; In other words, a socket is an active port used by a service.<br/>
 <br/>
 <br/>
 Ethernet frame has a payload section which is the entire contents of an IP datagram. <br/>
@@ -18,18 +17,18 @@ Ethernet frame has a payload section which is the entire contents of an IP datag
 IP datagram has a payload section and this is made up of what's known as a TCP segment. (encapsulation!)<br/>
 <br/>
 as such. TCP segment is made out of header (which contains many parts) and payload<br/>
-<img src="image.png" width="550" height="313" /><br/>
+<img height="313" src="image.png" width="550"/><br/>
 <br/>
 <b>A source port </b>is a high numbered port chosen from a special section of ports known as ephemeral ports.<br/>
 when we ask a server for an HTTP page through Destination port 80, the source port is the requesting app - eg chrome browser (and not something else)<br/>
 <br/>
-<b>sequence number</b>&nbsp;- is is a 32-bit number that's used to keep track of where in a sequence of TCP segments this one is expected to be.<br/>
+<b>sequence number</b>- is is a 32-bit number that's used to keep track of where in a sequence of TCP segments this one is expected to be.<br/>
 <br/>
-<b>Acknowledgement Number</b>&nbsp;– A 32-bit field that holds the acknowledgement number, i.e, the byte number that the receiver expects to receive next. It is an acknowledgement for the previous bytes being received <b>successfully</b>.<br/>
+<b>Acknowledgement Number</b>– A 32-bit field that holds the acknowledgement number, i.e, the byte number that the receiver expects to receive next. It is an acknowledgement for the previous bytes being received <b>successfully</b>.<br/>
 <br/>
 <b>Header Length (HLEN) </b>– This is a 4-bit field that indicates the length of the TCP header by a number of 4-byte words in the header, i.e if the header is 20 bytes(min length of TCP header), then this field will hold 5 (because 5 x 4 = 20) and the maximum length: 60 bytes, then it’ll hold the value 15(because 15 x 4 = 60). Hence, the value of this field is always between 5 and 15.<br/>
 <br/>
-<b>Control flags</b>&nbsp;– These are 6 1-bit control bits that control connection establishment, connection termination, connection abortion, flow control, mode of transfer etc.<br/>
+<b>Control flags</b>– These are 6 1-bit control bits that control connection establishment, connection termination, connection abortion, flow control, mode of transfer etc.<br/>
 Their function is:<br/>
 URG: Urgent pointer is valid<br/>
 ACK: Acknowledgement number is valid( used in case of cumulative acknowledgement)<br/>
@@ -40,6 +39,6 @@ FIN: Terminate the connection<br/>
 <br/>
 <b>Window size </b>– This field tells the window size of the sending TCP in bytes.<br/>
 <br/>
-<b>Checksum</b>&nbsp;– This field holds the checksum for error control. It is mandatory in TCP as opposed to UDP.<br/>
+<b>Checksum</b>– This field holds the checksum for error control. It is mandatory in TCP as opposed to UDP.<br/>
 <br/>
 <b>Urgent pointer </b>– mostly not in use. This field (valid only if the URG control flag is set) is used to point to data that is urgently required that needs to reach the receiving process at the earliest. The value of this field is added to the sequence number to get the byte number of the last urgent byte.</body></html>

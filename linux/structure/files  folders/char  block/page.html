@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>char &amp; block</title>
 </head><body>Char and block are considered special files (aka device files).<br/>
 <ul><li>Special files provide an interface for devices in the form of a file in the file system.</li>
@@ -11,11 +10,11 @@
 <li>Block file atcs as an interface to a device which performs data I/O in units of blocks (e.g. physical storage device, ISO image file), size of blocks varies. </li>
 </ul>
 <br/>
-To test for a char or block device, use <b>test</b>&nbsp;or <b>stat:</b><br/>
+To test for a char or block device, use <b>test</b>or <b>stat:</b><br/>
 <br/>
 test -b FILE<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FILE exists and is block special<br/>
+       FILE exists and is block special<br/>
 test -c FILE<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FILE exists and is character special<br/>
+       FILE exists and is character special<br/>
 <br/>
 stat FILE</body></html>

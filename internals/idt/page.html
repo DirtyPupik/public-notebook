@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>IDT</title>
 </head><body><b>Interrupt Descriptor Table (IDT)<br/>
 </b><b><a href="https://www.ired.team/miscellaneous-reversing-forensics/windows-kernel-internals/interrupt-descriptor-table-idt">IDT in Red Team Notes</a></b><br/>
@@ -16,25 +15,25 @@
 </ul>
 <br/>
 <br/>
-<img src="image.png" width="500" height="372" /><br/>
+<img height="372" src="image.png" width="500"/><br/>
 <br/>
 <br/>
-<img src="image 2.png" width="500" height="396" /><br/>
+<img height="396" src="image 2.png" width="500"/><br/>
 <br/>
-<img src="image 3.png" width="400" height="308" /><br/>
+<img height="308" src="image 3.png" width="400"/><br/>
 <br/>
 <br/>
 When examining the memory around IDTR (the 64-bit value 0xfffff80078c68000), each line represents a 16 byte long interrupt descriptor record. while line 0 represents int 0, line 3 to int 3 and so on..<br/>
 The limit is 0xfff = 4095 bits, (including 0, its 4096), which equals 256 records of 16 byte long (256*16=4096).<br/>
-<img src="image 7.png" /><br/>
+<img src="image 7.png"/><br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<img src="image 4.png" width="650" height="419" /><br/>
-<img src="image 5.png" width="750" height="503" /><br/>
+<img height="419" src="image 4.png" width="650"/><br/>
+<img height="503" src="image 5.png" width="750"/><br/>
 <br/>
-<img src="image 6.png" width="750" height="428" /><br/>
+<img height="428" src="image 6.png" width="750"/><br/>
 <br/>
 <br/>
 <br/>

@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Interrupt Descriptor</title>
 </head><body>Interrupt Descriptor<ul><li>The descriptors in the IDT describe one of two types:</li>
 <li style="list-style-type: none"><ul><li>Interrupt gate</li>
@@ -11,14 +10,14 @@
 </ul>
 The difference is how the processor handles the IF flag in the EFLAGS register<br/>
 <br/>
-<img src="image.png" width="600" height="466" /><br/>
+<img height="466" src="image.png" width="600"/><br/>
 <br/>
 The IDT entries contain a Segment Selector and a 64-bit offset (a far pointer).<br/>
 <br/>
-<img src="image 2.png" width="450" height="123" /><br/>
+<img height="123" src="image 2.png" width="450"/><br/>
 <br/>
 <br/>
-<img src="image 3.png" width="800" height="586" /><br/>
+<img height="586" src="image 3.png" width="800"/><br/>
 <ul><li>IST != 0 specifies a specific index to use for the RSP as pulled from the TSS (7 upper values).</li>
 <li>When IST = 0, the RSP will be determined by the RPL in the CS segment selector.</li>
 <li>The DPL controls whether a specific INT $N instruction is permitted to use the gate or not.</li>
@@ -26,7 +25,7 @@ The IDT entries contain a Segment Selector and a 64-bit offset (a far pointer).<
 <br/>
 <br/>
 When looking at memory around IDTR we may see the IDT with each line being an Interrupt Descriptor.<br/>
-<img src="image 7.png" /><br/>
+<img src="image 7.png"/><br/>
 The first record being:<br/>
 <span style="font-size: 16pt">00000000</span><br/>
 FFFFF<span style="font-size: 16pt">800</span><br/>
@@ -47,7 +46,7 @@ According to the interrupt descriptor structure:<ul><li>64-bit offset = 0x<span 
 so many detail WOW (god ghelp pls)<br/>
 <br/>
 <br/>
-So... assuming we have INT3.<ul><li>IDTR is pointing at the &nbsp;IDT table.</li>
+So... assuming we have INT3.<ul><li>IDTR is pointing at the IDT table.</li>
 <li>Record number 3 it taken.</li>
 <li>Simultanously, TR points at a TSS record in GDT to pull a Stack address to be used to save the task state, the address is pulled from the TSS depending on the IST or RPL of the interrupt descriptor, SS:RSP is filled, now the processor has a stack and the task state is saved.</li>
 <li>The interrupt record has a segment selector, an offset (which is a 64-bit far pointer), and details.</li>

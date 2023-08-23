@@ -1,21 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Endianess</title>
 </head><body><ul><li>Endianess only applies to memory storage (not registers!)</li>
 <li style="list-style-type: none">Registers store only in Big-Endian order</li>
 <li>Endianess only applies to bytes (not bits!)</li>
 </ul>
 <b><br/>
-</b><b>little endianess</b>&nbsp;- the little end / least significant byte, will be stored in the lowest address (little end first)<br/>
+</b><b>little endianess</b>- the little end / least significant byte, will be stored in the lowest address (little end first)<br/>
 0x12345678 will be stored as 0x78 0x56 0x34 0x12<br/>
 <br/>
-<b>big endianess</b>&nbsp;- store the big end / most significant byte in the lowest memory address (big end first)<br/>
+<b>big endianess</b>- store the big end / most significant byte in the lowest memory address (big end first)<br/>
 0x12345678 will be stored as 0x12 0x34 0x56 0x78<br/>
 <br/>
-<b>network trafic</b>&nbsp;is sent in big endian (<b>man byteorder</b>&nbsp;in linux to see POSIX network-to-host ordering functions)<br/>
+<b>network trafic</b>is sent in big endian (<b>man byteorder</b>in linux to see POSIX network-to-host ordering functions)<br/>
 <br/>
 RISC systems today are mostly Bi-Endian<br/>
 <br/>
-<img src="image.png" width="500" height="347" /></body></html>
+<img height="347" src="image.png" width="500"/></body></html>

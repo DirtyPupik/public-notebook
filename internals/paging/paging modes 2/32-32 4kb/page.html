@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>32-&gt;32 4KB</title>
-</head><body><img src="image.png" width="600" height="77" /><br/>
+</head><body><img height="77" src="image.png" width="600"/><br/>
 <br/>
 <br/>
 The table names and entries are as such<br/>
-<img src="image 5.png" width="500" height="298" /><br/>
+<img height="298" src="image 5.png" width="500"/><br/>
 <br/>
 <br/>
 The process<ul><li>CR3 holds a 32-bit base address to a page entry table.</li>
@@ -18,28 +17,28 @@ The process<ul><li>CR3 holds a 32-bit base address to a page entry table.</li>
 <li>Beacuse the bottom 12-bits are assumed to be 0, the MMU can reuse to for various purposes.</li>
 <li>Also that means the bottom is 4KB aligned (0y0000'0000'0000 -&gt; 0x000)</li>
 </ul>
-&nbsp;<img src="image 2.png" width="750" height="529" /><br/>
+<img height="529" src="image 2.png" width="750"/><br/>
 <br/>
 The process than repeats again:<ul><li>Next 10-bits from the 32-bit Linear address are used as index to the second table.</li>
 <li>The 2nd table entry's 20 MSBits are used as a base to the 3rd part (which is a page, not a table).</li>
 <li>12 bottom bits of entry assumed zero.</li>
 </ul>
-<img src="image 3.png" width="750" height="472" /><br/>
+<img height="472" src="image 3.png" width="750"/><br/>
 <br/>
 <br/>
 Finally the 3rd part is the page.<ul><li>We have the page-aligend base from the 2nd table.</li>
 <li>The bottom 12-bit that remain from the 32-bit Linear address points to the desired location in the page (the physical address).</li>
 </ul>
-<img src="image 4.png" width="750" height="461" /><br/>
+<img height="461" src="image 4.png" width="750"/><br/>
 <br/>
 <br/>
 <br/>
 Summery from the intel manual<br/>
-<img src="image 6.png" width="750" height="432" /><br/>
+<img height="432" src="image 6.png" width="750"/><br/>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-&nbsp;</body></html>
+</body></html>

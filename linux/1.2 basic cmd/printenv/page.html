@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>printenv</title>
-</head><body>printenv&#09;-&#09;print all enviroment variables<br/>
+</head><body>printenv	-	print all enviroment variables<br/>
 <br/>
 the common use is lowercase for local and UPPERCASE FOR GLOBAL <br/>
 <br/>
@@ -13,19 +12,19 @@ print a specific one:<br/>
 printenv HOME<br/>
 echo $HOME<br/>
 <br/>
-to create a <b>local variable</b>&nbsp;- use lowercase<br/>
-<b>myname="pupik"<br/>
+to create a <b>local variable</b>- use lowercase<br/>
+<b>myname=&quot;pupik&quot;<br/>
 echo $myname<br/>
 <br/>
 </b>to create global variable - use UPPERCASE<br/>
-<b>export myname</b>&#09;-&#09;will export the local variable we created to global env<br/>
+<b>export myname</b>	-	will export the local variable we created to global env<br/>
 <br/>
 to remove the variable<br/>
 <b>unset myname<br/>
 <br/>
 </b>to set permament:<b><br/>
 </b><b>subl ~/.profile<br/>
-</b>add the "<b>export &lt;varname&gt;='a string'</b>" at the end of the file<br/>
+</b>add the &quot;<b>export &lt;varname&gt;='a string'</b>&quot; at the end of the file<br/>
 <b>. ~/.profile<br/>
 <br/>
 <br/>

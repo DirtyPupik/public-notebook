@@ -1,10 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>5 PPP - point to point</title>
 </head><body>its data link layer protocol (such as the ethernet protocol)<br/>
-uses to encapsulate layer 3 &nbsp;protocols for transmision across serial links. <br/>
+uses to encapsulate layer 3 protocols for transmision across serial links. <br/>
 an open standard, successor of HDLC<br/>
 <br/>
 it supports alot of stuff:<br/>
@@ -13,18 +12,18 @@ error detection<br/>
 load balancing<br/>
 <br/>
 PPP frame:<br/>
-<img src="image.png" width="500" height="46" /><br/>
-<b>Flag</b>&nbsp;is a single byte and lets the receiver know this is the beginning of the frame. Depending on the encapsulation, there may or may not be a start flag or an end flag.<br/>
+<img height="46" src="image.png" width="500"/><br/>
+<b>Flag</b>is a single byte and lets the receiver know this is the beginning of the frame. Depending on the encapsulation, there may or may not be a start flag or an end flag.<br/>
 <br/>
-<b>Address</b>&nbsp;is a single byte, and it contains the broadcast address.<br/>
+<b>Address</b>is a single byte, and it contains the broadcast address.<br/>
 <br/>
-<b>Control</b>&nbsp;is a single byte required for various purposes but also allows a connectionless data link.<br/>
+<b>Control</b>is a single byte required for various purposes but also allows a connectionless data link.<br/>
 <br/>
-<b>Protocol</b>&nbsp;varies from one to three bytes, tells which layer protocol is encapsulated in the Data field<br/>
+<b>Protocol</b>varies from one to three bytes, tells which layer protocol is encapsulated in the Data field<br/>
 <br/>
-<b>Data</b>&nbsp;is where the information you need to transmit is stored and has a limit of 1500 bytes per frame.<br/>
+<b>Data</b>is where the information you need to transmit is stored and has a limit of 1500 bytes per frame.<br/>
 <br/>
-<b>Frame check sequence (FCS)</b>&nbsp;is 2 or 4 bytes and is used to verify data is intact upon receipt at the endpoint. <br/>
+<b>Frame check sequence (FCS)</b>is 2 or 4 bytes and is used to verify data is intact upon receipt at the endpoint. <br/>
 <br/>
 <br/>
 PPP components:<br/>

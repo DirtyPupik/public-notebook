@@ -1,34 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>ls</title>
 </head><body><span style="font-size: 12pt">list folders and files in the current dir<br/>
 <br/>
--la&#09;&#09;(list) all<br/>
--a&#09;&#09;all<br/>
+-la		(list) all<br/>
+-a		all<br/>
 <br/>
-file types:</span><ul><span style="font-size: 13pt"><li><b>–</b> &#09;: regular file</li>
-<li><b>d</b> &#09;: directory</li>
-<li><b>c</b> &#09;: character device file</li>
-<li><b>b</b> &#09;: block device file</li>
-<li><b>s</b> &#09;: local socket file</li>
-<li><b>p</b> &#09;: named pipe</li>
-</span><li><span style="font-size: 13pt"><b>l</b> &#09;: symbolic link</span></li>
+file types:</span><ul><span style="font-size: 13pt"><li><b>–</b> 	: regular file</li>
+<li><b>d</b> 	: directory</li>
+<li><b>c</b> 	: character device file</li>
+<li><b>b</b> 	: block device file</li>
+<li><b>s</b> 	: local socket file</li>
+<li><b>p</b> 	: named pipe</li>
+</span><li><span style="font-size: 13pt"><b>l</b> 	: symbolic link</span></li>
 </ul>
-&nbsp;<br/>
+<br/>
 <span style="font-size: 12pt"><br/>
-<img src="image.png" /><br/>
+<img src="image.png"/><br/>
 <br/>
 a folder mush be executable in order to touch its content, making a folder and changing group to r+w will not have any effect<br/>
 <br/>
-the <b>owner group</b>&nbsp;premission are affected by the rwx of the group<br/>
+the <b>owner group</b>premission are affected by the rwx of the group<br/>
 <br/>
-<b>setuid</b>&nbsp;- the setuid/setguid permissions are used to tell the system to run an executable as the owner with the owner’s permissions.<br/>
+<b>setuid</b>- the setuid/setguid permissions are used to tell the system to run an executable as the owner with the owner’s permissions.<br/>
 in the example above, the file fd if owned by <b>fd_pwn</b>, and group owner is <b>fd</b>, in the group permission it has <b>x</b>, and in the owner permission <b>s,<br/>
-</b>meaning, the user <b>fd</b>&nbsp;can execute the file <b>fd</b>&nbsp; as the owner (<b>fd_pwn)<br/>
+</b>meaning, the user <b>fd</b>can execute the file <b>fd</b> as the owner (<b>fd_pwn)<br/>
 </b><b><br/>
-</b>It's possible for a file to be setuid but not executable; this is denoted by <b>capital S</b>, where the <b>capital S</b>&nbsp;alerts you that this setting is probably wrong because the setuid bit is (almost always) useless if the file is not executable.<br/>
+</b>It's possible for a file to be setuid but not executable; this is denoted by <b>capital S</b>, where the <b>capital S</b>alerts you that this setting is probably wrong because the setuid bit is (almost always) useless if the file is not executable.<br/>
 <br/>
 <br/>
 </span></body></html>

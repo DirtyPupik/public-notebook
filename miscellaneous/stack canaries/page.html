@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Stack Canaries</title>
 </head><body>https://ctf101.org/binary-exploitation/stack-canaries/<br/>
 https://d3fend.mitre.org/technique/d3f:StackFrameCanaryValidation/<br/>
@@ -11,7 +10,7 @@ https://d3fend.mitre.org/technique/d3f:StackFrameCanaryValidation/<br/>
 <li>a random number is generated from /dev/random and put on the stack after the buffer and before the return. address.</li>
 <li>there is a NULL char 0x00 at the begining of the canary.</li>
 <li>The NULL byte at the beginning of the canary would present a problem for many string operations to print.</li>
-<li>example of a canary value&#09;-&#09;<b>0x08A5F900</b></li>
+<li>example of a canary value	-	<b>0x08A5F900</b></li>
 <li>Canaries in 64 bit programs follow the same principles, but will use the extra 32 bits for entropy.</li>
 <li>Stack canaries will be checked for their value just before the return to the calling function </li>
 </ul>
@@ -20,4 +19,4 @@ The random XOR canary will be like the random canary, except it will be XOR’ed
 <br/>
 <b>If the attacker performs a malicious action before the epilogue is called, then this protection will not be effective</b>. This includes altering the logic of the program by altering the values of local variables stored on the function stack, or by causing an exception and exploiting the exception mechanism such as the SEH (Structured Exception Handling) mechanism on Windows.<br/>
 <br/>
-<img src="image.png" width="900" height="348" /></body></html>
+<img height="348" src="image.png" width="900"/></body></html>

@@ -1,35 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>grep</title>
 </head><body>stands for global/regular expression/print<br/>
 <br/>
 or simply, find things<br/>
 <br/>
 grep &lt;expression&gt; &lt;file&gt;<br/>
-cat ping.txt | grep "64 bytes"&#09;&#09;- finds the line that contains the expression specified<br/>
+cat ping.txt | grep &quot;64 bytes&quot;		- finds the line that contains the expression specified<br/>
 <br/>
 <span style="font-size: 13pt"><br/>
--i&#09;&#09;&#09;&#09;case <b>in</b>sensitive<br/>
--v&#09;&#09;&#09;&#09;select opposite (grep not "expression")<br/>
--n&#09;&#09;&#09;&#09;print line number<br/>
+-i				case <b>in</b>sensitive<br/>
+-v				select opposite (grep not &quot;expression&quot;)<br/>
+-n				print line number<br/>
 <br/>
--A&#09;&#09;&#09;&#09;prints a number of lines <b>after</b>&nbsp;the match ( grep -A3 )<br/>
--B&#09;&#09;&#09;&#09;prints a number of lines <b>before</b>&nbsp;the match (grep -B2)<br/>
--C&#09;&#09;&#09;&#09;prints a number of lines <b>to both sides</b>&nbsp;the match (grep -C2)<br/>
+-A				prints a number of lines <b>after</b>the match ( grep -A3 )<br/>
+-B				prints a number of lines <b>before</b>the match (grep -B2)<br/>
+-C				prints a number of lines <b>to both sides</b>the match (grep -C2)<br/>
 <br/>
 <br/>
 </span><b>Grep - Anchor Matches</b><br/>
-Anchors are special characters that specify where a match must occur to be valid in the line. The first ones are the "<b>^</b>" and the "<b>$</b>" anchors. The "<b>^</b>" anchor stands for anything starting with a particular pattern. &nbsp; <span style="font-size: 13pt"><br/>
-</span><span style="font-size: 13pt"><img src="image 2.png" width="350" height="72" /><br/>
+Anchors are special characters that specify where a match must occur to be valid in the line. The first ones are the &quot;<b>^</b>&quot; and the &quot;<b>$</b>&quot; anchors. The &quot;<b>^</b>&quot; anchor stands for anything starting with a particular pattern.  <span style="font-size: 13pt"><br/>
+</span><span style="font-size: 13pt"><img height="72" src="image 2.png" width="350"/><br/>
 <br/>
-</span>In contrast, filter any string that ends with the letter "e" using the "$" anchor.<br/>
-<img src="image 3.png" width="400" height="68" /><span style="font-size: 13pt"><br/>
+</span>In contrast, filter any string that ends with the letter &quot;e&quot; using the &quot;$&quot; anchor.<br/>
+<img height="68" src="image 3.png" width="400"/><span style="font-size: 13pt"><br/>
 </span><span style="font-size: 13pt"><br/>
-</span>Another useful anchor is the "*", which means repeating the previous character or expression zero or more times. &nbsp; <br/>
-<img src="image 4.png" width="400" height="73" /><br/>
+</span>Another useful anchor is the &quot;*&quot;, which means repeating the previous character or expression zero or more times.  <br/>
+<img height="73" src="image 4.png" width="400"/><br/>
 <br/>
 <span style="font-size: 13pt"><br/>
 <br/>
-</span><img src="image.png" width="750" height="225" /></body></html>
+</span><img height="225" src="image.png" width="750"/></body></html>

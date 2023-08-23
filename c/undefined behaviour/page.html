@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>undefined behaviour</title>
 </head><body>UB<br/>
 <br/>
 <a href="https://stackoverflow.com/questions/5464183/modifying-string-literal">modifing a string literal</a><br/>
-<span style="font-size: 13pt"><span style="font-family: inherit">char</span></span>* p = <span style="font-size: 13pt"><span style="font-family: inherit">"hello";</span></span><br/>
+<span style="font-size: 13pt"><span style="font-family: inherit">char</span></span>* p = <span style="font-size: 13pt"><span style="font-family: inherit">&quot;hello&quot;;</span></span><br/>
 p[<span style="font-size: 13pt"><span style="font-family: inherit">0</span></span>] = <span style="font-size: 13pt"><span style="font-family: inherit">'y'</span></span>; <br/>
 <br/>
 dereferencing a null pointer<br/>

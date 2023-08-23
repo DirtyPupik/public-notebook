@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>jmp</title>
 </head><body>jmp will unconditionally change RIP to a given address (jump to address)<br/>
 <br/>
@@ -10,19 +9,19 @@
 the address can be specified in sevral ways:<br/>
 <br/>
 <b><u>short</u></b><br/>
-<b>relative - short</b>&nbsp;- RIP = RIP of next instruction + 1 byte displacement (sign extended to 64 bits)<br/>
-1 byte (8 bits) displacement allows moving from &nbsp;-128 to 127 (decimal) places from the next instruction<br/>
+<b>relative - short</b>- RIP = RIP of next instruction + 1 byte displacement (sign extended to 64 bits)<br/>
+1 byte (8 bits) displacement allows moving from -128 to 127 (decimal) places from the next instruction<br/>
 <br/>
 the short jump is calculated from the next instruction<br/>
 <br/>
 in this example, the IP is at 1004, jump is calculated from the next instruction - 1006, there we add 0xC to get 0x12<br/>
-<img src="image.png" /><br/>
+<img src="image.png"/><br/>
 <br/>
-jmp -2&#09;&#09;- will cause an infinite loop (FE = -2 decimal)<br/>
-<img src="image 2.png" /><br/>
+jmp -2		- will cause an infinite loop (FE = -2 decimal)<br/>
+<img src="image 2.png"/><br/>
 <br/>
 <u><b>near<br/>
-</b></u><b>near - relative</b>&nbsp;- RIP = RIP of next instruction + 4 byte (sign extended to 64 bits) displacement<br/>
+</b></u><b>near - relative</b>- RIP = RIP of next instruction + 4 byte (sign extended to 64 bits) displacement<br/>
 4 byte displacement allow values of -2,147,483,648 to 2,147,483,647<br/>
 <br/>
 <b>near, absolute indirect - </b>address calculated via r/mX (x = 16/32/64)<br/>

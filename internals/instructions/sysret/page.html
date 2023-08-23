@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>SYSRET</title>
 </head><body>Privileged instruction<br/>
 <ul><li>Restore RIP from RCX.</li>
@@ -12,18 +11,18 @@
 </ul>
 <br/>
 <br/>
-<img src="image.png" width="600" height="438" /><br/>
+<img height="438" src="image.png" width="600"/><br/>
 <br/>
 <br/>
 When returning, CS might not have RPL=3, and as it must have RPL=3 in userspace to avoid kernel privileges in userspace.<br/>
-<img src="image 2.png" width="600" height="352" /><br/>
+<img height="352" src="image 2.png" width="600"/><br/>
 <br/>
 The problem is solved in the microcode behind SYSRET instruction, which forces the RPL to 3 when returning:<br/>
 in the pseudocode<br/>
-<img src="image 3.png" width="500" height="105" /><br/>
+<img height="105" src="image 3.png" width="500"/><br/>
 Bitwise OR is preformed against CS, to ensure the last 2 bits are 0y11 (3).<br/>
 <br/>
-<img src="image 4.png" width="500" height="264" /><br/>
+<img height="264" src="image 4.png" width="500"/><br/>
 <br/>
 <br/>
 <br/>

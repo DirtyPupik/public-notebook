@@ -1,11 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>NULL vs '\0'</title>
 </head><body>`'\0'` and `NULL` are used for different purposes in C and have specific meanings:<br/>
 <br/>
-1. **`'\0'` (Null Terminator):** This is a character constant that represents the null terminator character, which has an ASCII value of zero. It is used to mark the end of strings in C. When you create a string using double quotes (e.g., `"Hello"`), the compiler automatically appends a `'\0'` at the end of the string to indicate its termination. This is crucial for functions that work with strings, as they rely on encountering the null terminator to know where the string ends.<br/>
+1. **`'\0'` (Null Terminator):** This is a character constant that represents the null terminator character, which has an ASCII value of zero. It is used to mark the end of strings in C. When you create a string using double quotes (e.g., `&quot;Hello&quot;`), the compiler automatically appends a `'\0'` at the end of the string to indicate its termination. This is crucial for functions that work with strings, as they rely on encountering the null terminator to know where the string ends.<br/>
 <br/>
 2. **`NULL`:** `NULL` is a predefined macro in C that represents a null pointer value. It's often used to initialize or compare pointer variables to indicate that they are not pointing to any valid memory location. `NULL` is typically defined as `(void*)0` or as an integer constant with a value of zero, depending on the implementation.<br/>
 <br/>
@@ -15,7 +14,7 @@ It's important to note the difference between these two:<br/>
 - `NULL` is used in the context of pointers to represent a null pointer, indicating that the pointer doesn't point to any valid memory location.<br/>
 <br/>
 Here are some examples to illustrate their usage:<br/>
-<img src="image.png" /><br/>
+<img src="image.png"/><br/>
 <br/>
 As for alternatives, when working with pointers, `NULL` is the standard way to represent a null pointer. There's no need to use alternatives since `NULL` is a widely recognized and accepted convention.<br/>
 <br/>

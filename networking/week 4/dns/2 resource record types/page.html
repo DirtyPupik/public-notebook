@@ -1,15 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>2 Resource Record Types</title>
 </head><body>DNS operates with defined resource record types<br/>
 the different record types allow different kinds of request resolutions<br/>
 <br/>
 <b>A record (A stands for address) - </b>points a certain domain name to certain IPv4 address<br/>
 in basic form a single A record is defined to a single domian, but a domain can have many A records<br/>
-<img src="image.png" width="200" height="63" />&nbsp;<br/>
-<img src="image 2.png" width="500" height="102" /><br/>
+<img height="63" src="image.png" width="200"/><br/>
+<img height="102" src="image 2.png" width="500"/><br/>
 so... A record is : IPv4 Address record (one domain may have many IPs)<br/>
 <br/>
 DNS round robin - a method for dividing trafic of DNS requests (a load balancing technique)<br/>
@@ -21,7 +20,7 @@ all IPs are provided in case one of them will not work.<br/>
 <br/>
 AAAA record - IPv6 record<br/>
 <br/>
-CNAME record (CannonicalNAME) &nbsp;- a record for <b>example.com</b>&nbsp;that will redirect to <b>www.example.com<br/>
+CNAME record (CannonicalNAME) - a record for <b>example.com</b>that will redirect to <b>www.example.com<br/>
 </b><b><br/>
 </b>MX record - mail exchange - only for mail<br/>
 <br/>
@@ -29,4 +28,4 @@ SRV record - service record - defines location of varios specific services - oft
 <br/>
 TXT record - TXT stands for text and was originally intended to be used only for associating some descriptive text with a domain name for human consumption. The idea was that, you could leave notes or messages that humans could discover and read to learn more about arbitrary specifics of your network. But over the years as the Internet and services that run on it have become more and more complex, the text record has been increasingly used to convey additional data intended for other computers to process. Since the text record has a field that's entirely free form, clever engineers have figured out ways to use it to communicate data not originally intended to be communicated by a system like DNS. It's pretty clever, right? This text record is often used to communicate configuration preferences about network services that you've entrusted other organizations to handle for your domain. For example, it's common for the text record to be used to convey additional info to an email as a service provider, which is a company that handles your email delivery for you.<br/>
 <br/>
-&nbsp;</body></html>
+</body></html>

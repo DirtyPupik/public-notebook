@@ -1,18 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>random</title>
 </head><body>looking at the source code of random.c:<br/>
-<img src="image 2.png" width="550" height="305" /><br/>
+<img height="305" src="image 2.png" width="550"/><br/>
 <br/>
 rand() gives a pseudo-random number<br/>
 this number is fixed and will repeat itself everytime called<br/>
 also, this number changes between workspeaces.<br/>
 as can be seen below, rand() repeats itself.<br/>
-<img src="image.png" width="550" height="223" /><br/>
+<img height="223" src="image.png" width="550"/><br/>
 <br/>
-the "^" operator is XOR bitwise operator in C<br/>
+the &quot;^&quot; operator is XOR bitwise operator in C<br/>
 for bitwise XOR:<br/>
 <b>a^b=c<br/>
 c^b=a<br/>
@@ -25,25 +24,25 @@ in our case, we are asked by IF statment about the following equation:<br/>
 if we know random, we can bitwise XOR it with 0xdeadbeef to find the key we are looking for<br/>
 0xdeadbeef ^ random = key<br/>
 <br/>
-the only "problem" is finding random.<br/>
+the only &quot;problem&quot; is finding random.<br/>
 luckly, pwnable allows us to play around in local <b>/tmp/our_name </b>folder<br/>
 <br/>
-in the temp folder, we will use <b>vi</b>&nbsp;editor to create a simple script and execute it<br/>
-to exit <b>vi</b>&nbsp;press: esc, ":wq", enter<br/>
-<img src="image 4.png" /><br/>
+in the temp folder, we will use <b>vi</b>editor to create a simple script and execute it<br/>
+to exit <b>vi</b>press: esc, &quot;:wq&quot;, enter<br/>
+<img src="image 4.png"/><br/>
 <br/>
 this is the script:<br/>
-<img src="image 3.png" /><br/>
+<img src="image 3.png"/><br/>
 <br/>
 when executed, we will get the pseudo-random number that we are looking for:<br/>
-<img src="image 5.png" /><br/>
+<img src="image 5.png"/><br/>
 <br/>
 0x6B8B4567 ^ 0xDEADBEEF = 0xB526FB88<br/>
 <br/>
-converting 0xB526FB88 to unsigned long int = <b>3039230856</b>&nbsp; <br/>
+converting 0xB526FB88 to unsigned long int = <b>3039230856</b> <br/>
 <br/>
 solving:<br/>
-<img src="image 6.png" /><br/>
+<img src="image 6.png"/><br/>
 <br/>
 <br/>
 </body></html>

@@ -1,39 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>/FMT Format</title>
 </head><body>Many GDB commands support a format specifier, which we will call /FMT (because that's what it's called in the gdb help command for each of these commands)<br/>
 <br/>
-/FMT is the combination of the <b>/</b>&nbsp;character,<br/>
+/FMT is the combination of the <b>/</b>character,<br/>
 followed by a number <b>n </b>(item count),<br/>
 followed by a format specifier <b>f</b>,<br/>
 and a unit size specifier <b>u</b>.<br/>
-Giving <b>/nfu</b>&nbsp;format.<br/>
+Giving <b>/nfu</b>format.<br/>
 Each of n, f, and u are optional, and will default to the last-used values or default initial values if left unspecified.<br/>
-<b>/10xw</b>&#09;-&#09;show 10 items, in hexadecimal form, each one 4 byte long.<br/>
+<b>/10xw</b>	-	show 10 items, in hexadecimal form, each one 4 byte long.<br/>
 <br/>
 <br/>
 <b>Format specifiers:</b><br/>
-s&#09;-&#09;string (presumed null terminated)<br/>
-i&#09;-&#09;instruction<br/>
-d&#09;-&#09;decimal (signed)<br/>
-u&#09;-&#09;unsigned decimal<br/>
-f&#09;-&#09;float<br/>
-x&#09;-&#09;hexadecimal<br/>
-c&#09;-&#09;ASCII char<br/>
-o&#09;-&#09;octal (binary representation)<br/>
-t&#09;-&#09;binary ("t" stands for "two")<br/>
-a&#09;-&#09;address, both absolute in hexadecimal and as an offset from the nearest preceding symbol.<br/>
-z&#09;-&#09;like "x" but with padding of leading zero's to the size of the integer type.<br/>
-r&#09;-&#09;raw<br/>
+s	-	string (presumed null terminated)<br/>
+i	-	instruction<br/>
+d	-	decimal (signed)<br/>
+u	-	unsigned decimal<br/>
+f	-	float<br/>
+x	-	hexadecimal<br/>
+c	-	ASCII char<br/>
+o	-	octal (binary representation)<br/>
+t	-	binary (&quot;t&quot; stands for &quot;two&quot;)<br/>
+a	-	address, both absolute in hexadecimal and as an offset from the nearest preceding symbol.<br/>
+z	-	like &quot;x&quot; but with padding of leading zero's to the size of the integer type.<br/>
+r	-	raw<br/>
 <a href="https://sourceware.org/gdb/onlinedocs/gdb/Output-Formats.html">Documentation</a><br/>
 <br/>
 <br/>
 <b>Sizes (u):</b><br/>
-<b>*NOTE - GDB word size is different than intel's (intel word is 2 bytes).</b><ul><li>b &#09;&#09;for bytes</li>
-<li>h &#09;&#09;for half-words (2 bytes)</li>
-<li>w &#09;&#09;for words (4 bytes)</li>
-<li>g &#09;&#09;for giant-words (8 bytes)</li>
+<b>*NOTE - GDB word size is different than intel's (intel word is 2 bytes).</b><ul><li>b 		for bytes</li>
+<li>h 		for half-words (2 bytes)</li>
+<li>w 		for words (4 bytes)</li>
+<li>g 		for giant-words (8 bytes)</li>
 </ul>
 </body></html>
